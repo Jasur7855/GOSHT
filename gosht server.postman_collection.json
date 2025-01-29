@@ -1,0 +1,456 @@
+{
+	"info": {
+		"_postman_id": "3e5f9146-1c47-4154-99f3-6a97d92cd33b",
+		"name": "gosht server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40607244"
+	},
+	"item": [
+		{
+			"name": "events",
+			"item": [
+				{
+					"name": "private",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "img",
+											"type": "file",
+											"src": "/home/fathullarashidov/Downloads/image 55.png"
+										},
+										{
+											"key": "event_title",
+											"value": "Workshop",
+											"type": "text"
+										},
+										{
+											"key": "event_subtitle",
+											"value": "Learn Node.js",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "Node.js Basics",
+											"type": "text"
+										},
+										{
+											"key": "paragraph",
+											"value": "This event will cover the basics of Node.js.",
+											"type": "text"
+										},
+										{
+											"key": "motivation",
+											"value": "Start your journey in backend development!",
+											"type": "text"
+										},
+										{
+											"key": "cost",
+											"value": "Free",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "2025-02-01",
+											"type": "text"
+										},
+										{
+											"key": "time",
+											"value": "10:00 AM",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://188.166.96.138:3000/api/events/private"
+							},
+							"response": []
+						},
+						{
+							"name": "get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://188.166.96.138:3000/api/events/private"
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://188.166.96.138:3000/api/events/private/1"
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "event_title",
+											"value": "changed",
+											"type": "text"
+										},
+										{
+											"key": "event_subtitle",
+											"value": "changed",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "changed",
+											"type": "text"
+										},
+										{
+											"key": "paragraph",
+											"value": "changed",
+											"type": "text"
+										},
+										{
+											"key": "motivation",
+											"value": "changed",
+											"type": "text"
+										},
+										{
+											"key": "cost",
+											"value": "changed",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "changed",
+											"type": "text"
+										},
+										{
+											"key": "time",
+											"value": "changed",
+											"type": "text"
+										},
+										{
+											"key": "img",
+											"type": "file",
+											"src": "/home/fathullarashidov/Pictures/wallpapers/World_Map_4k_Gruvbox_Dark.png"
+										}
+									]
+								},
+								"url": "http://188.166.96.138:3000/api/events/private/1"
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "http://188.166.96.138:3000/api/events/private/2"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "kids",
+					"item": [
+						{
+							"name": "get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://188.166.96.138:3000/api/events/kids"
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://188.166.96.138:3000/api/events/kids/1"
+							},
+							"response": []
+						},
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "img",
+											"type": "file",
+											"src": "/home/fathullarashidov/Pictures/wallpapers/World_Map_4k_Gruvbox_Dark.png"
+										},
+										{
+											"key": "event_title",
+											"value": "Workshop",
+											"type": "text"
+										},
+										{
+											"key": "event_subtitle",
+											"value": "Learn Node.js",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "Node.js Basics",
+											"type": "text"
+										},
+										{
+											"key": "paragraph",
+											"value": "This event will cover the basics of Node.js.",
+											"type": "text"
+										},
+										{
+											"key": "motivation",
+											"value": "Start your journey in backend development!",
+											"type": "text"
+										},
+										{
+											"key": "cost",
+											"value": "Free",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "2025-02-01",
+											"type": "text"
+										},
+										{
+											"key": "time",
+											"value": "10:00 AM",
+											"type": "text"
+										}
+									]
+								},
+								"url": "http://188.166.96.138:3000/api/events/kids"
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "event_title",
+											"value": "changed",
+											"type": "text"
+										},
+										{
+											"key": "event_subtitle",
+											"value": "changed",
+											"type": "text"
+										},
+										{
+											"key": "title",
+											"value": "changed",
+											"type": "text"
+										},
+										{
+											"key": "paragraph",
+											"value": "changed",
+											"type": "text"
+										},
+										{
+											"key": "motivation",
+											"value": "changed",
+											"type": "text"
+										},
+										{
+											"key": "cost",
+											"value": "changed",
+											"type": "text"
+										},
+										{
+											"key": "date",
+											"value": "changed",
+											"type": "text"
+										},
+										{
+											"key": "time",
+											"value": "changed",
+											"type": "text"
+										},
+										{
+											"key": "img",
+											"type": "file",
+											"src": "/home/fathullarashidov/Pictures/Screenshots/Screenshot from 2024-12-12 00-27-42.png"
+										}
+									]
+								},
+								"url": "http://188.166.96.138:3000/api/events/kids/1"
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "http://188.166.96.138:3000/api/events/kids/1"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "booking",
+			"item": [
+				{
+					"name": "private",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"phoneNumber\": \"+1234567890\",\n  \"eventDate\": \"2025-02-15\",\n  \"companyName\": \"Doe Enterprises\",\n  \"startTime\": \"10:00\",\n  \"endTime\": \"14:00\",\n  \"eventType\": \"Conference\",\n  \"peopleNumber\": 50,\n  \"additionalInformation\": \"Please provide projectors and microphones.\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://188.166.96.138:3000/api/book/private"
+							},
+							"response": []
+						},
+						{
+							"name": "get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://188.166.96.138:3000api/book/private/"
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://188.166.96.138:3000/api/book/private/1"
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"firstName\": \"changed\",\n  \"lastName\": \"Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"phoneNumber\": \"+1234567890\",\n  \"eventDate\": \"2025-02-15\",\n  \"companyName\": \"Doe Enterprises\",\n  \"startTime\": \"10:00\",\n  \"endTime\": \"14:00\",\n  \"eventType\": \"Conference\",\n  \"peopleNumber\": 50,\n  \"additionalInformation\": \"Please provide projectors and microphones.\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://188.166.96.138:3000/api/book/private/1"
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "http://188.166.96.138:3000/api/book/private/1"
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "kids",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"firstName\": \"Alice\",\n  \"email\": \"alice@example.com\",\n  \"phoneNumber\": \"+9876543210\",\n  \"peopleNumber\": 5\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://188.166.96.138:3000/api/book/kids"
+							},
+							"response": []
+						},
+						{
+							"name": "get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://188.166.96.138:3000/api/book/kids/"
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "http://188.166.96.138:3000/api/book/kids/1"
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"firstName\": \"changed\",\n  \"email\": \"alice@example.com\",\n  \"phoneNumber\": \"+9876543210\",\n  \"peopleNumber\": 5\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://188.166.96.138:3000/api/book/kids/1"
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "http://188.166.96.138:3000/api/book/kids/1"
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
