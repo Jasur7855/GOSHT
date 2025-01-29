@@ -13,6 +13,12 @@ export const SEventsCard = styled.div<IEventsCardProps>`
     display: flex;
     flex-direction: column;
     gap: 24px 0;
+    h6{
+      font-weight: 500;
+      padding-bottom: 8px;
+      border-bottom:1px solid  #B9BCBB;
+
+    }
   }
 
   .Main {
