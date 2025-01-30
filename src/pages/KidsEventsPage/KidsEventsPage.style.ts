@@ -27,6 +27,7 @@ export const SKidsEventPrograms = styled.section`
     height: calc(14.2vw + 274px);
     display: grid;
     grid-template-columns: 1fr calc(17.2vw + 262px) 1fr;
+    grid-template-rows: 1fr 1fr;
     gap: 30px;
     margin-bottom: 42px;
     .galleryImg{
@@ -41,12 +42,13 @@ export const SKidsEventPrograms = styled.section`
     display: flex;
     justify-content: space-between;
     .arrBtn{
-        width:48px;
-        height: 48px;
+        width:38px;
+        height: 38px;
         background-color: transparent;
-        border: 2px solid ${props=>props.theme.colors.grey};
+        border: 1px solid ${props=>props.theme.colors.grey};
         border-radius: 4px;
         cursor: pointer;
+        z-index: 30;
     }
   }
   .swiper-slide .galleryImg.main{
@@ -139,7 +141,7 @@ export const SKidsEventPrograms = styled.section`
         .galleryImg{
             height: 200px;
         }
-        .galleryImg:nth-child(5).none{
+        .galleryImg.none{
             display: none;
         }
     } 

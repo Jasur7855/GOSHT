@@ -29,8 +29,8 @@ export const KidsGallery = () => {
             <div className="galleryImg none main"></div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className=".galleryImg "></div>
-            <div className=".galleryImg"></div>
+            <div className="galleryImg "></div>
+            <div className="galleryImg"></div>
             <div className="galleryImg"></div>
             <div className="galleryImg none"></div>
             <div className="galleryImg none main"></div>
