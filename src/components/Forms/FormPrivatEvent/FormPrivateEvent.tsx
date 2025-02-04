@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { Heading } from "../typography/Heading/Heading";
-import { Button } from "../ui/Button/Button";
-import { LabelInput } from "../ui/LabelInput/LabelInput";
+import { Heading } from "../../typography/Heading/Heading";
+import { Button } from "../../ui/Button/Button";
+import { LabelInput } from "../../ui/LabelInput/LabelInput";
 import { SFormPrivateEvent } from "./FormPrivateEvent.style";
 import { PrivateEventScheme } from "./yupFromPrivate";
 

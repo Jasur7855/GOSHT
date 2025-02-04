@@ -6,8 +6,8 @@ interface ILabelInputProps extends InputHTMLAttributes<HTMLInputElement> {
   inputIcon?: ReactNode;
   isInput?: boolean;
   areaPlaceholder?: string;
-  errorText?:string,
-  isError:boolean
+  errorText?: string;
+  isError: boolean;
 }
 
 export const LabelInput = ({
@@ -27,11 +27,7 @@ export const LabelInput = ({
           {isInput ? (
             <input type="text" {...props} />
           ) : (
-            <textarea
-              
-              rows={5}
-              placeholder={areaPlaceholder}
-            ></textarea>
+            <textarea rows={5} placeholder={areaPlaceholder}></textarea>
           )}
         </div>
       ) : (
@@ -39,11 +35,7 @@ export const LabelInput = ({
           {isInput ? (
             <input type="text" {...props} />
           ) : (
-            <textarea
-              
-              rows={10}
-              placeholder={areaPlaceholder}
-            ></textarea>
+            <textarea rows={10} placeholder={areaPlaceholder}></textarea>
           )}
         </div>
       )}

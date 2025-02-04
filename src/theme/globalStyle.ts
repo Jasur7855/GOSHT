@@ -119,4 +119,7 @@ h5{
 h6{
   font-size: 20px;
 }
+label{
+  font-weight: 500;
+}
 `

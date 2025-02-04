@@ -5,7 +5,6 @@ import { IoIosArrowForward } from "react-icons/io";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
-import { DropDown } from "../../ui/DropDown/DropDown";
 
 export const Footer = () => {
   return (
@@ -52,7 +51,7 @@ export const Footer = () => {
         </div>
         <div className="divider"></div>
         <div className="bottom">
-          <DropDown/>
+          
           <div className="schedule">
             <span>7 Days a week,</span>
             <span>11:00 AM - 12:00 AM</span>
