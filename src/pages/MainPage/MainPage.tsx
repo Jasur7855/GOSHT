@@ -38,6 +38,32 @@ export const MainPage = ({}) => {
       <Header />
       {!isMobile && <SliderDesk data={dataMain} />}
       {isMobile && <SliderMobile tagText="NEW DISH" />}
+      <section className="menuInfo">
+        <div className="bgImg">
+          <img src="/public/img/burger4.png" className="burger"/>
+          <div>
+            <h6>
+              <img src="/public/icons/starWhite.svg" alt="" />
+              Fresh Food
+            </h6>
+            <p>Food is not stored for extended periods of time</p>
+          </div>
+          <div className="center">
+            <h6>
+              <img src="/public/icons/starWhite.svg" alt="" />
+              Countless Choices
+            </h6>
+            <p>A varied menu for every taste and budget</p>
+          </div>
+          <div>
+            <h6>
+              <img src="/public/icons/starWhite.svg" alt="" />
+              Online Payment
+            </h6>
+            <p>Convenient pay in cash or online</p>
+          </div>
+        </div>
+      </section>
       <section className="mainMenu">
         <MenuCard
           cardBadge="/icons/badge.svg"
