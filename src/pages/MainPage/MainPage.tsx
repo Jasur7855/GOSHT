@@ -5,6 +5,9 @@ import { Footer } from "../../components/widgets/Footer/Footer";
 import { SMainPage } from "./MainPage.style";
 import { SliderMobile } from "../../components/widgets/Carousel/SliderMobile";
 import { useIsMobile } from "../../hooks/useIsMobile";
+import { MenuBadge } from "../../components/ui/MenuBadge/MenuBadge";
+import { Heading } from "../../components/typography/Heading/Heading";
+import { Button } from "../../components/ui/Button/Button";
 
 const dataMain = [
   {
@@ -35,7 +38,7 @@ export const MainPage = ({}) => {
       <Header />
       {!isMobile && <SliderDesk data={dataMain} />}
       {isMobile && <SliderMobile tagText="NEW DISH" />}
-      <div className="mainMenu">
+      <section className="mainMenu">
         <MenuCard
           cardBadge="/icons/badge.svg"
           cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
@@ -96,7 +99,26 @@ export const MainPage = ({}) => {
           cardTitle="Греческий"
           cardImg="/img/MenuCard.png"
         />
-      </div>
+      </section>
+      <section className="allFood">
+        <div className="allFoodImg">
+          <MenuBadge cardBadge="/icons/badge.svg" badgeText="Chief's choice!" />
+        </div>
+        <div className="allFoodText">
+          <Heading text="Our food and drink menu" variant="h4" />
+          <p>
+            Discover a variety of flavours: from mouth-watering appetizers to
+            gourmet meals. Each dish is prepared with love and attention to
+            detail.
+          </p>
+          <Button
+            btnLink="#"
+            text="View menu"
+            typeButton="button"
+            variant="outlined"
+          />
+        </div>
+      </section>
       <Footer />
     </SMainPage>
   );

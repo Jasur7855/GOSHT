@@ -12,19 +12,7 @@ export const SMenuCard = styled.div`
     height: calc(12.5vw + 0px);
     padding: 6px;
     margin-bottom: 16px;
-    div {
-      width: 30px;
-      height: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #fff;
-      border-radius: 4px;
-      img {
-        width: 20px;
-        height: 20px;
-      }
-    }
+   
   }
   .description{
     h5{

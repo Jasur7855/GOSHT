@@ -1,3 +1,4 @@
+import { MenuBadge } from "../../ui/MenuBadge/MenuBadge";
 import { SMenuCard } from "./MenuCard.style";
 
 interface IMenuCard {
@@ -16,9 +17,7 @@ export const MenuCard = ({
   return (
     <SMenuCard>
       <div className="img" style={{ backgroundImage: `url(${cardImg})` }}>
-        <div>
-          <img src={cardBadge} alt="" className="badge" />
-        </div>
+        <MenuBadge cardBadge={cardBadge}/>
       </div>
       <div className="description">
         <h5>{cardTitle}</h5>

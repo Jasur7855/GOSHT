@@ -7,7 +7,7 @@ export const useIsMobile = (breakpoint = 975) => {
     const handleResize = () => setIsMobile(window.innerWidth <= breakpoint);
 
     window.addEventListener("resize", handleResize);
-    handleResize(); // Проверка при монтировании
+    handleResize(); 
 
     return () => window.removeEventListener("resize", handleResize);
   }, [breakpoint]);
