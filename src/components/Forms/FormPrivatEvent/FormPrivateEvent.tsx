@@ -244,7 +244,7 @@ export const FormPrivateEvent = () => {
             <FaTrashAlt />
             Clear the form
           </button>
-          <Button typeButton="submit" text="Send" variant="fill" />
+          <Button btnLink="#" typeButton="submit" text="Send" variant="fill" />
         </div>
       </form>
     </SFormPrivateEvent>

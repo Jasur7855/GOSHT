@@ -1,1 +1,1 @@
-export const baseUrl = "https://gosht.maksimovich.uz/api/api/";
+export const baseUrl = "https://gosht.maksimovich.uz/api/v1/";

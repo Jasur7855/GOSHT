@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "../../ui/Button/Button";
-import { SCarouselItem } from "./Carusel.style";
+import { SCarouselItem } from "./Slider.style";
 
 interface CarouselItemProps {
   tagText: string;
@@ -21,9 +21,9 @@ export const CarouselItem = ({
         <span className="tag">{tagText}</span>
         <h1 className="title">{title}</h1>
         <p className="description">{description}</p>
-        <Link to="/event-form">
-          <Button typeButton="button" text={buttonText} variant="fill" />
-        </Link>
+        
+          <Button btnLink="/form-event" typeButton="button" text={buttonText} variant="fill" />
+       
       </SCarouselItem>
     </>
   );

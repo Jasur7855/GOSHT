@@ -7,7 +7,7 @@ export const SFormPrivateEvent = styled.div`
     position: absolute;
     top:calc(4.1vw + 4.5px);
     right:calc(3.2vw + 8px);
-    font-size: 28px;
+    font-size: calc(0.6vw + 16px);
     cursor: pointer;
     color: #B9BCBB;
   }
