@@ -15,16 +15,15 @@ export const SMainPage = styled.div`
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      padding-right:52px ;
-      
-      .burger{
+      padding-right: 52px;
+
+      .burger {
         position: absolute;
         width: 396px;
         left: 0;
         bottom: 0;
       }
       div {
-       
         h6 {
           color: #fff;
           margin-bottom: 10px;
@@ -37,17 +36,17 @@ export const SMainPage = styled.div`
         p {
           font-size: 14px;
           color: #fff;
-          font-family: ${props=>props.theme.fontFamily.roboto};
+          font-family: ${(props) => props.theme.fontFamily.roboto};
           font-weight: 300;
           max-width: 156px;
           line-height: 128%;
         }
       }
-      .center{
+      .center {
         margin: 0 calc(5.1vw + 7px);
         padding: 0 calc(5.1vw + 7px);
-        border-left:  1px solid #FFFFFF80;
-        border-right: 1px solid #FFFFFF80;
+        border-left: 1px solid #ffffff80;
+        border-right: 1px solid #ffffff80;
       }
     }
   }
@@ -86,17 +85,88 @@ export const SMainPage = styled.div`
       }
     }
   }
+  .aboutGosht {
+    padding: 0 ${(props) => props.theme.padding.padding6024}
+      calc(0.9vw + 38.5px);
+    display: flex;
+    gap: 26px 31px;
+    flex-wrap: wrap;
+    .restaurant {
+      width: calc(17.2vw + 262.6px);
+      display: flex;
+      flex-direction: column;
+      gap: 24px 0;
+    }
+    .kidsWrapper {
+      flex-grow: 1;
+      .kids {
+        position: relative;
+        height: 265px;
+        background-image: url(/img/Kids.png);
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px;
+        padding: calc(0.4vw + 35.6px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .goshtKids {
+          position: absolute;
+          top: 36px;
+          right: 36px;
+          width: 226px;
+          height: 94px;
+        }
+        .instagram {
+          border: 1px solid transparent;
+          display: flex;
+          width: fit-content;
+          align-items: center;
+          gap: 0 calc(-0.4vw + 13.4px);
+          cursor: pointer;
+          transition: border-bottom 0.5s;
+          padding-bottom: 4px;
+          svg {
+            color: #fff;
+          }
+          span {
+            font-family: ${(props) => props.theme.fontFamily.robotoSerif};
+            font-size: 16px;
+            color: #fff;
+            font-weight: 400;
+          }
+        }
+        .kidsText {
+          h5 {
+            font-size: calc(0.2vw + 25.2px);
+            color: #fff;
+            margin-bottom: 12px;
+          }
+          p {
+            max-width: calc(21.3vw + 150px);
+            color: #fff;
+            font-family: ${(props) => props.theme.fontFamily.roboto};
+            font-weight: 300;
+            font-size: calc(0.2vw + 13.3px);
+          }
+        }
+        .instagram:hover {
+          border-bottom: 1px solid white;
+        }
+      }
+    }
+  }
+
   @media (max-width: 1190px) {
-    
     .mainMenu {
       grid-template-columns: repeat(4, 1fr);
     }
-    .burger{
+    .burger {
       display: none;
     }
   }
   @media (max-width: 975px) {
-    .menuInfo{
+    .menuInfo {
       height: auto;
       padding: 42px 0;
       .bgImg {
@@ -105,12 +175,13 @@ export const SMainPage = styled.div`
         gap: 6px 0;
         height: auto;
         padding: 0;
-        div,.center{
+        div,
+        .center {
           background-color: #151515;
-          width:100%;
+          width: 100%;
           border-radius: 6px;
-          padding:26px 16px;
-          p{
+          padding: 26px 16px;
+          p {
             max-width: 100%;
           }
         }
