@@ -209,6 +209,12 @@ export const MainPage = ({}) => {
               </div>
             }
           />
+          <Button
+            btnLink="#"
+            text="Know more about us"
+            typeButton="button"
+            variant="outlined"
+          />
         </div>
       </section>
       <Footer />

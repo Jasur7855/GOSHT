@@ -99,9 +99,13 @@ export const SMainPage = styled.div`
     }
     .kidsWrapper {
       flex-grow: 1;
+      .children {
+        height: calc(-0.8vw + 333px);
+        margin-bottom: calc(0.5vw + 23.23px);
+      }
       .kids {
         position: relative;
-        height: 265px;
+        height: 100%;
         background-image: url(/img/Kids.png);
         background-size: cover;
         background-position: center;
