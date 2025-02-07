@@ -6,7 +6,6 @@ import App from "./App";
 import { GlobalStyle } from "./theme/globalStyle";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
-import { Footer } from "./components/widgets/Footer/Footer";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

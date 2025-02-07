@@ -24,7 +24,7 @@ export const Footer = () => {
           <div className="links_list">
             <span className="title">Events</span>
             <Link to="/kids-event">Kid’s events</Link>
-            <Link to={"#"}>Private events</Link>
+            <Link to={"/events"}>Private events</Link>
           </div>
           <div className="links_list">
             <span className="title">Cooperation</span>

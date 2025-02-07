@@ -1,19 +1,18 @@
-import { Button } from "./../../ui/Button/Button";
 import styled from "styled-components";
 
 export const SFormKidsEvent = styled.div`
-position: relative;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 52px 20px calc(3vw + 8.7px);
-  .exit{
+  .exit {
     position: absolute;
-    top:calc(4.1vw + 4.5px);
-    right:calc(3.2vw + 8px);
+    top: calc(4.1vw + 4.5px);
+    right: calc(3.2vw + 8px);
     font-size: calc(0.6vw + 16px);
     cursor: pointer;
-    color: #B9BCBB;
+    color: #b9bcbb;
   }
   h4 {
     max-width: 606px;
@@ -87,8 +86,8 @@ position: relative;
     }
   }
   @media (max-width: 875px) {
-    h4{
-        text-align: left;
+    h4 {
+      text-align: left;
     }
     form {
       .formFlex {
@@ -97,8 +96,9 @@ position: relative;
       }
       .chooseWrapper {
         flex-direction: column;
-        .masterClass,.show{
-            width: 100%;
+        .masterClass,
+        .show {
+          width: 100%;
         }
         .btnsWrapper {
           flex-direction: column-reverse;

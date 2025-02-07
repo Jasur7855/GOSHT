@@ -1,13 +1,14 @@
 import { ButtonHTMLAttributes } from "react";
 import { SButton } from "./Button.style";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   variant: "outlined" | "fill";
   childText?: string;
   typeButton: "button" | "submit";
-  btnLink:string
+  btnLink: string;
+  onClick?:()=>void
 }
 
 export const Button = ({
@@ -16,7 +17,7 @@ export const Button = ({
   variant,
   childText,
   typeButton = "button",
-  btnLink
+  btnLink,
 }: ButtonProps) => {
   return (
     <Link to={btnLink}>

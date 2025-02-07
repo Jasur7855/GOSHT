@@ -90,7 +90,7 @@ export const SMainPage = styled.div`
       calc(0.9vw + 38.5px);
     display: flex;
     gap: 26px 31px;
-    flex-wrap: wrap;
+
     .restaurant {
       width: calc(17.2vw + 262.6px);
       display: flex;
@@ -160,6 +160,39 @@ export const SMainPage = styled.div`
       }
     }
   }
+  .eventsSection {
+    h2 {
+      display: none;
+    }
+    p {
+      display: none;
+    }
+  }
+  .clientSlider {
+    margin-bottom: 52px;
+    span {
+      font-size: calc(0.4vw + 14.6px);
+      color: ${(props) => props.theme.colors.red};
+      font-family: ${(props) => props.theme.fontFamily.roboto};
+      display: block;
+      text-align: center;
+      margin-bottom: calc(0.3vw + 12px);
+    }
+    h4 {
+      text-align: center;
+      font-weight: 500;
+      font-family: ${(props) => props.theme.fontFamily.robotoSerif};
+    }
+    .cardWrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px 30px;
+      width: 90%;
+      margin: 0 auto calc(1.5vw + 20.3px);
+      min-height: 259px;
+      padding-top: 40px;
+    }
+  }
 
   @media (max-width: 1190px) {
     .mainMenu {
@@ -167,6 +200,12 @@ export const SMainPage = styled.div`
     }
     .burger {
       display: none;
+    }
+    .aboutGosht {
+      flex-direction: column;
+      .restaurant {
+        width: 100%;
+      }
     }
   }
   @media (max-width: 975px) {
@@ -200,10 +239,49 @@ export const SMainPage = styled.div`
       align-items: center;
       background-color: #aa181a14;
     }
+    .goshtKids {
+      display: none;
+    }
   }
   @media (max-width: 575px) {
     .mainMenu {
       grid-template-columns: 1fr;
     }
+  }
+`;
+
+export const SMainCard = styled.div`
+  background-image: url(/icons/mainCardborder.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 90%;
+  padding: 40px 20px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  h3{
+    font-size: calc(0.2vw + 17.3px);
+    text-align: center;
+    font-family: ${props => props.theme.fontFamily.roboto};
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .stars{
+    margin-bottom: 16px;
+  }
+  p{
+    font-family: ${props => props.theme.fontFamily.roboto};
+    font-size:calc(0.4vw + 12.6px);
+    text-align: center;
   }
 `;

@@ -6,13 +6,14 @@ import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { SSliderDesk } from "./Slider.style";
 import { useState } from "react";
 import { Swiper as SwiperType } from "swiper";
+import { FormPrivateEvent } from "../../Forms/FormPrivatEvent/FormPrivateEvent";
 
 interface ISlide {
   tagText: string;
   title: string;
   description: string;
   buttonText: string;
-  backgroundImage: string; // ✅ Фон для каждого слайда
+  backgroundImage: string;
 }
 
 interface ISliderDeskProps {
@@ -21,7 +22,11 @@ interface ISliderDeskProps {
 
 export const SliderDesk = ({ data }: ISliderDeskProps) => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
+  const [isAddPostModalOpen, setIsAddPostModalOpen] = useState<boolean>(false);
 
+  const handleCloseModal = () => {
+    setIsAddPostModalOpen(false);
+  };
   return (
     <SSliderDesk>
       <Swiper
@@ -33,26 +38,41 @@ export const SliderDesk = ({ data }: ISliderDeskProps) => {
         {data.map((item, idx) => (
           <SwiperSlide
             key={idx}
-            style={{ backgroundImage: `url(${item.backgroundImage})` }} // ✅ Установка фона
+            style={{ backgroundImage: `url(${item.backgroundImage})` }}
           >
             <CarouselItem
               tagText={item.tagText}
               title={item.title}
               description={item.description}
               buttonText={item.buttonText}
+              onClick={() => {
+                setIsAddPostModalOpen(true);
+              }}
             />
           </SwiperSlide>
         ))}
 
         <div className="sliderBtns">
-          <button className="arrBtn" onClick={() => swiperInstance?.slidePrev()}>
+          <button
+            className="arrBtn"
+            onClick={() => swiperInstance?.slidePrev()}
+          >
             <IoIosArrowBack />
           </button>
-          <button className="arrBtn" onClick={() => swiperInstance?.slideNext()}>
+          <button
+            className="arrBtn"
+            onClick={() => swiperInstance?.slideNext()}
+          >
             <IoIosArrowForward />
           </button>
         </div>
       </Swiper>
+      {
+        <FormPrivateEvent
+          isOpen={isAddPostModalOpen}
+          onClose={handleCloseModal}
+        />
+      }
     </SSliderDesk>
   );
 };

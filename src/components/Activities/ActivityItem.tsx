@@ -26,7 +26,7 @@ export const ActivityItem = ({
       <div className="ActivityInfo">
         <Heading variant={"h3"} text={eventTitle} />
         <p className="description">{eventSubtitle}</p>
-        <Button
+        <Button btnLink="#"
           typeButton="button"
           text={"Know more"}
           variant={"outlined"}

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { Button } from "../../ui/Button/Button";
 import { SCarouselItem } from "./Slider.style";
 
@@ -7,6 +6,7 @@ interface CarouselItemProps {
   title: string;
   description: string;
   buttonText: string;
+  onClick?:()=> void;
 }
 
 export const CarouselItem = ({
@@ -14,6 +14,7 @@ export const CarouselItem = ({
   description,
   tagText,
   title,
+  onClick
 }: CarouselItemProps) => {
   return (
     <>
@@ -21,9 +22,14 @@ export const CarouselItem = ({
         <span className="tag">{tagText}</span>
         <h1 className="title">{title}</h1>
         <p className="description">{description}</p>
-        
-          <Button btnLink="/form-event" typeButton="button" text={buttonText} variant="fill" />
-       
+
+        <Button
+          btnLink="#"
+          typeButton="button"
+          text={buttonText}
+          variant="fill"
+          onClick={onClick}
+        />
       </SCarouselItem>
     </>
   );

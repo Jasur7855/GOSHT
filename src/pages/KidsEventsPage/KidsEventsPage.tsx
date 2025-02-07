@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Header } from "../../components/Header/Header";
 import { Heading } from "../../components/typography/Heading/Heading";
 import { CarouselItem } from "../../components/widgets/Carousel/CarouselItem";
@@ -6,8 +7,13 @@ import { SKidsEventFormInfo, SKidsEventPrograms } from "./KidsEventsPage.style";
 import { KidsGallery } from "./KidsGallery";
 import { MasterClass } from "./MasterClass";
 import { Shows } from "./Shows";
+import { FormKidsEvents } from "../../components/Forms/FormKidsEvents/FormKidsEvents";
 
 export const KidsEventsPage = () => {
+  const [isAddPostModalOpen, setIsAddPostModalOpen] = useState<boolean>(false);
+  const handleCloseModal = () => {
+    setIsAddPostModalOpen(false);
+  };
   return (
     <div>
       <Header />
@@ -17,6 +23,7 @@ export const KidsEventsPage = () => {
           description="For all inquiries, please fill out the form below and we’ll be in touch soon. "
           tagText="BOOK AN EVENT"
           title="Kids Events"
+          onClick={()=>setIsAddPostModalOpen(true)}
         />
       </SKidsEventFormInfo>
       <SKidsEventPrograms>
@@ -29,11 +36,12 @@ export const KidsEventsPage = () => {
         </p>
         <div className="programsWrapper">
           <MasterClass />
-          <Shows/>
+          <Shows />
         </div>
         <KidsGallery />
       </SKidsEventPrograms>
       <Footer />
+      {<FormKidsEvents isOpen={isAddPostModalOpen} onClose={handleCloseModal}/>}
     </div>
   );
 };

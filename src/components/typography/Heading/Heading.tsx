@@ -25,28 +25,28 @@ export const Heading = ({ text, variant = "h2", childText }: HeadingProps) => {
         );
       case "h3":
         return (
-          <h3>
+          <h3 style={{ whiteSpace: "pre-line" }}>
             {text}
             {childText && <div style={{ color: "#AA181A" }}>{childText}</div>}
           </h3>
         );
       case "h4":
         return (
-          <h4>
+          <h4 style={{ whiteSpace: "pre-line" }}>
             {text}
             {childText && <div style={{ color: "#AA181A" }}>{childText}</div>}
           </h4>
         );
       case "h5":
         return (
-          <h5>
+          <h5 style={{ whiteSpace: "pre-line" }}>
             {text}
             {childText && <div style={{ color: "#AA181A" }}>{childText}</div>}
           </h5>
         );
       case "h6":
         return (
-          <h6>
+          <h6 style={{ whiteSpace: "pre-line" }}>
             {text}
             {childText && <div style={{ color: "#AA181A" }}>{childText}</div>}
           </h6>

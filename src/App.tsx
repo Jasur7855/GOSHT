@@ -1,17 +1,20 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { EventsPage } from "./pages/EventsPage/EventsPage";
 import { EventsCardPage } from "./pages/EventsCardPage/EventsCardPage";
-import { FormPrivateEvent } from "./components/Forms/FormPrivatEvent/FormPrivateEvent";
 import { KidsEventsPage } from "./pages/KidsEventsPage/KidsEventsPage";
 import { FormBooking } from "./components/Forms/FormBooking/FormBooking";
 import { FormKidsEvents } from "./components/Forms/FormKidsEvents/FormKidsEvents";
 import { MainPage } from "./pages/MainPage/MainPage";
+import { EventsPage } from "./pages/EventsPage/EventsPage";
 
 const App = () => {
   const routerConfig = createBrowserRouter([
     {
       path: "/",
-      element: <MainPage/>,
+      element: <MainPage />,
+    },
+    {
+      path: "/events",
+      element: <EventsPage />,
     },
     {
       path: "/kids-event",
@@ -26,20 +29,11 @@ const App = () => {
       element: <FormBooking />,
     },
     {
-      path: "/form-event",
-      element: <FormPrivateEvent />,
-    },
-    {
       path: "/form-kids",
       element: <FormKidsEvents />,
     },
   ]);
-  return (
-    
-      <RouterProvider router={routerConfig} />
-     
-    
-  );
+  return <RouterProvider router={routerConfig} />;
 };
 
 export default App;

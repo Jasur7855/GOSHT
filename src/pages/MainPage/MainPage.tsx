@@ -2,7 +2,7 @@ import { Header } from "../../components/Header/Header";
 import { MenuCard } from "../../components/MainComponents/MenuCard/MenuCard";
 import { SliderDesk } from "../../components/widgets/Carousel/SliderDesk";
 import { Footer } from "../../components/widgets/Footer/Footer";
-import { SMainPage } from "./MainPage.style";
+import { SMainCard, SMainPage } from "./MainPage.style";
 import { SliderMobile } from "../../components/widgets/Carousel/SliderMobile";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import { MenuBadge } from "../../components/ui/MenuBadge/MenuBadge";
@@ -11,6 +11,11 @@ import { Button } from "../../components/ui/Button/Button";
 import { GoshtBadge } from "../../components/GoshtBadge/GoshtBadge";
 
 import { MdArrowOutward } from "react-icons/md";
+import { EventsSection } from "../../components/EventsSection/EventsSection";
+import { MainSlider } from "../../components/MainComponents/MainSlider/MainSlider";
+import { SwiperSlide } from "swiper/react";
+import { FaStar } from "react-icons/fa";
+import { CiStar } from "react-icons/ci";
 const dataMain = [
   {
     id: 1,
@@ -31,7 +36,48 @@ const dataMain = [
     backgroundImage: "/public/img/Kids.png",
   },
 ];
-
+const cards = [
+  {
+    id: 1,
+    title: "Thomas Party",
+    description:
+      "Our fast-food network includes projects like Blaсk Star Burger, with 7 locations solely in Tashkent, Mahalla with 6 spots also in Tashkent",
+  },
+  {
+    id: 2,
+    title: "Thomas Party",
+    description:
+      "Our fast-food network includes projects like Blaсk Star Burger, with 7 locations solely in Tashkent, Mahalla with 6 spots also in Tashkent",
+  },
+  {
+    id: 3,
+    title: "Thomas Party",
+    description:
+      "Our fast-food network includes projects like Blaсk Star Burger, with 7 locations solely in Tashkent, Mahalla with 6 spots also in Tashkent",
+  },
+];
+const Card = ({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}) => {
+  return (
+    <SMainCard>
+      <img src="/icons/mainCardImg.svg" alt="ladyBag" className="img" />
+      <h3>{title}</h3>
+      <div className="stars">
+        <FaStar style={{ color: "#AA181A" }} />
+        <FaStar style={{ color: "#AA181A" }} />
+        <FaStar style={{ color: "#AA181A" }} />
+        <FaStar style={{ color: "#AA181A" }} />
+        <CiStar />
+      </div>
+      <p>{description}</p>
+    </SMainCard>
+  );
+};
 export const MainPage = ({}) => {
   const isMobile = useIsMobile(975);
 
@@ -216,6 +262,25 @@ export const MainPage = ({}) => {
             variant="outlined"
           />
         </div>
+      </section>
+      <EventsSection />
+      <section className="clientSlider">
+        <span>Review</span>
+        <Heading
+          text={`Don’t believe me, check what Clients\nthink about us!`}
+          variant="h4"
+        />
+        <MainSlider>
+          {cards.map((card) => (
+            <SwiperSlide key={card.id}>
+              <div className="cardWrapper">
+                <Card title={card.title} description={card.description} />
+                <Card title={card.title} description={card.description} />
+                <Card title={card.title} description={card.description} />
+              </div>
+            </SwiperSlide>
+          ))}
+        </MainSlider>
       </section>
       <Footer />
     </SMainPage>

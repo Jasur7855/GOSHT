@@ -1,4 +1,3 @@
-import { fontFamily } from './../../../theme/roots';
 import styled from "styled-components";
 
 export const SSliderDesk = styled.div`
@@ -82,7 +81,7 @@ export const SCarouselItem = styled.div`
   }
 `;
 export const SSliderMobile = styled.div`
-  .swiper-pagination-bullet-active{
+  .swiper-pagination-bullet-active {
     background-color: #000 !important;
   }
   .sliderImg {
@@ -92,7 +91,6 @@ export const SSliderMobile = styled.div`
     background-repeat: no-repeat;
     height: calc(50vw + 12.5px);
     margin-bottom: 20px;
-    
   }
   .sliderText {
     padding: 0 24px;
@@ -102,7 +100,7 @@ export const SSliderMobile = styled.div`
     margin-bottom: 20px;
     .tag {
       color: white;
-      background-color: ${props=>props.theme.colors.red};
+      background-color: ${(props) => props.theme.colors.red};
       padding: 4px 0;
       border-radius: 4px;
       font-size: calc(0.4vw + 10.6px);
@@ -110,22 +108,22 @@ export const SSliderMobile = styled.div`
       width: 100px;
       text-align: center;
     }
-    h1{
+    h1 {
     }
-    p{
-      font-family: ${props=>props.theme.fontFamily.roboto};
+    p {
+      font-family: ${(props) => props.theme.fontFamily.roboto};
       font-size: calc(0.4vw + 12.6px);
       font-weight: 300;
       line-height: 114%;
     }
-    button{
+    button {
       width: 100%;
     }
   }
   .sliderBtns {
     display: flex;
     justify-content: space-between;
-    padding:0 24px;
+    padding: 0 24px;
 
     button {
       width: 48px;
@@ -133,9 +131,9 @@ export const SSliderMobile = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 1px solid #0000004D;
+      border: 1px solid #0000004d;
       background-color: transparent;
-      color: #0000004D;
+      color: #0000004d;
       font-size: 24px;
       cursor: pointer;
       border-radius: 4px;
@@ -145,6 +143,5 @@ export const SSliderMobile = styled.div`
         background-color: #0056b3;
       }
     }
-
   }
 `;
