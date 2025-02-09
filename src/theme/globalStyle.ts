@@ -14,8 +14,9 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 body {
-  font-family:${props=>props.theme.fontFamily.font} , ${props=>props.theme.fontFamily.titleFont}, serif, sans-serif;
-  background-color: ${props=>props.theme.colors.white};
+  font-family:${(props) => props.theme.fontFamily.font} , ${(props) =>
+  props.theme.fontFamily.titleFont}, serif, sans-serif;
+  background-color: ${(props) => props.theme.colors.white};
  
 }
 
@@ -89,6 +90,17 @@ h6 {
   font-size: inherit;
   font-weight: 400;
 }
+/* Для WebKit-браузеров (Chrome, Safari, Edge) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Для Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 .container {
   width: 100vw;
   padding: 52px 60px 102px 60px;
@@ -103,7 +115,7 @@ h1{
 }
 h2{
   font-size: calc(2.4vw + 16.8px )/*52-26*/;
-  font-family: ${props=>props.theme.fontFamily.robotoSerif};
+  font-family: ${(props) => props.theme.fontFamily.robotoSerif};
   font-weight: 500;
 }
 h3{
@@ -123,4 +135,4 @@ h6{
 label{
   font-weight: 500;
 }
-`
+`;

@@ -2,7 +2,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { EventsCardPage } from "./pages/EventsCardPage/EventsCardPage";
 import { KidsEventsPage } from "./pages/KidsEventsPage/KidsEventsPage";
 import { FormBooking } from "./components/Forms/FormBooking/FormBooking";
-import { FormKidsEvents } from "./components/Forms/FormKidsEvents/FormKidsEvents";
 import { MainPage } from "./pages/MainPage/MainPage";
 import { EventsPage } from "./pages/EventsPage/EventsPage";
 

@@ -1,32 +1,34 @@
 import * as yup from "yup";
 
 export const KidsEventScheme = yup.object({
-  userName: yup.string().required("Обязательное поле!"),
-
-  userEmail: yup
+  firstName: yup.string().required("Обязательное поле!"),
+  phoneNumber: yup
+  .string()
+  .matches(
+    /^[+]*[0-9]{10,15}$/,
+    "Введите корректный номер телефона (например, +1234567890)"
+  )
+  .required("Обязательное поле!"),
+  email: yup
     .string()
     .email("Введите корректный email")
     .required("Обязательное поле!"),
 
-  userPhone: yup
-    .string()
-    .matches(
-      /^[+]*[0-9]{10,15}$/,
-      "Введите корректный номер телефона (например, +1234567890)"
-    )
-    .required("Обязательное поле!"),
+ 
   eventDate: yup
     .string()
     .required("Дата обязательна")
     .test("is-valid-date", "Некорректная дата", (value) =>
       Boolean(value && !isNaN(new Date(value).getTime()))
     ),
-  peopleCount: yup
+  peopleNumber: yup
     .number()
     .positive("Количество людей должно быть положительным числом")
     .integer("Количество людей должно быть целым числом")
     .nullable()
     .required("Обязательное поле!"),
 
-  additionalInfo: yup.string().required(),
+  masterclass:yup.string().required("Обязательное поле !"),
+  showType: yup.string().required("Обязательное поле !"),
+
 });

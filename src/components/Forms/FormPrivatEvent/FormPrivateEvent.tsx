@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Heading } from "../../typography/Heading/Heading";
-import { Button } from "../../ui/Button/Button";
+import { FormBtn } from "../../ui/Button/FormBtn";
 import { LabelInput } from "../../ui/LabelInput/LabelInput";
 import { SFormPrivateEvent } from "./FormPrivateEvent.style";
 import { PrivateEventScheme } from "./yupFromPrivate";
@@ -10,6 +10,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Modal from "react-modal";
 import { FaTrashAlt } from "react-icons/fa";
 import { MdOutlineClear } from "react-icons/md";
+import { useAddPrivetEventMutation } from "../../../store/Api/inquireFormsApi";
 
 export interface IFormPrivateEvent {
   userName: string;
@@ -43,7 +44,6 @@ const customStyles: Modal.Styles = {
   },
 };
 
-
 export const FormPrivateEvent = ({ isOpen, onClose }: IFormPrivateProps) => {
   const {
     control,
@@ -67,9 +67,34 @@ export const FormPrivateEvent = ({ isOpen, onClose }: IFormPrivateProps) => {
       additionalInfo: "",
     },
   });
-  const clearForm = () => reset();
-  const onSubmit: SubmitHandler<IFormPrivateEvent> = (data) => {
-    console.log(data);
+
+  const [addPrivetEvent] = useAddPrivetEventMutation();
+
+  const clearForm = () =>
+    reset({}, { keepErrors: false, keepDirty: false, keepTouched: false });
+
+  const onSubmit: SubmitHandler<IFormPrivateEvent> = async (data) => {
+    const payload = {
+      firstName: data.userName,
+      lastName: data.userLastName,
+      email: data.userEmail,
+      phoneNumber: data.userPhone,
+      eventDate: data.userDate,
+      companyName: data.userCompany,
+      startTime: data.startTime,
+      endTime: data.endTime,
+      eventType: data.eventType,
+      peopleNumber: data.peopleCount,
+      additionalInformation: data.additionalInfo,
+    };
+
+    try {
+      await addPrivetEvent(payload).unwrap();
+      reset();
+      onClose(); 
+    } catch (error) {
+      console.error("Ошибка при отправке формы:", error);
+    }
   };
 
   return (
@@ -139,7 +164,7 @@ export const FormPrivateEvent = ({ isOpen, onClose }: IFormPrivateProps) => {
                 labelText="Phone Number"
                 inputIcon
                 placeholder="Phone Number"
-                type="tel"
+                type="number"
                 value={field.value}
                 onChange={field.onChange}
                 isError={Boolean(errors.userPhone)}
@@ -235,7 +260,7 @@ export const FormPrivateEvent = ({ isOpen, onClose }: IFormPrivateProps) => {
                 labelText="Number of People"
                 inputIcon
                 placeholder="0"
-                type="text"
+                type="number"
                 value={field.value}
                 onChange={field.onChange}
                 isError={Boolean(errors.peopleCount)}
@@ -256,20 +281,18 @@ export const FormPrivateEvent = ({ isOpen, onClose }: IFormPrivateProps) => {
                 onChange={field.onChange}
                 isError={Boolean(errors.additionalInfo)}
                 errorText={errors.additionalInfo?.message}
+                isInput={false}
+                areaPlaceholder="Additional Information"
               />
             )}
           />
           <div className="btnsWrapper">
-            <button className="clear" onClick={clearForm}>
+            <button type="button" className="clear" onClick={clearForm}>
               <FaTrashAlt />
               Clear the form
             </button>
-            <Button
-              btnLink="#"
-              typeButton="submit"
-              text="Send"
-              variant="fill"
-            />
+
+            <FormBtn typeButton="submit" text="Send" variant="fill" />
           </div>
         </form>
       </SFormPrivateEvent>
