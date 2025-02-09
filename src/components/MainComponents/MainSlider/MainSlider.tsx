@@ -16,8 +16,8 @@ export const MainSlider = ({ children }: IMainSliderProps) => {
       <Swiper
         modules={[Navigation, A11y]}
         slidesPerView={"auto"}
-        spaceBetween={10} // Отступ между слайдами
-        centeredSlides={true} // Центрирует активный слайд
+        spaceBetween={10} 
+        centeredSlides={true} 
         pagination={{ clickable: true }}
         navigation={{
           nextEl: ".next-btn",

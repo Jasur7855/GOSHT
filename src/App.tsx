@@ -28,10 +28,7 @@ const App = () => {
       path: "/form-booking",
       element: <FormBooking />,
     },
-    {
-      path: "/form-kids",
-      element: <FormKidsEvents />,
-    },
+    
   ]);
   return <RouterProvider router={routerConfig} />;
 };
