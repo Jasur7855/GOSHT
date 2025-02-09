@@ -1,4 +1,3 @@
-import { fontSize } from './../../../theme/roots';
 import styled from "styled-components";
 
 export const SBurgerMenu = styled.div<{ isOpen: boolean }>`

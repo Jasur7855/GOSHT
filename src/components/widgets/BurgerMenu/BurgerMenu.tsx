@@ -4,7 +4,6 @@ import { FaUser, FaUtensils } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { SBurgerMenu } from "./BurgerMenu.style";
 import { RiMenu2Line } from "react-icons/ri";
-import { Button } from "../../ui/Button/Button";
 
 interface IBurgerMenuProps {}
 

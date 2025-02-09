@@ -1,13 +1,23 @@
 import { FaTrashAlt } from "react-icons/fa";
 import { Heading } from "../../typography/Heading/Heading";
-import { CheckBoxLabel } from "../../ui/CheckBoxLabel/CheckBoxLabel";
 import { LabelInput } from "../../ui/LabelInput/LabelInput";
 import { SFormKidsEvent } from "./FormKidsEvents.style";
 import { Button } from "../../ui/Button/Button";
 import { MdOutlineClear } from "react-icons/md";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import Modal from "react-modal";
+import { KidsEventScheme } from "./yupFormKids";
+import { yupResolver } from "@hookform/resolvers/yup";
 
+interface IFormKidsEventsScheme {
+  firstName: string;
+  phoneNumber: string;
+  email: string;
+  eventDate: string;
+  peopleNumber: number;
+  masterclass: string;
+  showType: string;
+}
 interface IFormKidsEventsProps {
   isOpen: boolean;
   onClose: () => void;
@@ -26,13 +36,25 @@ const customStyles: Modal.Styles = {
     border: "none",
   },
 };
+
 export const FormKidsEvents = ({ isOpen, onClose }: IFormKidsEventsProps) => {
-  // const {
-  //   control,
-  //   handleSubmit,
-  //   formState: { errors },
-  //   reset,
-  // } = useForm<IFormKidsEventsProps>({});
+  const {
+    control,
+
+    formState: { errors },
+  } = useForm<IFormKidsEventsScheme>({
+    resolver: yupResolver(KidsEventScheme),
+    mode: "onBlur",
+    defaultValues: {
+      firstName: "",
+      phoneNumber: "",
+      email: "",
+      eventDate: "",
+      peopleNumber: 0,
+      masterclass: "",
+      showType: "",
+    },
+  });
   return (
     <Modal isOpen={isOpen} onRequestClose={onClose} style={customStyles}>
       <SFormKidsEvent>
@@ -44,32 +66,79 @@ export const FormKidsEvents = ({ isOpen, onClose }: IFormKidsEventsProps) => {
         />
         <form action="">
           <div className="formFlex">
-            <LabelInput
-              labelText="First Name"
-              isError={false}
-              placeholder="First Name"
+            <Controller
+              name="firstName"
+              control={control}
+              render={({ field }) => (
+                <LabelInput
+                  labelText="First Name"
+                  placeholder="First Name"
+                  value={field.value}
+                  onChange={field.onChange}
+                  isError={Boolean(errors.firstName)}
+                  errorText={errors.firstName?.message}
+                />
+              )}
             />
-            <LabelInput
-              labelText="Phone Number"
-              isError={false}
-              placeholder="Phone Number"
+            <Controller
+              name="phoneNumber"
+              control={control}
+              render={({ field }) => (
+                <LabelInput
+                  type="number"
+                  labelText="Phone Number"
+                  placeholder="Phone Number"
+                  value={field.value}
+                  onChange={field.onChange}
+                  isError={Boolean(errors.phoneNumber)}
+                  errorText={errors.phoneNumber?.message}
+                />
+              )}
             />
           </div>
-          <LabelInput
-            labelText="Phone Number"
-            isError={false}
-            placeholder="example@gmail.com"
+          <Controller
+            name="email"
+            control={control}
+            render={({ field }) => (
+              <LabelInput
+                labelText="Email"
+                placeholder="example@gmail.com"
+                value={field.value}
+                onChange={field.onChange}
+                isError={Boolean(errors.email)}
+                errorText={errors.email?.message}
+              />
+            )}
           />
           <div className="formFlex">
-            <LabelInput
-              labelText="Event Date"
-              isError={false}
-              placeholder="DD/MM/YYYY"
+            <Controller
+              name="eventDate"
+              control={control}
+              render={({ field }) => (
+                <LabelInput
+                  labelText="Event Date"
+                  placeholder="DD/MM/YYYY"
+                  value={field.value}
+                  onChange={field.onChange}
+                  isError={Boolean(errors.eventDate)}
+                  errorText={errors.eventDate?.message}
+                />
+              )}
             />
-            <LabelInput
-              labelText="Number of People"
-              isError={false}
-              placeholder="0"
+
+            <Controller
+              name="peopleNumber"
+              control={control}
+              render={({ field }) => (
+                <LabelInput
+                  labelText="Number of People"
+                  placeholder="0"
+                  value={field.value}
+                  onChange={field.onChange}
+                  isError={Boolean(errors.peopleNumber)}
+                  errorText={errors.peopleNumber?.message}
+                />
+              )}
             />
           </div>
           <div className="choose">
@@ -80,26 +149,44 @@ export const FormKidsEvents = ({ isOpen, onClose }: IFormKidsEventsProps) => {
           </div>
           <div className="chooseWrapper">
             <div className="masterClass">
-              <LabelInput
-                labelText="Choose the Masterclass"
-                isError={false}
-                placeholder="Choose the Masterclass"
+              <Controller
+                name="masterclass"
+                control={control}
+                render={({ field }) => (
+                  <LabelInput
+                    labelText="Choose the Masterclass"
+                    placeholder="Choose the Masterclass"
+                    value={field.value}
+                    onChange={field.onChange}
+                    isError={Boolean(errors.masterclass)}
+                    errorText={errors.masterclass?.message}
+                  />
+                )}
               />
-              <div className="checkboxWrapper">
+              {/* <div className="checkboxWrapper">
                 <CheckBoxLabel labelText="Placholder" />
                 <CheckBoxLabel labelText="Placholder" />
                 <CheckBoxLabel labelText="Placholder" />
-              </div>
+              </div> */}
             </div>
             <div className="show">
-              <LabelInput
-                labelText="Choose Show for Kids"
-                isError={false}
-                areaPlaceholder={`Placeholder
+              <Controller
+                name="showType"
+                control={control}
+                render={({ field }) => (
+                  <LabelInput
+                    labelText="Choose Show for Kids"
+                    areaPlaceholder={`Placeholder
 Create clown costumes and accessories,
 enjoying entertaining performances
 and laughter-inducing activities.`}
-                isInput={false}
+                    isInput={false}
+                    value={field.value}
+                    onChange={field.onChange}
+                    isError={Boolean(errors.masterclass)}
+                    errorText={errors.masterclass?.message}
+                  />
+                )}
               />
             </div>
           </div>

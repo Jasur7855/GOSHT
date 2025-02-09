@@ -1,6 +1,6 @@
 import "swiper/swiper-bundle.css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y } from "swiper/modules";
+import { Swiper } from "swiper/react";
+import { Navigation, A11y } from "swiper/modules";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { ReactNode } from "react";
 
