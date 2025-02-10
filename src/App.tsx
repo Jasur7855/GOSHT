@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { EventsCardPage } from "./pages/EventsCardPage/EventsCardPage";
 import { KidsEventsPage } from "./pages/KidsEventsPage/KidsEventsPage";
-import { FormBooking } from "./components/Forms/FormBooking/FormBooking";
 import { MainPage } from "./pages/MainPage/MainPage";
 import { EventsPage } from "./pages/EventsPage/EventsPage";
 
@@ -23,11 +22,6 @@ const App = () => {
       path: "/event-card/:id",
       element: <EventsCardPage />,
     },
-    {
-      path: "/form-booking",
-      element: <FormBooking />,
-    },
-    
   ]);
   return <RouterProvider router={routerConfig} />;
 };

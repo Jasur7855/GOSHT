@@ -35,28 +35,22 @@ export const BurgerMenu = ({}: IBurgerMenuProps) => {
 
         <nav>
           <ul>
-            <Link to="#" onClick={() => setIsOpen(false)}>
-              {" "}
+            <Link to="/" onClick={() => setIsOpen(false)}>
               <li>Menu</li>
             </Link>
             <Link to="#" onClick={() => setIsOpen(false)}>
-              {" "}
               <li>About us</li>
             </Link>
-            <Link to="#" onClick={() => setIsOpen(false)}>
-              {" "}
+            <Link to="/events" onClick={() => setIsOpen(false)}>
               <li>Events</li>
             </Link>
-            <Link to="#" onClick={() => setIsOpen(false)}>
-              {" "}
+            <Link to="/kids-event" onClick={() => setIsOpen(false)}>
               <li>Kids Events</li>
             </Link>
             <Link to="#" onClick={() => setIsOpen(false)}>
-              {" "}
               <li>Hours & Location</li>
             </Link>
             <Link to="#" onClick={() => setIsOpen(false)}>
-              {" "}
               <li>Review</li>
             </Link>
           </ul>
@@ -67,7 +61,7 @@ export const BurgerMenu = ({}: IBurgerMenuProps) => {
             </button>
 
             <button className="outline">
-              <FaUtensils style={{color:"white"}}/>
+              <FaUtensils style={{ color: "white" }} />
               <span>Book a table</span>
             </button>
           </div>

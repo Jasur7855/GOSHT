@@ -10,8 +10,13 @@ import {
 import { Heading } from "../../components/typography/Heading/Heading";
 import { Button } from "../../components/ui/Button/Button";
 import { IoIosArrowBack } from "react-icons/io";
+import { FormBooking } from "../../components/Forms/FormBooking/FormBooking";
+import { useState } from "react";
+import { FormBtn } from "../../components/ui/Button/FormBtn";
 
 export const EventsCardPage = () => {
+  const [isFormBookingOpenModal, setIsFormBookingOpenModal] =
+    useState<boolean>(false);
   const { id } = useParams();
   const {
     data: eventInfo,
@@ -27,7 +32,9 @@ export const EventsCardPage = () => {
   if (isLoading) return <div>Loading event...</div>;
   if (isError) return <div>Error loading event</div>;
   if (!eventInfo) return <div>No event found</div>;
-
+  const handleCloseModal = () => {
+    setIsFormBookingOpenModal(false);
+  };
   return (
     <div>
       <Header />
@@ -52,8 +59,18 @@ export const EventsCardPage = () => {
           <Heading text={eventInfo.event_title} variant="h4" />
           <div className="mainImg"></div>
           <div className="btnWrapper">
-            <Button  btnLink="#" typeButton="button" variant="fill" text={eventInfo.date} />
-            <Button  btnLink="#" typeButton="button" variant="fill" text={eventInfo.time} />
+            <Button
+              btnLink="#"
+              typeButton="button"
+              variant="fill"
+              text={eventInfo.date}
+            />
+            <Button
+              btnLink="#"
+              typeButton="button"
+              variant="fill"
+              text={eventInfo.time}
+            />
           </div>
           <div className="eventDateTime">
             <Heading variant="h5" text={eventInfo.title} />
@@ -62,12 +79,7 @@ export const EventsCardPage = () => {
           <Heading text={eventInfo.motivation} variant="h5" />
           <div className="bookingWrapper">
             <div className="btnWrapper">
-              <Button
-                btnLink="/form-booking"
-                typeButton="button"
-                text="Booking"
-                variant="fill"
-              />
+              <FormBtn typeButton="button" text="Booking" variant="fill" onClick={()=>setIsFormBookingOpenModal(true)} />
               <Button
                 btnLink="#"
                 typeButton="button"
@@ -87,8 +99,15 @@ export const EventsCardPage = () => {
         </div>
       </SEventsCard>
       <Footer />
+      {isFormBookingOpenModal && (
+        <FormBooking
+          isOpen={isFormBookingOpenModal}
+          onClose={handleCloseModal}
+          id={id}
+        />
+      )}
     </div>
   );
 };
 
-// "paragraph": "Join us for an extraordinary adventure tailored for our young fans. Children will embark on a journey as junior adventurers, immersing themselves in thrilling activities inspired by Unicorns, discovering the wonder and magic of a captivating enchanted realm.Experience the joy of a hands-on Caesar Salad-making masterclass for the little ones, guided by our expert chef. Plus, enjoy the creative activity of painting ceramic figures. To top it off, there will be a fun-filled program by the best animators in NYC!While children delight in the festivities, parents can unwind and indulge in an array of international and local cuisines meticulously crafted by our talented chefs.",
+

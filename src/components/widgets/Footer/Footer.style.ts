@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const SFooter = styled.div`
+  user-select: none;
   background-color: ${(props) => props.theme.colors.red};
   .footer {
     padding: 52px ${(props) => props.theme.padding.padding6024};

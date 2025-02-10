@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { baseUrl } from "../../utils/baseUrl";
+import { API_URL } from "../../config/envConfig";
+
 
 interface IEvent {
   id: string;
@@ -20,7 +21,7 @@ type IGetAllEventsResponse = IEvent[]
 interface IGetEventByIdResponse extends IEvent{}
 export const eventsApi = createApi({
   reducerPath: "eventsApi",
-  baseQuery: fetchBaseQuery({ baseUrl }),
+  baseQuery: fetchBaseQuery({ baseUrl:API_URL }),
   endpoints: (builder) => ({
     getAllEvents: builder.query<IGetAllEventsResponse, null>({
       query: () => "events/private",

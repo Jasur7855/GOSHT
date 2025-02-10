@@ -5,6 +5,48 @@ import { IoIosArrowForward } from "react-icons/io";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
+import { DropDown } from "../../ui/DropDown/DropDown";
+
+const menuMob = {
+  navigate: [
+    {
+      link: "/",
+      text: "Menu",
+    },
+    {
+      link: "#",
+      text: "About us",
+    },
+    {
+      link: "#",
+      text: "Hours & Location",
+    },
+    {
+      link: "#",
+      text: "Review",
+    },
+  ],
+  events: [
+    {
+      link: "/kids-event",
+      text: "Kid’s events",
+    },
+    {
+      link: "/events",
+      text: "Private events",
+    },
+  ],
+  cooperation: [
+    {
+      link: "#",
+      text: "Career",
+    },
+    {
+      link: "#",
+      text: "Contact us",
+    },
+  ],
+};
 
 export const Footer = () => {
   return (
@@ -51,13 +93,11 @@ export const Footer = () => {
         </div>
         <div className="divider"></div>
         <div className="bottom">
-          
           <div className="schedule">
             <span>7 Days a week,</span>
             <span>11:00 AM - 12:00 AM</span>
           </div>
           <div className="social_media">
-           
             <a href="#">
               <img src="/icons/telegram-logo.svg" alt="telegram" />
             </a>
@@ -84,18 +124,9 @@ export const Footer = () => {
         </div>
         <div className="footerLinks">
           <div className="footerDropDown">
-            <div className="dropDown">
-              <h5>Navigation</h5>
-              <IoIosArrowForward />
-            </div>
-            <div className="dropDown">
-              <h5>Events</h5>
-              <IoIosArrowForward />
-            </div>
-            <div className="dropDown">
-              <h5>Cooperation</h5>
-              <IoIosArrowForward />
-            </div>
+            <DropDown menuElems={menuMob.navigate} btnText="Navigation" />
+            <DropDown menuElems={menuMob.events} btnText="Events" />
+            <DropDown menuElems={menuMob.cooperation} btnText="Cooperation" />
           </div>
           <div className="footerAddress">
             <div className="address">

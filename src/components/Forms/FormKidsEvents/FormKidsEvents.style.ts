@@ -82,7 +82,7 @@ export const SFormKidsEvent = styled.div`
           margin-right: 12px;
         }
       }
-      margin-top: 40px;
+      
     }
   }
   @media (max-width: 875px) {
@@ -100,14 +100,17 @@ export const SFormKidsEvent = styled.div`
         .show {
           width: 100%;
         }
-        .btnsWrapper {
+      }
+      .btnsWrapper {
           flex-direction: column-reverse;
           gap: 24px;
-          .Button.fill {
-            width: 100% !important;
+          .clear,.Button.fill{
+            width: 90vw;
+          }
+          .clear{
+            padding: 12px 0;
           }
         }
-      }
     }
   }
 `;

@@ -10,9 +10,9 @@ import { Shows } from "./Shows";
 import { FormKidsEvents } from "../../components/Forms/FormKidsEvents/FormKidsEvents";
 
 export const KidsEventsPage = () => {
-  const [isAddPostModalOpen, setIsAddPostModalOpen] = useState<boolean>(false);
+  const [isKidsModalOpen, setIsKidsModalOpen] = useState<boolean>(false);
   const handleCloseModal = () => {
-    setIsAddPostModalOpen(false);
+    setIsKidsModalOpen(false);
   };
   return (
     <div>
@@ -23,7 +23,7 @@ export const KidsEventsPage = () => {
           description="For all inquiries, please fill out the form below and we’ll be in touch soon. "
           tagText="BOOK AN EVENT"
           title="Kids Events"
-          onClick={()=>setIsAddPostModalOpen(true)}
+          onClick={()=>setIsKidsModalOpen(true)}
         />
       </SKidsEventFormInfo>
       <SKidsEventPrograms>
@@ -41,7 +41,7 @@ export const KidsEventsPage = () => {
         <KidsGallery />
       </SKidsEventPrograms>
       <Footer />
-      {<FormKidsEvents isOpen={isAddPostModalOpen} onClose={handleCloseModal}/>}
+      {<FormKidsEvents isOpen={isKidsModalOpen} onClose={handleCloseModal}/>}
     </div>
   );
 };

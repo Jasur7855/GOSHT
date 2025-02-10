@@ -23,7 +23,7 @@ export interface IFormPrivateEvent {
   endTime: string;
   eventType: string;
   peopleCount: number;
-  additionalInfo: string;
+  additionalInfo: string ;
 }
 export interface IFormPrivateProps {
   isOpen: boolean;
