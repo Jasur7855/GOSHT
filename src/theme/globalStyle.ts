@@ -136,4 +136,7 @@ h6{
 label{
   font-weight: 500;
 }
+a{
+  color:#222;
+}
 `;

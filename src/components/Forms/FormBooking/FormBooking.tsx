@@ -7,7 +7,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Modal from "react-modal";
 import { BookingScheme } from "./yupFormBooking";
 import { FormBtn } from "../../ui/Button/FormBtn";
-
+import { useParams } from "react-router-dom";
+import { useAddBookingPrivetEventsMutation } from "../../../store/Api/bookingFormsApi";
 interface IFormBookingScheme {
   firstName: string;
   phoneNumber: string;
@@ -34,11 +35,13 @@ const customStyles: Modal.Styles = {
   },
 };
 
-export const FormBooking = ({ isOpen, onClose, id }: IFormBookingProps) => {
+export const FormBooking = ({ isOpen, onClose }: IFormBookingProps) => {
+  const { id } = useParams();
+  const [addBookingEvents] = useAddBookingPrivetEventsMutation();
   const {
     control,
-    reset,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<IFormBookingScheme>({
     resolver: yupResolver(BookingScheme),
@@ -51,10 +54,23 @@ export const FormBooking = ({ isOpen, onClose, id }: IFormBookingProps) => {
       privateEventId: 1,
     },
   });
-  console.log(id);
-  
+
   const onSubmit: SubmitHandler<IFormBookingScheme> = async (data) => {
-    let payload = {};
+    try {
+      let payload = {
+        firstName: data.firstName,
+        phoneNumber: data.phoneNumber,
+        email: data.email,
+        peopleNumber: data.privateEventId,
+        privateEventId: Number(id),
+      };
+      console.log("Отправка формы:", payload);
+      await addBookingEvents(payload).unwrap();
+      reset();
+      onClose();
+    } catch (error) {
+      console.error("Ошибка при отправке формы:", error);
+    }
   };
 
   return (

@@ -26,6 +26,11 @@ export const SFormBooking = styled.div`
     button{
       margin-top: 24px;
     }
+    form{
+      display: flex;
+      flex-direction: column;
+      gap: 30px 0;
+    }
   }
   .image {
     background-image: url(/img/bookingIMG.png);
@@ -33,7 +38,6 @@ export const SFormBooking = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
     flex-grow: 1;
     img {
       width: 100%;

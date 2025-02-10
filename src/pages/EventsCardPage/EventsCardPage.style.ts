@@ -32,8 +32,6 @@ export const SEventsCard = styled.div<IEventsCardProps>`
       font-size: ${(props) => props.theme.fontSize.font20$16}; /* Исправлено */
       margin-bottom: 32px;
       font-family: "Roboto";
-      pointer-events: none;
-
       svg {
         color: ${(props) => props.theme.colors.red};
       }

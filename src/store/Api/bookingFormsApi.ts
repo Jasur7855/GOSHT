@@ -27,4 +27,4 @@ export const bookingFormsApi = createApi({
   }),
 });
 
-const { useAddBookingPrivetEventsMutation }=bookingFormsApi;
+export const { useAddBookingPrivetEventsMutation }=bookingFormsApi;

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { EventCardItem } from "../../components/EventCardItem/EventCardItem";
 import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/widgets/Footer/Footer";
@@ -54,7 +54,9 @@ export const EventsCardPage = () => {
         <div className="Main">
           <div className="breadcrumb">
             <IoIosArrowBack />
-            <span>Main / Events / {eventInfo.event_title}</span>
+            <Link to="/events">
+              <span>Main / Events / {eventInfo.event_title}</span>
+            </Link>
           </div>
           <Heading text={eventInfo.event_title} variant="h4" />
           <div className="mainImg"></div>
@@ -79,7 +81,12 @@ export const EventsCardPage = () => {
           <Heading text={eventInfo.motivation} variant="h5" />
           <div className="bookingWrapper">
             <div className="btnWrapper">
-              <FormBtn typeButton="button" text="Booking" variant="fill" onClick={()=>setIsFormBookingOpenModal(true)} />
+              <FormBtn
+                typeButton="button"
+                text="Booking"
+                variant="fill"
+                onClick={() => setIsFormBookingOpenModal(true)}
+              />
               <Button
                 btnLink="#"
                 typeButton="button"
@@ -109,5 +116,3 @@ export const EventsCardPage = () => {
     </div>
   );
 };
-
-
