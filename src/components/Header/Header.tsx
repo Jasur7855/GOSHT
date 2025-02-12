@@ -8,7 +8,7 @@ import { BurgerMenu } from "../widgets/BurgerMenu/BurgerMenu";
 import { useIsMobile } from "../../hooks/useIsMobile";
 
 export const Header = () => {
-  const isMobile = useIsMobile(975);
+  const isMobile = useIsMobile(1075);
   return (
     <SHeader>
       {isMobile && <BurgerMenu />}

@@ -7,11 +7,22 @@ import { useState } from "react";
 import { Heading } from "../../typography/Heading/Heading";
 import { Button } from "../../ui/Button/Button";
 import { SSliderMobile } from "./Slider.style";
-interface ISliderMobileProps {
+import { FormBtn } from "../../ui/Button/FormBtn";
+
+interface ISlide {
   tagText: string;
+  title: string;
+  description: string;
+  buttonText: string;
+  backgroundImage: string;
 }
 
-export const SliderMobile = ({ tagText }: ISliderMobileProps) => {
+interface ISliderMobileProps {
+  data: ISlide[];
+  btnClick?: () => void;
+}
+
+export const SliderMobile = ({ data, btnClick }: ISliderMobileProps) => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
   return (
@@ -22,62 +33,40 @@ export const SliderMobile = ({ tagText }: ISliderMobileProps) => {
         pagination={{ clickable: true }}
         onSwiper={(swiper) => setSwiperInstance(swiper)}
       >
-        <SwiperSlide
+        {data.map((elem: ISlide) => (
+          <SwiperSlide>
+            <div
+              className="sliderImg"
+              style={{ backgroundImage: `url(${elem.backgroundImage})` }}
+            ></div>
+            <div className="sliderText">
+              <span className="tag">{elem.tagText}</span>
+              <Heading variant="h1" text={elem.title} />
+              <p>{elem.description}</p>
+              <FormBtn
+                typeButton="button"
+                text={elem.buttonText}
+                variant="fill"
+                onClick={btnClick}
+              />
+            </div>
+          </SwiperSlide>
+        ))}
 
-        // style={{ backgroundImage: `url(${item.backgroundImage})` }} // ✅ Установка фона
-        >
-          <div className="sliderImg"></div>
-          <div className="sliderText">
-            <span className="tag">{tagText}</span>
-            <Heading variant="h1" text="Caesar" />
-            <p>
-              Crisp hearts of Romaine lettuce tossed in robust homemade Caesar
-              dressing, topped with shaved parmesan cheese and egg.
-            </p>
-            <Button
-              typeButton="button"
-              text="Order now"
-              variant="fill"
-              btnLink="#"
-            />
-          </div>
-          
-        </SwiperSlide>
-        <SwiperSlide
-
-// style={{ backgroundImage: `url(${item.backgroundImage})` }} // ✅ Установка фона
->
-  <div className="sliderImg"></div>
-  <div className="sliderText">
-    <span className="tag">{tagText}</span>
-    <Heading variant="h1" text="Caesar" />
-    <p>
-      Crisp hearts of Romaine lettuce tossed in robust homemade Caesar
-      dressing, topped with shaved parmesan cheese and egg.
-    </p>
-    <Button
-      typeButton="button"
-      text="Order now"
-      variant="fill"
-      btnLink="#"
-    />
-  </div>
-  
-</SwiperSlide>
         <div className="sliderBtns">
-            <button
-              className="arrBtn"
-              onClick={() => swiperInstance?.slidePrev()}
-            >
-              <IoIosArrowBack />
-            </button>
-            <button
-              className="arrBtn"
-              onClick={() => swiperInstance?.slideNext()}
-            >
-              <IoIosArrowForward />
-            </button>
-          </div>
+          <button
+            className="arrBtn"
+            onClick={() => swiperInstance?.slidePrev()}
+          >
+            <IoIosArrowBack />
+          </button>
+          <button
+            className="arrBtn"
+            onClick={() => swiperInstance?.slideNext()}
+          >
+            <IoIosArrowForward />
+          </button>
+        </div>
       </Swiper>
     </SSliderMobile>
   );

@@ -8,6 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { KidsEventScheme } from "./yupFormKids";
 import { useAddKidsEventMutation } from "../../../store/Api/inquireFormsApi";
 import { FormBtn } from "../../ui/Button/FormBtn";
+import { MdOutlineClear } from "react-icons/md";
 
 interface IFormKidsEventsScheme {
   firstName: string;
@@ -78,6 +79,7 @@ export const FormKidsEvents = ({ isOpen, onClose }: IFormKidsEventsProps) => {
   return (
     <Modal isOpen={isOpen} onRequestClose={onClose} style={customStyles}>
       <SFormKidsEvent>
+      <MdOutlineClear className="exit" onClick={onClose} />
         <Heading
           text="Fill in the form and we will contact you about Kids event"
           variant="h4"

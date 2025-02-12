@@ -57,5 +57,5 @@ export const PrivateEventScheme = yup.object({
     .nullable()
     .required("Обязательное поле!"),
 
-  additionalInfo: yup.string().required(),
+  additionalInfo: yup.string().nullable(),
 });

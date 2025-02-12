@@ -8,24 +8,54 @@ import { KidsGallery } from "./KidsGallery";
 import { MasterClass } from "./MasterClass";
 import { Shows } from "./Shows";
 import { FormKidsEvents } from "../../components/Forms/FormKidsEvents/FormKidsEvents";
-
+import { useIsMobile } from "../../hooks/useIsMobile";
+import { SliderDesk } from "../../components/widgets/Carousel/SliderDesk";
+import { SliderMobile } from "../../components/widgets/Carousel/SliderMobile";
+const dataMain = [
+  {
+    id: 1,
+    tagText: "книга про Эвенты",
+    title: "Kid's Events",
+    description:
+      "For all inquiries, please fill out the form below and we’ll be in touch soon. ",
+    buttonText: "Inquire Now",
+    backgroundImage: "/public/img/Kids.png",
+  },
+  {
+    id: 2,
+    tagText: "BOOK AN EVENT",
+    title: "Caesar",
+    description:
+      "Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg.",
+    buttonText: "Inquire Now",
+    backgroundImage: "/public/img/Main.jpg",
+  },
+];
 export const KidsEventsPage = () => {
   const [isKidsModalOpen, setIsKidsModalOpen] = useState<boolean>(false);
   const handleCloseModal = () => {
     setIsKidsModalOpen(false);
   };
+
+  const isMobile = useIsMobile(975);
   return (
     <div>
       <Header />
-      <SKidsEventFormInfo>
-        <CarouselItem
-          buttonText="Inquire Now"
-          description="For all inquiries, please fill out the form below and we’ll be in touch soon. "
-          tagText="BOOK AN EVENT"
-          title="Kids Events"
-          onClick={()=>setIsKidsModalOpen(true)}
+      {!isMobile && (
+        <SliderDesk
+        btnClick={()=>setIsKidsModalOpen(true)}
+          sliderForm={
+            <FormKidsEvents
+              isOpen={isKidsModalOpen}
+              onClose={handleCloseModal}
+              
+            />
+          }
+          data={dataMain}
         />
-      </SKidsEventFormInfo>
+      )}
+      {isMobile && <SliderMobile data={dataMain}  btnClick={()=>setIsKidsModalOpen(true)} />}
+
       <SKidsEventPrograms>
         <Heading text="Gōsht Kids" variant="h2" />
         <p>
@@ -41,7 +71,6 @@ export const KidsEventsPage = () => {
         <KidsGallery />
       </SKidsEventPrograms>
       <Footer />
-      {<FormKidsEvents isOpen={isKidsModalOpen} onClose={handleCloseModal}/>}
     </div>
   );
 };

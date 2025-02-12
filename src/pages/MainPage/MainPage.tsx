@@ -23,7 +23,7 @@ const dataMain = [
     title: "Caesar",
     description:
       "Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg.",
-    buttonText: "Inquire Now",
+    buttonText: "Order now",
     backgroundImage: "/public/img/Main.jpg",
   },
   {
@@ -32,7 +32,7 @@ const dataMain = [
     title: "Private Events",
     description:
       "For all inquiries, please fill out the form below and we’ll be in touch soon. ",
-    buttonText: "Inquire Now",
+    buttonText: "Order now",
     backgroundImage: "/public/img/Kids.png",
   },
 ];
@@ -80,12 +80,12 @@ const Card = ({
 };
 export const MainPage = ({}) => {
   const isMobile = useIsMobile(975);
-
+  
   return (
     <SMainPage>
       <Header />
-      {!isMobile && <SliderDesk data={dataMain} />}
-      {isMobile && <SliderMobile tagText="NEW DISH" />}
+      {!isMobile && <SliderDesk btnClick={()=>{}}data={dataMain} />}
+      {isMobile && <SliderMobile data={dataMain} />}
       <section className="menuInfo">
         <div className="bgImg">
           <img src="/public/img/burger4.png" className="burger" />
@@ -227,7 +227,6 @@ export const MainPage = ({}) => {
             }
           />
         </div>
-
         <div className="kidsWrapper">
           <GoshtBadge
             badgeLogo="/public/icons/KidsGosht.svg"

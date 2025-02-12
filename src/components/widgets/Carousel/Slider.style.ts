@@ -75,6 +75,7 @@ export const SCarouselItem = styled.div`
   .description {
     font-family: "Roboto";
     font-size: calc(0.4vw + 12.6px);
+    font-weight: 300x;
     line-height: 22px;
     color: white;
     max-width: 400px;

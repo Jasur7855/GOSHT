@@ -33,7 +33,7 @@ export const DropDown = ({ btnText, menuElems }: IDropDownProps) => {
       </span>
       <DropDownContent $isOpen={isOpen}>
         {menuElems.map((elem, indx) => (
-          <Link key={indx} to={elem.link}>{elem.text}</Link>
+          <Link  key={indx} to={elem.link}>{elem.text}</Link>
         ))}
       </DropDownContent>
     </SDropDown>

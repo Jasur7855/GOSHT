@@ -21,7 +21,7 @@ export const DropDownContent = styled.ul<{ $isOpen: boolean }>`
   transition: max-height 0.3s ease, opacity 0.3s ease;
 
   display: grid;
-  gap: 16px ;
+  gap: 26px ;
   grid-template-rows: ${({ $isOpen }) => ($isOpen ? "1fr" : "0fr")};
   max-height: ${({ $isOpen }) => ($isOpen ? "200px" : "0px")};
   opacity: ${({ $isOpen }) => ($isOpen ? "1" : "0")};

@@ -13,7 +13,7 @@ interface IAddPrivetEventPayload {
   endTime: string;
   eventType: string;
   peopleNumber: number;
-  additionalInformation: string;
+  additionalInformation: string | null;
 }
 interface IAddKidsEventPayload {
   peopleNumber: number;

@@ -4,9 +4,8 @@ import { Navigation, Pagination, A11y } from "swiper/modules";
 import { CarouselItem } from "./CarouselItem";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import { SSliderDesk } from "./Slider.style";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { Swiper as SwiperType } from "swiper";
-import { FormPrivateEvent } from "../../Forms/FormPrivatEvent/FormPrivateEvent";
 
 interface ISlide {
   tagText: string;
@@ -18,15 +17,13 @@ interface ISlide {
 
 interface ISliderDeskProps {
   data: ISlide[];
+  sliderForm?: ReactNode;
+  btnClick:()=>void
 }
 
-export const SliderDesk = ({ data }: ISliderDeskProps) => {
+export const SliderDesk = ({ data, sliderForm,btnClick }: ISliderDeskProps) => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
-  const [isAddPostModalOpen, setIsAddPostModalOpen] = useState<boolean>(false);
 
-  const handleCloseModal = () => {
-    setIsAddPostModalOpen(false);
-  };
   return (
     <SSliderDesk>
       <Swiper
@@ -45,9 +42,7 @@ export const SliderDesk = ({ data }: ISliderDeskProps) => {
               title={item.title}
               description={item.description}
               buttonText={item.buttonText}
-              onClick={() => {
-                setIsAddPostModalOpen(true);
-              }}
+              onClick={btnClick}
             />
           </SwiperSlide>
         ))}
@@ -67,12 +62,7 @@ export const SliderDesk = ({ data }: ISliderDeskProps) => {
           </button>
         </div>
       </Swiper>
-      {
-        <FormPrivateEvent
-          isOpen={isAddPostModalOpen}
-          onClose={handleCloseModal}
-        />
-      }
+      {sliderForm}
     </SSliderDesk>
   );
 };

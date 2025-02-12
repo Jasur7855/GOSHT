@@ -1,10 +1,8 @@
-import { Link } from "react-router-dom";
 import { Heading } from "../../typography/Heading/Heading";
 import { FormBtn } from "../../ui/Button/FormBtn";
 import { LabelInput } from "../../ui/LabelInput/LabelInput";
 import { SFormPrivateEvent } from "./FormPrivateEvent.style";
 import { PrivateEventScheme } from "./yupFromPrivate";
-
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Modal from "react-modal";
@@ -23,7 +21,7 @@ export interface IFormPrivateEvent {
   endTime: string;
   eventType: string;
   peopleCount: number;
-  additionalInfo: string ;
+  additionalInfo?: string | null;
 }
 export interface IFormPrivateProps {
   isOpen: boolean;
@@ -64,7 +62,7 @@ export const FormPrivateEvent = ({ isOpen, onClose }: IFormPrivateProps) => {
       endTime: "",
       eventType: "",
       peopleCount: 0,
-      additionalInfo: "",
+      additionalInfo: null,
     },
   });
 
@@ -85,13 +83,13 @@ export const FormPrivateEvent = ({ isOpen, onClose }: IFormPrivateProps) => {
       endTime: data.endTime,
       eventType: data.eventType,
       peopleNumber: data.peopleCount,
-      additionalInformation: data.additionalInfo,
+      additionalInformation: data.additionalInfo || null,
     };
 
     try {
       await addPrivetEvent(payload).unwrap();
       reset();
-      onClose(); 
+      onClose();
     } catch (error) {
       console.error("Ошибка при отправке формы:", error);
     }
@@ -100,9 +98,8 @@ export const FormPrivateEvent = ({ isOpen, onClose }: IFormPrivateProps) => {
   return (
     <Modal isOpen={isOpen} style={customStyles} onRequestClose={onClose}>
       <SFormPrivateEvent>
-        <Link to="/">
-          <MdOutlineClear className="exit" onClick={onClose} />
-        </Link>
+        <MdOutlineClear className="exit" onClick={onClose} />
+
         <Heading
           text="Fill out the form and we will contact you about a Private event"
           variant="h4"
@@ -269,23 +266,23 @@ export const FormPrivateEvent = ({ isOpen, onClose }: IFormPrivateProps) => {
             )}
           />
           <Controller
-            name="additionalInfo"
-            control={control}
-            render={({ field }) => (
-              <LabelInput
-                labelText="Additional Information"
-                inputIcon
-                placeholder="Additional Information"
-                type="text"
-                value={field.value}
-                onChange={field.onChange}
-                isError={Boolean(errors.additionalInfo)}
-                errorText={errors.additionalInfo?.message}
-                isInput={false}
-                areaPlaceholder="Additional Information"
-              />
-            )}
-          />
+  name="additionalInfo"
+  control={control}
+  render={({ field }) => (
+    <LabelInput
+      labelText="Additional Information"
+      inputIcon
+      placeholder="Additional Information"
+      type="text"
+      {...field}
+      value={field.value ?? ""} 
+      isError={Boolean(errors.additionalInfo)}
+      errorText={errors.additionalInfo?.message}
+      isInput={false}
+      areaPlaceholder="Additional Information"
+    />
+  )}
+/>
           <div className="btnsWrapper">
             <button type="button" className="clear" onClick={clearForm}>
               <FaTrashAlt />
