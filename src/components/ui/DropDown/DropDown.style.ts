@@ -23,7 +23,7 @@ export const DropDownContent = styled.ul<{ $isOpen: boolean }>`
   display: grid;
   gap: 26px ;
   grid-template-rows: ${({ $isOpen }) => ($isOpen ? "1fr" : "0fr")};
-  max-height: ${({ $isOpen }) => ($isOpen ? "200px" : "0px")};
+  max-height: ${({ $isOpen }) => ($isOpen ? "600px" : "0px")};
   opacity: ${({ $isOpen }) => ($isOpen ? "1" : "0")};
   a{
     font-family: ${props => props.theme.fontFamily.roboto};

@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import { Header } from "../../components/Header/Header";
-import { Footer } from "../../components/widgets/Footer/Footer";
 import {
   SAboutGosht,
   SAboutLavka,
@@ -19,7 +17,6 @@ export const AboutPage = () => {
   const mobile = useIsMobile();
   return (
     <div>
-      <Header />
       <SAboutPageSocial>
         <div className="footerSocial">
           <Link to="#" className="social">
@@ -36,21 +33,21 @@ export const AboutPage = () => {
 
       <SContainer>
         <img
-          src="/public/icons/BigBlackgosht.svg"
+          src="/icons/BigBlackgosht.svg"
           className="bigBlack"
           alt=""
         />
         <img
           src={`${
             mobile
-              ? "/public/img/aboutGosht.png"
-              : "/public/img/aboutGosht.png"
+              ? "/img/aboutGosht.png"
+              : "/img/aboutGosht.png"
           }`}
           alt=""
         />
         <SAboutGosht>
           <GoshtBadge
-            badgeLogo="/public/icons/BlackGosht.svg"
+            badgeLogo="/icons/BlackGosht.svg"
             title="Gōsht Group"
             subTitle="3215 Coney Island Avenue, Brooklyn, NY 11235"
             children={
@@ -66,7 +63,7 @@ export const AboutPage = () => {
             }
           />
           <GoshtBadge
-            badgeLogo="/public/icons/BlackGosht.svg"
+            badgeLogo="/icons/BlackGosht.svg"
             title="Gōsht Group"
             subTitle="3215 Coney Island Avenue, Brooklyn, NY 11235"
             children={
@@ -166,7 +163,6 @@ export const AboutPage = () => {
           </div>
         </div>
       </SContainer>
-      <Footer />
     </div>
   );
 };

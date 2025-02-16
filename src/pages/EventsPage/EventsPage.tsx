@@ -1,5 +1,4 @@
-import { Footer } from "../../components/widgets/Footer/Footer";
-import { Header } from "../../components/Header/Header";
+
 import { EventsSection } from "../../components/EventsSection/EventsSection";
 import { SliderDesk } from "../../components/widgets/Carousel/SliderDesk";
 import { useIsMobile } from "../../hooks/useIsMobile";
@@ -41,7 +40,6 @@ export const EventsPage = () => {
   const isMobile = useIsMobile(975);
   return (
     <div>
-      <Header />
 
       {!isMobile && <SliderDesk btnClick={handleOpenModal} data={dataMain} 
       sliderForm={<FormPrivateEvent
@@ -52,7 +50,6 @@ export const EventsPage = () => {
       {isMobile && <SliderMobile data={dataMain}  btnClick={()=>setIsAddPostModalOpen(true)}/>}
 
       <EventsSection />
-      <Footer />
     </div>
   );
 };

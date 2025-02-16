@@ -21,7 +21,7 @@ export const DropDown = ({ btnText, menuElems }: IDropDownProps) => {
   };
 
   return (
-    <SDropDown>
+    <SDropDown className="dropDown">
       <span onClick={toggleDropdown} className="dropDown">
         <h5>{btnText}</h5>
         <IoIosArrowForward

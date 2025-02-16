@@ -14,7 +14,7 @@ const menuMob = {
       text: "Menu",
     },
     {
-      link: "#",
+      link: "/about-page",
       text: "About us",
     },
     {
@@ -59,7 +59,7 @@ export const Footer = () => {
           <div className="links_list">
             <span className="title">Navigation</span>
             <Link to={"/"}>Menu</Link>
-            <Link to={"#"}>About us</Link>
+            <Link to={"/about-page"}>About us</Link>
             <Link to={"#"}>Hours & Location</Link>
             <Link to={"#"}>Review</Link>
           </div>

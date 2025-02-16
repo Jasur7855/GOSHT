@@ -16,10 +16,10 @@ export const Header = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/">Menu</Link>
+            <Link to="/menu-page/starter">Menu</Link>
           </li>
           <li>
-            <Link to="#">About us</Link>
+            <Link to="/about-page">About us</Link>
           </li>
           <li>
             <Link to="/events">Events</Link>

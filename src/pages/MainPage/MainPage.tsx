@@ -1,7 +1,5 @@
-import { Header } from "../../components/Header/Header";
 import { MenuCard } from "../../components/MainComponents/MenuCard/MenuCard";
 import { SliderDesk } from "../../components/widgets/Carousel/SliderDesk";
-import { Footer } from "../../components/widgets/Footer/Footer";
 import { SMainCard, SMainPage } from "./MainPage.style";
 import { SliderMobile } from "../../components/widgets/Carousel/SliderMobile";
 import { useIsMobile } from "../../hooks/useIsMobile";
@@ -24,7 +22,7 @@ const dataMain = [
     description:
       "Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg.",
     buttonText: "Order now",
-    backgroundImage: "/public/img/Main.jpg",
+    backgroundImage: "/img/Main.jpg",
   },
   {
     id: 2,
@@ -33,7 +31,7 @@ const dataMain = [
     description:
       "For all inquiries, please fill out the form below and we’ll be in touch soon. ",
     buttonText: "Order now",
-    backgroundImage: "/public/img/Kids.png",
+    backgroundImage: "/img/Kids.png",
   },
 ];
 const cards = [
@@ -80,32 +78,31 @@ const Card = ({
 };
 export const MainPage = ({}) => {
   const isMobile = useIsMobile(975);
-  
+
   return (
     <SMainPage>
-      <Header />
-      {!isMobile && <SliderDesk btnClick={()=>{}}data={dataMain} />}
+      {!isMobile && <SliderDesk btnClick={() => {}} data={dataMain} />}
       {isMobile && <SliderMobile data={dataMain} />}
       <section className="menuInfo">
         <div className="bgImg">
-          <img src="/public/img/burger4.png" className="burger" />
+          <img src="/img/burger4.png" className="burger" />
           <div>
             <h6>
-              <img src="/public/icons/starWhite.svg" alt="" />
+              <img src="/icons/starWhite.svg" alt="" />
               Fresh Food
             </h6>
             <p>Food is not stored for extended periods of time</p>
           </div>
           <div className="center">
             <h6>
-              <img src="/public/icons/starWhite.svg" alt="" />
+              <img src="/icons/starWhite.svg" alt="" />
               Countless Choices
             </h6>
             <p>A varied menu for every taste and budget</p>
           </div>
           <div>
             <h6>
-              <img src="/public/icons/starWhite.svg" alt="" />
+              <img src="/icons/starWhite.svg" alt="" />
               Online Payment
             </h6>
             <p>Convenient pay in cash or online</p>
@@ -229,7 +226,7 @@ export const MainPage = ({}) => {
         </div>
         <div className="kidsWrapper">
           <GoshtBadge
-            badgeLogo="/public/icons/KidsGosht.svg"
+            badgeLogo="/icons/KidsGosht.svg"
             title="Gōsht Kids"
             subTitle="Мы ждем всех самых маленьких!"
             children={
@@ -281,7 +278,6 @@ export const MainPage = ({}) => {
           ))}
         </MainSlider>
       </section>
-      <Footer />
     </SMainPage>
   );
 };
