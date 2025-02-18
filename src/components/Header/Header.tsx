@@ -28,7 +28,7 @@ export const Header = () => {
             <Link to="/kids-event">Kids Events</Link>
           </li>
           <li>
-            <Link to="#">Hours & Location</Link>
+            <Link to="/location-page">Hours & Location</Link>
           </li>
           <li>
             <Link to="#">Review</Link>

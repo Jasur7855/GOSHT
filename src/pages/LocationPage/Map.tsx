@@ -22,7 +22,7 @@ export const Map = () => {
     >
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       <Marker position={center}>
-        <Popup>Мой ресторан в Нью-Йорке 🗽🍔</Popup>
+        <Popup>Gosht в Нью-Йорке 🗽🍔</Popup>
       </Marker>
     </MapContainer>
   );
