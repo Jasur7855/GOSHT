@@ -14,7 +14,7 @@ const dataMain = [
     description:
       "For all inquiries, please fill out the form below and we’ll be in touch soon. ",
     buttonText: "Inquire Now",
-    backgroundImage: "/public/img/Kids.png",
+    backgroundImage: "/img/Kids.png",
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ const dataMain = [
     description:
       "Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg.",
     buttonText: "Inquire Now",
-    backgroundImage: "/public/img/Main.jpg",
+    backgroundImage: "/img/Main.jpg",
   },
 ];
 export const EventsPage = () => {

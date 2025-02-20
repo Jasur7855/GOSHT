@@ -31,7 +31,7 @@ export const Header = () => {
             <Link to="/location-page">Hours & Location</Link>
           </li>
           <li>
-            <Link to="#">Review</Link>
+            <Link to="/career-page">Review</Link>
           </li>
         </ul>
       </nav>

@@ -14,6 +14,7 @@ import { MainSlider } from "../../components/MainComponents/MainSlider/MainSlide
 import { SwiperSlide } from "swiper/react";
 import { FaStar } from "react-icons/fa";
 import { CiStar } from "react-icons/ci";
+import { API_URL } from "../../config/envConfig";
 const dataMain = [
   {
     id: 1,

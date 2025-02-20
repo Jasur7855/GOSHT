@@ -1,23 +1,38 @@
 import { Heading } from "../../components/typography/Heading/Heading";
 import { FormBtn } from "../../components/ui/Button/FormBtn";
+import { useIsMobile } from "../../hooks/useIsMobile";
 import { SLocation } from "./Location.style";
-import {Map} from "./Map"
+import { Map } from "./Map";
 import "leaflet/dist/leaflet.css";
 
 export const LocationPage = () => {
-    const restaurantCoords = [55.751244, 37.618423]; 
+  const mobile = useIsMobile();
   return (
     <SLocation>
-      <section className="hours">
-        <div>
-          <Heading text="Gōsht Restaurant" variant="h1" />
-          <p>
-            For all inquiries, please fill out the form below and <br /> we’ll
-            be in touch soon. 
-          </p>
-          <FormBtn text="Get directions" typeButton="button" variant="fill" />
-        </div>
-      </section>
+      {mobile ? (
+        <section>
+          <div className="hours"></div>
+          <div className="mobHours">
+            <Heading text="Gōsht Restaurant" variant="h1" />
+            <p>
+              For all inquiries, please fill out the form below and <br /> we’ll
+              be in touch soon. 
+            </p>
+            <FormBtn text="Get directions" typeButton="button" variant="fill" />
+          </div>
+        </section>
+      ) : (
+        <section className="hours">
+          <div>
+            <Heading text="Gōsht Restaurant" variant="h1" />
+            <p>
+              For all inquiries, please fill out the form below and <br /> we’ll
+              be in touch soon. 
+            </p>
+            <FormBtn text="Get directions" typeButton="button" variant="fill" />
+          </div>
+        </section>
+      )}
       <section className="menuInfo">
         <div className="bgImg">
           <img src="/img/burger4.png" className="burger" />
@@ -48,7 +63,7 @@ export const LocationPage = () => {
         <Heading text="We are on the map" variant="h2" />
         <span>We're waiting for everyone!</span>
         <div className="wrapper">
-          <Map/>
+          <Map />
         </div>
       </section>
     </SLocation>

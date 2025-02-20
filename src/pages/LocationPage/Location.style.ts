@@ -103,6 +103,29 @@ export const SLocation = styled.main`
       height: calc(19.5vw + 319px);
     }
   }
+  .mobHours {
+    padding: 20px 0;
+    h1 {
+      margin-bottom: 10px;
+      line-height: 110%;
+      text-align: center;
+    }
+    p {
+      margin-bottom: 24px;
+      font-family: ${(props) => props.theme.fontFamily.roboto};
+      font-size: calc(0.4vw + 12.6px);
+      font-weight: 300;
+      text-align: center;
+      line-height: 122%;
+    }
+    button{
+      width: 90%;
+      margin: 0  auto;
+    }
+  }
+  .leaflet-control-attribution.leaflet-control{
+    display: none;
+  }
   @media (max-width: 1190px) {
     .menuInfo {
       .burger {

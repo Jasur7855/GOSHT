@@ -8,29 +8,9 @@ import { AboutPage } from "./pages/AboutPage/AboutPage";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/widgets/Footer/Footer";
 import { MenuPage } from "./pages/MenuPage/MenuPage";
-import { MainMenu } from "./pages/MenuPage/MainMenu";
 import { LocationPage } from "./pages/LocationPage/LocationPage";
-
-const categories = [
-  {
-    id: 0,
-    name: "salad",
-    description:
-      "Served with roasted garlic and cherry tomatoes Certified Halal meat from local butchers",
-  },
-  {
-    id: 1,
-    name: "steaks",
-    description:
-      "Served with roasted garlic and cherry tomatoes Certified Halal meat from local butchers",
-  },
-  {
-    id: 2,
-    name: "soups",
-    description:
-      "Served with roasted garlic and cherry tomatoes Certified Halal meat from local butchers",
-  },
-];
+import { CareerPage } from "./pages/CareerPage/CareerPage";
+import { CareerMorePage } from "./pages/CareerPage/CareerMorePage";
 
 const App = () => {
   return (
@@ -44,7 +24,9 @@ const App = () => {
         <Route path="/event-card/:id" element={<EventsCardPage />} />
         <Route path="/about-page" element={<AboutPage />} />
         <Route path="/location-page" element={<LocationPage />} />
-        <Route path="/menu-page/:id" element={<MenuPage />}></Route>
+        <Route path="/menu-page/:id" element={<MenuPage />} />
+        <Route path="/career-page" element={<CareerPage />} />
+        <Route path="/career-more-page" element={<CareerMorePage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
