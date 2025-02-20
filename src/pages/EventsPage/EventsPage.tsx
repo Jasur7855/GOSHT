@@ -1,4 +1,3 @@
-
 import { EventsSection } from "../../components/EventsSection/EventsSection";
 import { SliderDesk } from "../../components/widgets/Carousel/SliderDesk";
 import { useIsMobile } from "../../hooks/useIsMobile";
@@ -6,7 +5,6 @@ import { SliderMobile } from "../../components/widgets/Carousel/SliderMobile";
 import { useState } from "react";
 import { FormPrivateEvent } from "../../components/Forms/FormPrivatEvent/FormPrivateEvent";
 const dataMain = [
-  
   {
     id: 1,
     tagText: "книга про Эвенты",
@@ -32,24 +30,26 @@ export const EventsPage = () => {
   const handleCloseModal = () => {
     setIsAddPostModalOpen(false);
   };
-  const  handleOpenModal=()=>{
+  const handleOpenModal = () => {
     console.log("true");
-    
-    setIsAddPostModalOpen(true)
-  }
+
+    setIsAddPostModalOpen(true);
+  };
   const isMobile = useIsMobile(975);
   return (
     <div>
-
-      {!isMobile && <SliderDesk btnClick={handleOpenModal} data={dataMain} 
-      sliderForm={<FormPrivateEvent
+      {!isMobile && <SliderDesk btnClick={handleOpenModal} data={dataMain} />}
+      {isMobile && (
+        <SliderMobile
+          data={dataMain}
+          btnClick={() => setIsAddPostModalOpen(true)}
+        />
+      )}
+      <EventsSection />
+      <FormPrivateEvent
         isOpen={isAddPostModalOpen}
         onClose={handleCloseModal}
-      />}
-      />}
-      {isMobile && <SliderMobile data={dataMain}  btnClick={()=>setIsAddPostModalOpen(true)}/>}
-
-      <EventsSection />
+      />
     </div>
   );
 };

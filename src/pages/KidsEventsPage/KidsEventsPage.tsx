@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Heading } from "../../components/typography/Heading/Heading";
-import {  SKidsEventPrograms } from "./KidsEventsPage.style";
+import { SKidsEventPrograms } from "./KidsEventsPage.style";
 import { KidsGallery } from "./KidsGallery";
 import { MasterClass } from "./MasterClass";
 import { Shows } from "./Shows";
@@ -38,19 +38,14 @@ export const KidsEventsPage = () => {
   return (
     <div>
       {!isMobile && (
-        <SliderDesk
-        btnClick={()=>setIsKidsModalOpen(true)}
-          sliderForm={
-            <FormKidsEvents
-              isOpen={isKidsModalOpen}
-              onClose={handleCloseModal}
-              
-            />
-          }
+        <SliderDesk btnClick={() => setIsKidsModalOpen(true)} data={dataMain} />
+      )}
+      {isMobile && (
+        <SliderMobile
           data={dataMain}
+          btnClick={() => setIsKidsModalOpen(true)}
         />
       )}
-      {isMobile && <SliderMobile data={dataMain}  btnClick={()=>setIsKidsModalOpen(true)} />}
 
       <SKidsEventPrograms>
         <Heading text="Gōsht Kids" variant="h2" />
@@ -66,6 +61,7 @@ export const KidsEventsPage = () => {
         </div>
         <KidsGallery />
       </SKidsEventPrograms>
+      <FormKidsEvents isOpen={isKidsModalOpen} onClose={handleCloseModal} />
     </div>
   );
 };
