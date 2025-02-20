@@ -65,7 +65,7 @@ export const SCarierPage = styled.main`
   }
   .main {
     border-radius: calc(3.2vw + 4px) calc(3.2vw + 4px) 0 0;
-    padding: calc(5.5vw + 52.2px);
+    padding: calc(5.5vw + 72.2px);
     margin-top: calc(-6.5vw + 33px);
     z-index: 30;
     background-color: white;
@@ -215,13 +215,16 @@ export const SCareerMore = styled.main`
   .mainWrapper {
     display: grid;
     grid-template-columns: 38fr 62fr;
-    gap: 92px 30px;
+    gap: 0 30px;
     .left {
       padding: calc(2.1vw + 77px) calc(1.9vw + 17px) calc(1.9vw + 17px);
       border: 1px solid #00000033;
       border-radius: calc(0.8vw + 13.2px);
       margin-top: 96px;
       position: relative;
+      .careerCard {
+        min-height: auto;
+      }
       .logo {
         position: absolute;
         width: calc(2.3vw + 93.5px);
@@ -244,12 +247,15 @@ export const SCareerMore = styled.main`
         font-family: ${(props) => props.theme.fontFamily.roboto};
         line-height: 18px;
       }
+      .last {
+        margin-bottom: 0;
+      }
     }
   }
-  @media (max-width:975px) {
-    .mainWrapper{
-     display: flex;
-     flex-direction: column-reverse;
+  @media (max-width: 975px) {
+    .mainWrapper {
+      display: flex;
+      flex-direction: column-reverse;
     }
   }
 `;

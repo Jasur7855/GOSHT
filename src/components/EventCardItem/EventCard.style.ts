@@ -16,4 +16,9 @@ export const SEventsCardItem = styled.div<IEventCardItemProps>`
   h4{
     font-family:"Roboto Serif"
   }
+  @media (max-width:1190px) {
+    .picture {
+      height: calc(14.6vw + 45.26px);
+    }
+  }
 `;

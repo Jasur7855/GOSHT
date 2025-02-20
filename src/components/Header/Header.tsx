@@ -12,7 +12,13 @@ export const Header = () => {
   return (
     <SHeader>
       {isMobile && <BurgerMenu />}
-      <img src="/icons/header-logo.svg" className="logo" alt="brand logotype" />
+      <Link to="/">
+        <img
+          src="/icons/header-logo.svg"
+          className="logo"
+          alt="brand logotype"
+        />
+      </Link>
       <nav>
         <ul>
           <li>

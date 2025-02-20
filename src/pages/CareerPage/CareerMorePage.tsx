@@ -47,7 +47,7 @@ export const CareerMorePage = () => {
           <Heading text="Shift:" variant="h5" />
           <p>8 hour shift</p>
           <Heading text="About Gōsht:" variant="h5" />
-          <p>
+          <p className="last"> 
             Gōsht works a little like a restaurant. We build kitchens in every
             shop. We don’t use ‘sell-by’ dates because at the end of every day
             we offer our unsold food to charity rather than keeping it to sell

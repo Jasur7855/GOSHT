@@ -18,9 +18,14 @@ body {
   font-family:${(props) => props.theme.fontFamily.font} , ${(props) =>
   props.theme.fontFamily.titleFont}, serif, sans-serif;
   background-color: ${(props) => props.theme.colors.white};
- 
+  
 }
-
+html {
+  scrollbar-width: none; 
+}
+html::-webkit-scrollbar {
+  display: none;
+}
 :focus,
 :active {
   outline: none;

@@ -17,6 +17,7 @@ export const SHeader = styled.header`
     gap: 0 24px;
 
     a {
+      font-family: ${props => props.theme.fontFamily.robotoSerif};
       color: #fff;
     }
   }
@@ -41,9 +42,10 @@ export const SHeader = styled.header`
       display: flex;
       align-items: center;
       gap: 0 10px;
+      font-family: ${props => props.theme.fontFamily.robotoSerif};
 
       &:hover {
-        border: 1px solid ${props=>props.theme.colors.grey};
+        border: 1px solid white;
       }
 
       svg {
@@ -52,6 +54,7 @@ export const SHeader = styled.header`
       }
 
       span {
+        font-size: 16px;
         background-color: transparent !important;
       }
     }

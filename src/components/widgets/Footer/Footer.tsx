@@ -18,7 +18,7 @@ const menuMob = {
       text: "About us",
     },
     {
-      link: "#",
+      link: "/location-page",
       text: "Hours & Location",
     },
     {
@@ -38,7 +38,7 @@ const menuMob = {
   ],
   cooperation: [
     {
-      link: "#",
+      link: "/career-page",
       text: "Career",
     },
     {

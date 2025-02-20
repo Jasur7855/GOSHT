@@ -71,6 +71,7 @@ export const SAboutPageSocial = styled.section`
   .footerSocial {
     display: flex;
     gap: 0 30px;
+    margin-right: ${props => props.theme.padding.padding6024};
     .social {
       padding: 12px 24px;
       border: 1px solid #cccccc80;

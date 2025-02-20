@@ -37,7 +37,6 @@ export const EventsCardPage = () => {
   };
   return (
     <div>
-      <Header />
       <SEventsCard $mainBg={eventInfo.img || ""}>
         <aside className="leftSide">
           <Heading text="Events" variant="h6" />
@@ -105,7 +104,6 @@ export const EventsCardPage = () => {
           </div>
         </div>
       </SEventsCard>
-      <Footer />
       {isFormBookingOpenModal && (
         <FormBooking
           isOpen={isFormBookingOpenModal}

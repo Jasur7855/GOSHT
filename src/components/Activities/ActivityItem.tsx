@@ -5,7 +5,7 @@ import { SActivityItem } from "./ActivityItem.style";
 
 interface ActivityItemProps {
   isWrap: boolean;
-  onClick?: () => void;
+  onClick: string;
   eventTitle: string;
   eventSubtitle: string;
   eventImg:string;
@@ -26,11 +26,11 @@ export const ActivityItem = ({
       <div className="ActivityInfo">
         <Heading variant={"h3"} text={eventTitle} />
         <p className="description">{eventSubtitle}</p>
-        <Button btnLink="#"
+        <Button btnLink={onClick}
           typeButton="button"
           text={"Know more"}
           variant={"outlined"}
-          onClick={onClick}
+          
         />
       </div>
     </SActivityItem>

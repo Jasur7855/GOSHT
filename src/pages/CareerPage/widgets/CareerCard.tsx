@@ -16,7 +16,7 @@ export const CareerCard = ({
   cardImg,
 }: ICareerCard) => {
   return (
-    <SCareerCard>
+    <SCareerCard className="careerCard">
       <div>
         <img src={cardImg} alt="" className="img" />
         <Heading text={title} variant="h5" />
