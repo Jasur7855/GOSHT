@@ -66,7 +66,7 @@ const cards = [
   },
 ];
 
-export const MainPage = ({}) => {
+const MainPage = ({}) => {
   const isMobile = useIsMobile(975);
 
   return (
@@ -260,7 +260,7 @@ export const MainPage = ({}) => {
         {isMobile ? (
           <MainSlider slidesPerView={1}>
             {cards.map((card) => (
-              <SwiperSlide  key={card.id}>
+              <SwiperSlide key={card.id}>
                 <div className="cardWrapper">
                   <Card title={card.title} description={card.description} />
                   <Card title={card.title} description={card.description} />
@@ -273,7 +273,7 @@ export const MainPage = ({}) => {
           <div className="desktop">
             <MainSlider slidesPerView={3}>
               {cards.map((card) => (
-                <SwiperSlide  key={card.id}>
+                <SwiperSlide key={card.id}>
                   <Card title={card.title} description={card.description} />
                 </SwiperSlide>
               ))}
@@ -284,3 +284,5 @@ export const MainPage = ({}) => {
     </SMainPage>
   );
 };
+
+export default MainPage;

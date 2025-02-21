@@ -14,7 +14,7 @@ import { FormBooking } from "../../components/Forms/FormBooking/FormBooking";
 import { useState } from "react";
 import { FormBtn } from "../../components/ui/Button/FormBtn";
 
-export const EventsCardPage = () => {
+const EventsCardPage = () => {
   const [isFormBookingOpenModal, setIsFormBookingOpenModal] =
     useState<boolean>(false);
   const { id } = useParams();
@@ -114,3 +114,5 @@ export const EventsCardPage = () => {
     </div>
   );
 };
+
+export default EventsCardPage;

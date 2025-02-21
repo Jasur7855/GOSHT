@@ -13,7 +13,7 @@ import { Heading } from "../../components/typography/Heading/Heading";
 import { LabelInput } from "../../components/ui/LabelInput/LabelInput";
 import { FormBtn } from "../../components/ui/Button/FormBtn";
 import { useIsMobile } from "../../hooks/useIsMobile";
-export const AboutPage = () => {
+const AboutPage = () => {
   const mobile = useIsMobile();
   return (
     <div>
@@ -32,17 +32,9 @@ export const AboutPage = () => {
       </SAboutPageSocial>
 
       <SContainer>
+        <img src="/icons/BigBlackgosht.svg" className="bigBlack" alt="" />
         <img
-          src="/icons/BigBlackgosht.svg"
-          className="bigBlack"
-          alt=""
-        />
-        <img
-          src={`${
-            mobile
-              ? "/img/aboutGosht.png"
-              : "/img/aboutGosht.png"
-          }`}
+          src={`${mobile ? "/img/aboutGosht.png" : "/img/aboutGosht.png"}`}
           alt=""
         />
         <SAboutGosht>
@@ -166,3 +158,5 @@ export const AboutPage = () => {
     </div>
   );
 };
+
+export default AboutPage;

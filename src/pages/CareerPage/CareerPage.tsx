@@ -4,7 +4,8 @@ import { useIsMobile } from "../../hooks/useIsMobile";
 import { SCarierPage } from "./CareerPage.style";
 import { CareerCard } from "./widgets/CareerCard";
 import { CareerSlider } from "./widgets/CareerSlider";
-export const CareerPage = () => {
+
+const CareerPage = () => {
   const mobile = useIsMobile();
   const sliderData = [
     {
@@ -115,3 +116,5 @@ export const CareerPage = () => {
     </SCarierPage>
   );
 };
+
+export default CareerPage;

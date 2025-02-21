@@ -19,7 +19,7 @@ export const EventsSection = () => {
               eventSubtitle={elem.event_subtitle}
               eventImg={elem.img}
               isWrap={index % 2 === 0}
-              onClick={`/event-card/${elem.id}`}
+              onClick={`/events/${elem.id}`}
             />
           ))
         ) : (

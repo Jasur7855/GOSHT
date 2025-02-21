@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Heading } from "../../components/typography/Heading/Heading";
 import { SKidsEventPrograms } from "./KidsEventsPage.style";
 import { KidsGallery } from "./KidsGallery";
 import { MasterClass } from "./MasterClass";
@@ -29,7 +28,7 @@ const dataMain = [
     backgroundImage: "/img/Main.jpg",
   },
 ];
-export const KidsEventsPage = () => {
+const KidsEventsPage = () => {
   const [isKidsModalOpen, setIsKidsModalOpen] = useState<boolean>(false);
   const handleCloseModal = () => {
     setIsKidsModalOpen(false);
@@ -72,3 +71,5 @@ export const KidsEventsPage = () => {
     </div>
   );
 };
+
+export default KidsEventsPage;

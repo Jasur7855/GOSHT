@@ -5,7 +5,7 @@ import { MainMenu } from "./MainMenu";
 
 interface IMenuPageProps {}
 
-export const MenuPage = ({}: IMenuPageProps) => {
+ const MenuPage = ({}: IMenuPageProps) => {
   const params = useParams()
   return (
     <SMenuPage>
@@ -14,3 +14,5 @@ export const MenuPage = ({}: IMenuPageProps) => {
     </SMenuPage>
   );
 };
+
+export default MenuPage

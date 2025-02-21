@@ -24,7 +24,7 @@ const dataMain = [
     backgroundImage: "/img/Main.jpg",
   },
 ];
-export const EventsPage = () => {
+const EventsPage = () => {
   const [isAddPostModalOpen, setIsAddPostModalOpen] = useState<boolean>(false);
 
   const handleCloseModal = () => {
@@ -53,3 +53,5 @@ export const EventsPage = () => {
     </div>
   );
 };
+
+export default EventsPage;

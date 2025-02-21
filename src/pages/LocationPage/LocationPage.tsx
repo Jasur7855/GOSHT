@@ -5,7 +5,7 @@ import { SLocation } from "./Location.style";
 import { Map } from "./Map";
 import "leaflet/dist/leaflet.css";
 
-export const LocationPage = () => {
+const LocationPage = () => {
   const mobile = useIsMobile();
   return (
     <SLocation>
@@ -69,3 +69,5 @@ export const LocationPage = () => {
     </SLocation>
   );
 };
+
+export default LocationPage;
