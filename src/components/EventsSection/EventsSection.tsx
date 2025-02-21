@@ -1,13 +1,13 @@
-import "./EventsSection.scss";
 import { Heading } from "../typography/Heading/Heading";
 import { ActivityItem } from "../Activities/ActivityItem";
 import { useGetAllEventsQuery } from "../../store/Api/eventsApi";
+import { SEventSection } from "./EventSection.style";
 
 export const EventsSection = () => {
   const { data } = useGetAllEventsQuery(null);
 
   return (
-    <section className="eventsSection">
+    <SEventSection>
       <Heading variant="h2" text="Activities" />
       <p>Activities inside the Gōsht Restaurant</p>
       <div className="eventsWrapper">
@@ -26,6 +26,6 @@ export const EventsSection = () => {
           <p>No events available.</p>
         )}
       </div>
-    </section>
+    </SEventSection>
   );
 };

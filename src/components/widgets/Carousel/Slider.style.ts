@@ -2,6 +2,16 @@ import styled from "styled-components";
 
 export const SSliderDesk = styled.div`
   position: relative;
+  .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 70px;
+    .swiper-pagination-bullet.swiper-pagination-bullet-active {
+      width: 12px;
+      height: 12px;
+    }
+  }
 
   .swiper {
     width: 100% !important;
@@ -82,9 +92,18 @@ export const SCarouselItem = styled.div`
   }
 `;
 export const SSliderMobile = styled.div`
-  .swiper-pagination-bullet-active {
-    background-color: #000 !important;
+  .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    .swiper-pagination-bullet-active {
+      width: 12px;
+      height: 12px;
+      background-color: black;
+    }
   }
+
   .sliderImg {
     background-image: url(/img/Main.jpg);
     background-size: cover;
@@ -102,11 +121,11 @@ export const SSliderMobile = styled.div`
     .tag {
       color: white;
       background-color: ${(props) => props.theme.colors.red};
-      padding: 4px 0;
+      padding: 4px 12px;
       border-radius: 4px;
       font-size: calc(0.4vw + 10.6px);
       text-transform: uppercase;
-      width: 100px;
+      width: fit-content;
       text-align: center;
     }
     h1 {

@@ -8,6 +8,7 @@ import { FormKidsEvents } from "../../components/Forms/FormKidsEvents/FormKidsEv
 import { useIsMobile } from "../../hooks/useIsMobile";
 import { SliderDesk } from "../../components/widgets/Carousel/SliderDesk";
 import { SliderMobile } from "../../components/widgets/Carousel/SliderMobile";
+import ColorfulText from "../../components/widgets/ColorFulText/ColorFulText";
 const dataMain = [
   {
     id: 1,
@@ -48,13 +49,19 @@ export const KidsEventsPage = () => {
       )}
 
       <SKidsEventPrograms>
-        <Heading text="Gōsht Kids" variant="h2" />
-        <p>
-          Birthdays and special occasions made effortless! Whether it's a grand
-          birthday bash or an intricate celebration, leave the details to us.
-          Fill out the form below and let's transform your vision into an
-          unforgettable reality!
-        </p>
+        <h2>
+          Gosht <ColorfulText />
+        </h2>
+        {!isMobile ? (
+          <p>
+            Birthdays and special occasions made effortless! Whether it's a
+            grand birthday bash or an intricate celebration, leave the details
+            to us. Fill out the form below and let's transform your vision into
+            an unforgettable reality!
+          </p>
+        ) : (
+          <p>Activities inside the Gōsht Restaurant</p>
+        )}
         <div className="programsWrapper">
           <MasterClass />
           <Shows />

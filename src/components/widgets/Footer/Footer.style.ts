@@ -136,8 +136,7 @@ export const SFooter = styled.div`
         gap: 10px 0;
         cursor: pointer;
         .dropDown {
-          display: flex;
-          justify-content: space-between;
+          
           color: #ffffff;
           padding: 6px 0;
           font-size: ${(props) => props.theme.fontSize.font18$14};

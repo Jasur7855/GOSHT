@@ -185,14 +185,21 @@ export const SMainPage = styled.div`
     }
     .cardWrapper {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 32px 30px;
       width: 90%;
       margin: 0 auto calc(1.5vw + 20.3px);
       min-height: 259px;
       padding-top: 40px;
     }
-  }
+    .desktop{
+      
+      .swiper-wrapper{
+        padding-top: 81px;
+        height: 100%;
+      }
+    }
+    }
 
   @media (max-width: 1190px) {
     .mainMenu {
@@ -253,14 +260,13 @@ export const SMainPage = styled.div`
 export const SMainCard = styled.div`
   background-image: url(/icons/mainCardborder.svg);
   background-repeat: no-repeat;
-  background-size: cover;
-  width: 90%;
-  padding: 40px 20px;
+  background-size: contain;
+  background-position: center;
+  width: 390px;
+  height: 218px;
   margin: 0 auto;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
   .img {
     position: absolute;
     width: 50px;
@@ -269,19 +275,26 @@ export const SMainCard = styled.div`
     left: 50%;
     transform: translateX(-50%);
   }
-  h3{
-    font-size: calc(0.2vw + 17.3px);
-    text-align: center;
-    font-family: ${props => props.theme.fontFamily.roboto};
-    font-weight: 500;
-    margin-bottom: 8px;
-  }
-  .stars{
-    margin-bottom: 16px;
-  }
-  p{
-    font-family: ${props => props.theme.fontFamily.roboto};
-    font-size:calc(0.4vw + 12.6px);
-    text-align: center;
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    h3 {
+      font-size: calc(0.2vw + 17.3px);
+      text-align: center;
+      font-family: ${(props) => props.theme.fontFamily.roboto};
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+    .stars {
+      margin: 0 auto 16px;
+      padding: 0;
+    }
+    p {
+      font-family: ${(props) => props.theme.fontFamily.roboto};
+      font-size: calc(0.4vw + 12.6px);
+      text-align: center;
+    }
   }
 `;

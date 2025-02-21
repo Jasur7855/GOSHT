@@ -14,6 +14,11 @@ export const SKidsEventPrograms = styled.section`
     text-align: center;
     margin-bottom: 8px;
     line-height: 120%;
+    display: flex;
+    justify-content: center;
+    div {
+      margin-left: 10px;
+    }
   }
   p {
     color: ${(props) => props.theme.colors.grey};
@@ -30,30 +35,29 @@ export const SKidsEventPrograms = styled.section`
     grid-template-rows: 1fr 1fr;
     gap: 30px;
     margin-bottom: 42px;
-    .galleryImg{
-        background-image: url("/img/ladyBag.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
+    .galleryImg {
+      background-image: url("/img/ladyBag.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
     }
-    
   }
-  .sliderBtns{
+  .sliderBtns {
     display: flex;
     justify-content: space-between;
-    .arrBtn{
-        width:38px;
-        height: 38px;
-        background-color: transparent;
-        border: 1px solid ${props=>props.theme.colors.grey};
-        border-radius: 4px;
-        cursor: pointer;
-        z-index: 30;
+    .arrBtn {
+      width: 38px;
+      height: 38px;
+      background-color: transparent;
+      border: 1px solid ${(props) => props.theme.colors.grey};
+      border-radius: 4px;
+      cursor: pointer;
+      z-index: 30;
     }
   }
-  .swiper-slide .galleryImg.main{
-    grid-column:2/3 ;
-    grid-row:1/3 ;
+  .swiper-slide .galleryImg.main {
+    grid-column: 2/3;
+    grid-row: 1/3;
   }
   .programsWrapper {
     display: flex;
@@ -129,22 +133,32 @@ export const SKidsEventPrograms = styled.section`
         }
       }
     }
-    .gallery {
-      .gallerySlider {
+  }
+  .gallery {
+    .gallerySlider {
+      .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+          background: ${(props) => props.theme.colors.red};
+          width: 12px;
+          height: 12px;
+        }
       }
     }
   }
   @media (max-width: 975px) {
-    .swiper-slide{
-        height: auto;
-        grid-template-columns: 1fr;
-        .galleryImg{
-            height: 200px;
-        }
-        .galleryImg.none{
-            display: none;
-        }
-    } 
+    .swiper-slide {
+      height: auto;
+      grid-template-columns: 1fr;
+      .galleryImg {
+        height: 200px;
+      }
+      .galleryImg.none {
+        display: none;
+      }
+    }
     .programsWrapper {
       flex-direction: column;
       .masterClass,
@@ -158,6 +172,10 @@ export const SKidsEventPrograms = styled.section`
       .masterClass {
         .plans_wrapper {
           grid-template-columns: 1fr;
+          .plan {
+            text-align: left;
+            padding: 16px 26px;
+          }
         }
       }
     }

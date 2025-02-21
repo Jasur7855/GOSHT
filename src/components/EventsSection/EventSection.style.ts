@@ -1,4 +1,7 @@
-.eventsSection {
+import { Button } from "./../ui/Button/Button";
+import styled from "styled-components";
+
+export const SEventSection = styled.div`
   padding: calc(0.9vw + 38.5px) calc(3.4vw + 11.3px) calc(4.7vw + 34.3px);
   display: flex;
   flex-direction: column;
@@ -14,4 +17,7 @@
   .eventsWrapper {
     width: 100%;
   }
-}
+  a {
+    width: 100% !important;
+  }
+`;

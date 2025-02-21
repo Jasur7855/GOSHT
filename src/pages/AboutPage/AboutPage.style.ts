@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const SContainer = styled.main`
-  padding: 0 ${(props) => props.theme.padding.padding6024} calc(4.7vw + 34.4px) ;
+  padding: 0 ${(props) => props.theme.padding.padding6024} calc(4.7vw + 34.4px);
   position: relative;
   padding-top: 96px;
-  .bigBlack{
+  .bigBlack {
     position: absolute;
-    z-index: 1000;
+    z-index: 10;
     left: calc(5.3vw - 21.6px);
-    top:-70px;
+    top: -70px;
     width: calc(10.7vw + 60px);
     height: calc(10.7vw + 60px);
   }
@@ -16,43 +16,47 @@ export const SContainer = styled.main`
     display: flex;
     flex-direction: column;
     gap: calc(2.4vw + 17px) 0;
-    .formWrapper{
+    .formWrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 42px 30px;
-      .children{
+      .children {
         display: flex;
         flex-direction: column;
-        gap: 12px ;
-        h4{
+        gap: 12px;
+        h4 {
           font-weight: 500 !important;
         }
-        p{
+        p {
           font-size: calc(0.9vw + 10.5px);
         }
       }
-      .form{
-        h4{
-          font-family: ${props => props.theme.fontFamily.robotoSerif};
-          margin-bottom:calc(0.8vw + 13.2px);
+      .form {
+        h4 {
+          font-family: ${(props) => props.theme.fontFamily.robotoSerif};
+          margin-bottom: calc(0.8vw + 13.2px);
           font-weight: 500;
           min-height: 64px;
-          
         }
-        button{
-          margin-left:  auto;
+        button {
+          margin-left: auto;
           margin-top: 40px;
         }
       }
     }
   }
-  @media (max-width:1075px) {
-    .bigBlack{
+  @media (max-width: 1075px) {
+    .bigBlack {
       top: -30px;
     }
-    .wrapper{
-      .formWrapper{
+    .wrapper {
+      .formWrapper {
         grid-template-columns: 1fr;
+        .form {
+          button {
+            width: 100%;
+          }
+        }
       }
     }
   }
@@ -71,7 +75,7 @@ export const SAboutPageSocial = styled.section`
   .footerSocial {
     display: flex;
     gap: 0 30px;
-    margin-right: ${props => props.theme.padding.padding6024};
+    margin-right: ${(props) => props.theme.padding.padding6024};
     .social {
       padding: 12px 24px;
       border: 1px solid #cccccc80;

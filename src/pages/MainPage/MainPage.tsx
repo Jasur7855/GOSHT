@@ -1,20 +1,18 @@
 import { MenuCard } from "../../components/MainComponents/MenuCard/MenuCard";
+import { Card } from "./Сard";
 import { SliderDesk } from "../../components/widgets/Carousel/SliderDesk";
-import { SMainCard, SMainPage } from "./MainPage.style";
+import { SMainPage } from "./MainPage.style";
 import { SliderMobile } from "../../components/widgets/Carousel/SliderMobile";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import { MenuBadge } from "../../components/ui/MenuBadge/MenuBadge";
 import { Heading } from "../../components/typography/Heading/Heading";
 import { Button } from "../../components/ui/Button/Button";
 import { GoshtBadge } from "../../components/GoshtBadge/GoshtBadge";
-
 import { MdArrowOutward } from "react-icons/md";
 import { EventsSection } from "../../components/EventsSection/EventsSection";
 import { MainSlider } from "../../components/MainComponents/MainSlider/MainSlider";
 import { SwiperSlide } from "swiper/react";
-import { FaStar } from "react-icons/fa";
-import { CiStar } from "react-icons/ci";
-import { API_URL } from "../../config/envConfig";
+
 const dataMain = [
   {
     id: 1,
@@ -54,29 +52,20 @@ const cards = [
     description:
       "Our fast-food network includes projects like Blaсk Star Burger, with 7 locations solely in Tashkent, Mahalla with 6 spots also in Tashkent",
   },
+  {
+    id: 4,
+    title: "Thomas Party",
+    description:
+      "Our fast-food network includes projects like Blaсk Star Burger, with 7 locations solely in Tashkent, Mahalla with 6 spots also in Tashkent",
+  },
+  {
+    id: 5,
+    title: "Thomas Party",
+    description:
+      "Our fast-food network includes projects like Blaсk Star Burger, with 7 locations solely in Tashkent, Mahalla with 6 spots also in Tashkent",
+  },
 ];
-const Card = ({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) => {
-  return (
-    <SMainCard>
-      <img src="/icons/mainCardImg.svg" alt="ladyBag" className="img" />
-      <h3>{title}</h3>
-      <div className="stars">
-        <FaStar style={{ color: "#AA181A" }} />
-        <FaStar style={{ color: "#AA181A" }} />
-        <FaStar style={{ color: "#AA181A" }} />
-        <FaStar style={{ color: "#AA181A" }} />
-        <CiStar />
-      </div>
-      <p>{description}</p>
-    </SMainCard>
-  );
-};
+
 export const MainPage = ({}) => {
   const isMobile = useIsMobile(975);
 
@@ -267,17 +256,30 @@ export const MainPage = ({}) => {
           text={`Don’t believe me, check what Clients\nthink about us!`}
           variant="h4"
         />
-        <MainSlider>
-          {cards.map((card) => (
-            <SwiperSlide key={card.id}>
-              <div className="cardWrapper">
-                <Card title={card.title} description={card.description} />
-                <Card title={card.title} description={card.description} />
-                <Card title={card.title} description={card.description} />
-              </div>
-            </SwiperSlide>
-          ))}
-        </MainSlider>
+
+        {isMobile ? (
+          <MainSlider slidesPerView={1}>
+            {cards.map((card) => (
+              <SwiperSlide  key={card.id}>
+                <div className="cardWrapper">
+                  <Card title={card.title} description={card.description} />
+                  <Card title={card.title} description={card.description} />
+                  <Card title={card.title} description={card.description} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </MainSlider>
+        ) : (
+          <div className="desktop">
+            <MainSlider slidesPerView={3}>
+              {cards.map((card) => (
+                <SwiperSlide  key={card.id}>
+                  <Card title={card.title} description={card.description} />
+                </SwiperSlide>
+              ))}
+            </MainSlider>
+          </div>
+        )}
       </section>
     </SMainPage>
   );

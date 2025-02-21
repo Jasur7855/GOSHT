@@ -43,11 +43,37 @@ export const CareerMorePage = () => {
           <Heading text="Referral Bonus: " variant="h5" />
           <p>$100.00</p>
           <Heading text="Benefits:" variant="h5" />
-          <p></p>
+          <p>
+            <ul>
+              <li>- Health, Dental and Vision Benefits</li>
+              <li>- Weekly Mystery Shopper bonus plan</li>
+              <li>- 401K retirement plan</li>
+              <li>- Generous Paid Time Off</li>
+              <li>
+                - Company sponsored Life Insurance + STD and LTD offerings
+              </li>
+              <li>- Child Bonding Leave</li>
+              <li>
+                - The Pret Academy, which supports the training and development
+                for our wonderful people
+              </li>
+              <li>- Quarterly nationwide team events</li>
+              <li>
+                - Free breakfast and lunch when working– including generous
+                discounts when you’re not
+              </li>
+              <li>- Transit program, FSA and HSAs available</li>
+              <li>
+                - A friendly, fun, and fast-paced environment with passionate
+                teams to work with
+              </li>
+              <li>- Pet Insurance</li>
+            </ul>
+          </p>
           <Heading text="Shift:" variant="h5" />
           <p>8 hour shift</p>
           <Heading text="About Gōsht:" variant="h5" />
-          <p className="last"> 
+          <p className="last">
             Gōsht works a little like a restaurant. We build kitchens in every
             shop. We don’t use ‘sell-by’ dates because at the end of every day
             we offer our unsold food to charity rather than keeping it to sell
