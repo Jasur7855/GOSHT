@@ -3,7 +3,6 @@ import ScrollToTop from "./theme/ScrolToTop";
 import { Header } from "./components/Header/Header";
 import { Footer } from "./components/widgets/Footer/Footer";
 import { lazy } from "react";
-import { CareerMorePage } from "./pages/CareerPage/CareerMorePage";
 
 const MainPage = lazy(() => import("./pages/MainPage/MainPage"));
 const EventsPage = lazy(() => import("./pages/EventsPage/EventsPage"));
@@ -13,6 +12,9 @@ const AboutPage = lazy(() => import("./pages/AboutPage/AboutPage"));
 const LocationPage = lazy(() => import("./pages/LocationPage/LocationPage"));
 const CareerPage = lazy(() => import("./pages/CareerPage/CareerPage"));
 const MenuPage = lazy(() => import("./pages/MenuPage/MenuPage"));
+const CareerMorePage = lazy(()=> import("./pages/CareerPage/CareerMorePage").then(module=>({
+  default:module.CareerMorePage
+})));
 
 const App = () => {
   return (

@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
   variant: "outlined" | "fill";
-  childText?: string;
+  childText?: string | number;
   typeButton: "button" | "submit";
   btnLink: string;
-  onClick?:()=>void
+  onClick?: () => void;
 }
 
 export const Button = ({

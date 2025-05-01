@@ -12,6 +12,7 @@ import { MdArrowOutward } from "react-icons/md";
 import { EventsSection } from "../../components/EventsSection/EventsSection";
 import { MainSlider } from "../../components/MainComponents/MainSlider/MainSlider";
 import { SwiperSlide } from "swiper/react";
+import { Link } from "react-router-dom";
 
 const dataMain = [
   {
@@ -100,66 +101,86 @@ const MainPage = ({}) => {
         </div>
       </section>
       <section className="mainMenu">
-        <MenuCard
-          cardBadge="/icons/badge.svg"
-          cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
-          cardTitle="Греческий"
-          cardImg="/img/MenuCard.png"
-        />
-        <MenuCard
-          cardBadge="/icons/badge.svg"
-          cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
-          cardTitle="Греческий"
-          cardImg="/img/MenuCard.png"
-        />
-        <MenuCard
-          cardBadge="/icons/badge.svg"
-          cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
-          cardTitle="Греческий"
-          cardImg="/img/MenuCard.png"
-        />
-        <MenuCard
-          cardBadge="/icons/badge.svg"
-          cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
-          cardTitle="Греческий"
-          cardImg="/img/MenuCard.png"
-        />
-        <MenuCard
-          cardBadge="/icons/badge.svg"
-          cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
-          cardTitle="Греческий"
-          cardImg="/img/MenuCard.png"
-        />
-        <MenuCard
-          cardBadge="/icons/badge.svg"
-          cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
-          cardTitle="Греческий"
-          cardImg="/img/MenuCard.png"
-        />
-        <MenuCard
-          cardBadge="/icons/badge.svg"
-          cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
-          cardTitle="Греческий"
-          cardImg="/img/MenuCard.png"
-        />
-        <MenuCard
-          cardBadge="/icons/badge.svg"
-          cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
-          cardTitle="Греческий"
-          cardImg="/img/MenuCard.png"
-        />
-        <MenuCard
-          cardBadge="/icons/badge.svg"
-          cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
-          cardTitle="Греческий"
-          cardImg="/img/MenuCard.png"
-        />
-        <MenuCard
-          cardBadge="/icons/badge.svg"
-          cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
-          cardTitle="Греческий"
-          cardImg="/img/MenuCard.png"
-        />
+        <Link to="https://www.toasttab.com/local/order/gosht-3225-coney-island-avenue/r-d6d97f8d-513d-4bcf-ba76-8a40e1b23651">
+          <MenuCard
+            cardBadge="/icons/badge.svg"
+            cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
+            cardTitle="Греческий"
+            cardImg="/img/MenuCard.png"
+          />
+        </Link>
+        <Link to="https://www.toasttab.com/local/order/gosht-3225-coney-island-avenue/r-d6d97f8d-513d-4bcf-ba76-8a40e1b23651">
+          <MenuCard
+            cardBadge="/icons/badge.svg"
+            cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
+            cardTitle="Греческий"
+            cardImg="/img/MenuCard.png"
+          />
+        </Link>
+        <Link to="https://www.toasttab.com/local/order/gosht-3225-coney-island-avenue/r-d6d97f8d-513d-4bcf-ba76-8a40e1b23651">
+          <MenuCard
+            cardBadge="/icons/badge.svg"
+            cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
+            cardTitle="Греческий"
+            cardImg="/img/MenuCard.png"
+          />
+        </Link>
+        <Link to="https://www.toasttab.com/local/order/gosht-3225-coney-island-avenue/r-d6d97f8d-513d-4bcf-ba76-8a40e1b23651">
+          <MenuCard
+            cardBadge="/icons/badge.svg"
+            cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
+            cardTitle="Греческий"
+            cardImg="/img/MenuCard.png"
+          />
+        </Link>
+        <Link to="https://www.toasttab.com/local/order/gosht-3225-coney-island-avenue/r-d6d97f8d-513d-4bcf-ba76-8a40e1b23651">
+          <MenuCard
+            cardBadge="/icons/badge.svg"
+            cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
+            cardTitle="Греческий"
+            cardImg="/img/MenuCard.png"
+          />
+        </Link>
+        <Link to="https://www.toasttab.com/local/order/gosht-3225-coney-island-avenue/r-d6d97f8d-513d-4bcf-ba76-8a40e1b23651">
+          <MenuCard
+            cardBadge="/icons/badge.svg"
+            cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
+            cardTitle="Греческий"
+            cardImg="/img/MenuCard.png"
+          />
+        </Link>
+        <Link to="https://www.toasttab.com/local/order/gosht-3225-coney-island-avenue/r-d6d97f8d-513d-4bcf-ba76-8a40e1b23651">
+          <MenuCard
+            cardBadge="/icons/badge.svg"
+            cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
+            cardTitle="Греческий"
+            cardImg="/img/MenuCard.png"
+          />
+        </Link>
+        <Link to="https://www.toasttab.com/local/order/gosht-3225-coney-island-avenue/r-d6d97f8d-513d-4bcf-ba76-8a40e1b23651">
+          <MenuCard
+            cardBadge="/icons/badge.svg"
+            cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
+            cardTitle="Греческий"
+            cardImg="/img/MenuCard.png"
+          />
+        </Link>
+        <Link to="https://www.toasttab.com/local/order/gosht-3225-coney-island-avenue/r-d6d97f8d-513d-4bcf-ba76-8a40e1b23651">
+          <MenuCard
+            cardBadge="/icons/badge.svg"
+            cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
+            cardTitle="Греческий"
+            cardImg="/img/MenuCard.png"
+          />
+        </Link>
+        <Link to="https://www.toasttab.com/local/order/gosht-3225-coney-island-avenue/r-d6d97f8d-513d-4bcf-ba76-8a40e1b23651">
+          <MenuCard
+            cardBadge="/icons/badge.svg"
+            cardSubtitle="Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg"
+            cardTitle="Греческий"
+            cardImg="/img/MenuCard.png"
+          />
+        </Link>
       </section>
       <section className="allFood">
         <div className="allFoodImg">

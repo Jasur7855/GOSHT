@@ -2,6 +2,7 @@ import { Heading } from "../typography/Heading/Heading";
 import { ActivityItem } from "../Activities/ActivityItem";
 import { useGetAllEventsQuery } from "../../store/Api/eventsApi";
 import { SEventSection } from "./EventSection.style";
+import { API_URL } from "../../config/envConfig";
 
 export const EventsSection = () => {
   const { data } = useGetAllEventsQuery(null);
@@ -15,9 +16,9 @@ export const EventsSection = () => {
           data.map((elem, index) => (
             <ActivityItem
               key={elem.id}
-              eventTitle={elem.event_title}
-              eventSubtitle={elem.event_subtitle}
-              eventImg={elem.img}
+              eventTitle={elem.main_title}
+              eventSubtitle={elem.main_description}
+              eventImg={`${API_URL}${elem.media.path}`}
               isWrap={index % 2 === 0}
               onClick={`/events/${elem.id}`}
             />

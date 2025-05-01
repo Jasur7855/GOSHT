@@ -1,6 +1,10 @@
 import { Heading } from "../../components/typography/Heading/Heading";
+import { useGetAllMasterclassesQuery } from "../../store/Api/MasterclassesApi";
 
 export const MasterClass = () => {
+  const { data } = useGetAllMasterclassesQuery(null);
+  console.log(data);
+
   return (
     <div className="masterClass">
       <div className="image"></div>
@@ -10,20 +14,9 @@ export const MasterClass = () => {
         workshops and activities for unforgettable moments:
       </p>
       <div className="plans_wrapper">
-        <div className="plan">Postcard Creation</div>
-        <div className="plan">Box and Pencil Case Painting</div>
-        <div className="plan">Branded Aprons</div>
-        <div className="plan">Cotton Wool Creations</div>
-        <div className="plan">Exclusive Mugs</div>
-        <div className="plan">Ring Holders</div>
-        <div className="plan">Stylish T-Shirts</div>
-        <div className="plan">Cozy Pillows</div>
-        <div className="plan">Magical Candles</div>
-        <div className="plan">Lucky Stone Amulets</div>
-        <div className="plan">Canvas Art</div>
-        <div className="plan">Giant Coloring</div>
-        <div className="plan">Lantern Design</div>
-        <div className="plan">Gosht Kids Puzzle</div>
+        {data?.map((elem) => (
+          <div className="plan">{elem.title}</div>
+        ))}
       </div>
       <div className="plan">Cookie Painting</div>
       <div className="plan red">Cookie Painting</div>

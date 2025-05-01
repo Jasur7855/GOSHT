@@ -1,8 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { EventCardItem } from "../../components/EventCardItem/EventCardItem";
-import { Header } from "../../components/Header/Header";
-import { Footer } from "../../components/widgets/Footer/Footer";
 import { SEventsCard } from "./EventsCardPage.style";
+import { API_URL } from "../../config/envConfig";
 import {
   useGetAllEventsQuery,
   useGetEventByIdQuery,
@@ -28,7 +27,7 @@ const EventsCardPage = () => {
     isLoading: isEventsLoading,
     isError: isEventsError,
   } = useGetAllEventsQuery(null);
-
+  
   if (isLoading) return <div>Loading event...</div>;
   if (isError) return <div>Error loading event</div>;
   if (!eventInfo) return <div>No event found</div>;
@@ -37,14 +36,18 @@ const EventsCardPage = () => {
   };
   return (
     <div>
-      <SEventsCard $mainBg={eventInfo.img || ""}>
+      <SEventsCard $mainBg={`${API_URL}${eventInfo.media.path}` || ""}>
         <aside className="leftSide">
           <Heading text="Events" variant="h6" />
           {isEventsLoading && <p>Loading events...</p>}
           {isEventsError && <p>Error loading events</p>}
           {Array.isArray(eventsData) && eventsData.length > 0 ? (
             eventsData.map((e, i) => (
-              <EventCardItem key={i} itemBg={e.img} itemTitle={e.event_title} />
+              <EventCardItem
+                key={i}
+                itemBg={`${API_URL}${eventInfo.media.path}`}
+                itemTitle={e.main_title}
+              />
             ))
           ) : (
             <p>No events available</p>
@@ -54,10 +57,10 @@ const EventsCardPage = () => {
           <div className="breadcrumb">
             <IoIosArrowBack />
             <Link to="/events">
-              <span>Main / Events / {eventInfo.event_title}</span>
+              <span>Main / Events / {eventInfo.main_title}</span>
             </Link>
           </div>
-          <Heading text={eventInfo.event_title} variant="h4" />
+          <Heading text={eventInfo.main_title} variant="h4" />
           <div className="mainImg"></div>
           <div className="btnWrapper">
             <Button
@@ -74,7 +77,7 @@ const EventsCardPage = () => {
             />
           </div>
           <div className="eventDateTime">
-            <Heading variant="h5" text={eventInfo.title} />
+            <Heading variant="h5" text={eventInfo.main_title} />
             <p>{eventInfo.paragraph}</p>
           </div>
           <Heading text={eventInfo.motivation} variant="h5" />

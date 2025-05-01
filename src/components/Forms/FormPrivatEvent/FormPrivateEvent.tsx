@@ -62,7 +62,7 @@ export const FormPrivateEvent = ({ isOpen, onClose }: IFormPrivateProps) => {
       endTime: "",
       eventType: "",
       peopleCount: 0,
-      additionalInfo: null,
+      additionalInfo: "",
     },
   });
 
@@ -70,23 +70,28 @@ export const FormPrivateEvent = ({ isOpen, onClose }: IFormPrivateProps) => {
 
   const clearForm = () =>
     reset({}, { keepErrors: false, keepDirty: false, keepTouched: false });
+  const formatTime = (t: string) => (t.length === 5 ? `${t}:00` : t);
 
   const onSubmit: SubmitHandler<IFormPrivateEvent> = async (data) => {
     const payload = {
-      firstName: data.userName,
-      lastName: data.userLastName,
+      first_name: data.userName,
+      last_name: data.userLastName,
       email: data.userEmail,
-      phoneNumber: data.userPhone,
-      eventDate: data.userDate,
-      companyName: data.userCompany,
-      startTime: data.startTime,
-      endTime: data.endTime,
-      eventType: data.eventType,
-      peopleNumber: data.peopleCount,
-      additionalInformation: data.additionalInfo || null,
+      phone_number: data.userPhone,
+      date: new Date(data.userDate).toISOString().slice(0, 10),
+      company_name: data.userCompany,
+      start_time: formatTime(data.startTime),
+      end_time: formatTime(data.endTime),
+      event_type: data.eventType,
+      people_quantity: data.peopleCount,
+      additional_info: data.additionalInfo || "",
+      status: "pending",
     };
+    console.log(data.userDate);
 
     try {
+      console.log(payload);
+
       await addPrivetEvent(payload).unwrap();
       reset();
       onClose();
@@ -161,7 +166,7 @@ export const FormPrivateEvent = ({ isOpen, onClose }: IFormPrivateProps) => {
                 labelText="Phone Number"
                 inputIcon
                 placeholder="Phone Number"
-                type="number"
+                type="tel"
                 value={field.value}
                 onChange={field.onChange}
                 isError={Boolean(errors.userPhone)}
@@ -266,23 +271,23 @@ export const FormPrivateEvent = ({ isOpen, onClose }: IFormPrivateProps) => {
             )}
           />
           <Controller
-  name="additionalInfo"
-  control={control}
-  render={({ field }) => (
-    <LabelInput
-      labelText="Additional Information"
-      inputIcon
-      placeholder="Additional Information"
-      type="text"
-      {...field}
-      value={field.value ?? ""} 
-      isError={Boolean(errors.additionalInfo)}
-      errorText={errors.additionalInfo?.message}
-      isInput={false}
-      areaPlaceholder="Additional Information"
-    />
-  )}
-/>
+            name="additionalInfo"
+            control={control}
+            render={({ field }) => (
+              <LabelInput
+                labelText="Additional Information"
+                inputIcon
+                placeholder="Additional Information"
+                type="text"
+                {...field}
+                value={field.value ?? ""}
+                isError={Boolean(errors.additionalInfo)}
+                errorText={errors.additionalInfo?.message}
+                isInput={false}
+                areaPlaceholder="Additional Information"
+              />
+            )}
+          />
           <div className="btnsWrapper">
             <button type="button" className="clear" onClick={clearForm}>
               <FaTrashAlt />

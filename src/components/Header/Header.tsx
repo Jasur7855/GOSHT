@@ -46,10 +46,7 @@ export const Header = () => {
           <FaUser />
           <span>Log in</span>
         </button>
-        <button id="basketBtn">
-          <IoMdBasket />
-          <span>Cart</span>
-        </button>
+       
         <button>
           <FaUtensils />
           <span>Book a table</span>

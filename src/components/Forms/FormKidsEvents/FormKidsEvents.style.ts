@@ -82,7 +82,6 @@ export const SFormKidsEvent = styled.div`
           margin-right: 12px;
         }
       }
-      
     }
   }
   @media (max-width: 875px) {
@@ -102,15 +101,37 @@ export const SFormKidsEvent = styled.div`
         }
       }
       .btnsWrapper {
-          flex-direction: column-reverse;
-          gap: 24px;
-          .clear,.Button.fill{
-            width: 90vw;
-          }
-          .clear{
-            padding: 12px 0;
-          }
+        flex-direction: column-reverse;
+        gap: 24px;
+        .clear,
+        .Button.fill {
+          width: 90vw;
         }
+        .clear {
+          padding: 12px 0;
+        }
+      }
+    }
+  }
+`;
+
+export const SKidsDropDown = styled.div`
+  width: 100%;
+  p {
+    margin-bottom: 8px;
+    font-size: calc(0.4vw + 10.6px);
+    font-family: "Roboto";
+    font-weight: 500;
+  }
+  select {
+    width: 100%;
+    border: 1px solid #00000033;
+    padding: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    option {
+      font-size: calc(0.4vw + 10.6px);
+      font-weight: 500;
     }
   }
 `;

@@ -1,7 +1,6 @@
 import { FaTrashAlt } from "react-icons/fa";
-import { Heading } from "../../typography/Heading/Heading";
 import { LabelInput } from "../../ui/LabelInput/LabelInput";
-import { SFormKidsEvent } from "./FormKidsEvents.style";
+import { SFormKidsEvent, SKidsDropDown } from "./FormKidsEvents.style";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import Modal from "react-modal";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -9,6 +8,9 @@ import { KidsEventScheme } from "./yupFormKids";
 import { useAddKidsEventMutation } from "../../../store/Api/inquireFormsApi";
 import { FormBtn } from "../../ui/Button/FormBtn";
 import { MdOutlineClear } from "react-icons/md";
+import ColorfulText from "../../widgets/ColorFulText/ColorFulText";
+import { useGetAllMasterclassesQuery } from "../../../store/Api/MasterclassesApi";
+import { useGetAllShowsApiQuery } from "../../../store/Api/ShowsApi";
 
 interface IFormKidsEventsScheme {
   firstName: string;
@@ -38,6 +40,8 @@ const customStyles: Modal.Styles = {
 };
 
 export const FormKidsEvents = ({ isOpen, onClose }: IFormKidsEventsProps) => {
+  const { data: masterClassData } = useGetAllMasterclassesQuery(null);
+  const { data: showsData } = useGetAllShowsApiQuery(null);
   const {
     control,
     reset,
@@ -51,7 +55,7 @@ export const FormKidsEvents = ({ isOpen, onClose }: IFormKidsEventsProps) => {
       phoneNumber: "",
       email: "",
       eventDate: "",
-      peopleNumber: 0, // Исправлено
+      peopleNumber: 0,
       masterclass: "",
       showType: "",
     },
@@ -61,7 +65,15 @@ export const FormKidsEvents = ({ isOpen, onClose }: IFormKidsEventsProps) => {
 
   const onSubmit: SubmitHandler<IFormKidsEventsScheme> = async (data) => {
     try {
-      const payload = { ...data, peopleNumber: Number(data.peopleNumber) };
+      const payload = {
+        first_name: data.firstName,
+        email: data.email,
+        phone_number: data.phoneNumber,
+        date: data.eventDate,
+        showForKidsId: data.showType,
+        masterclassId: data.masterclass,
+        people_quantity: Number(data.peopleNumber),
+      };
       console.log("Отправка формы:", payload);
       await addKidsEvent(payload).unwrap();
       reset();
@@ -79,11 +91,11 @@ export const FormKidsEvents = ({ isOpen, onClose }: IFormKidsEventsProps) => {
   return (
     <Modal isOpen={isOpen} onRequestClose={onClose} style={customStyles}>
       <SFormKidsEvent>
-      <MdOutlineClear className="exit" onClick={onClose} />
-        <Heading
-          text="Fill in the form and we will contact you about Kids event"
-          variant="h4"
-        />
+        <MdOutlineClear className="exit" onClick={onClose} />
+        <h4>
+          Fill in the form and we will contact you about <ColorfulText /> event
+        </h4>
+
         <form onSubmit={handleSubmit(onSubmit)}>
           <Controller
             name="firstName"
@@ -157,24 +169,51 @@ export const FormKidsEvents = ({ isOpen, onClose }: IFormKidsEventsProps) => {
             name="masterclass"
             control={control}
             render={({ field }) => (
-              <LabelInput
-                labelText="Choose the Masterclass"
-                {...field}
-                isError={!!errors.masterclass}
-                errorText={errors.masterclass?.message}
-              />
+              <SKidsDropDown>
+                <p>Choose the Masterclass</p>
+                <select
+                  {...field}
+                  onChange={(e) => field.onChange(e.target.value)}
+                >
+                  <option value="">Choose the Masterclass</option>
+                  {masterClassData?.map((elem) => (
+                    <option key={elem.id} value={elem.id}>
+                      {elem.title}
+                    </option>
+                  ))}
+                </select>
+                {errors.showType && (
+                  <p className="error-text">{errors.showType.message}</p>
+                )}
+              </SKidsDropDown>
             )}
           />
           <Controller
             name="showType"
             control={control}
             render={({ field }) => (
-              <LabelInput
-                labelText="Choose Show for Kids"
-                {...field}
-                isError={!!errors.showType}
-                errorText={errors.showType?.message}
-              />
+              <SKidsDropDown>
+                <p>Choose Show for Kids</p>
+                <select
+                  {...field}
+                  value={field.value ?? ""}
+                  onChange={(e) => field.onChange(e.target.value)}
+                  onBlur={field.onBlur}
+                >
+                  <option value="" disabled hidden>
+                    Choose the shows
+                  </option>
+                  {showsData?.map((elem) => (
+                    <option key={elem.id} value={elem.id}>
+                      {elem.title}
+                    </option>
+                  ))}
+                </select>
+
+                {errors.showType && (
+                  <p className="error-text">{errors.showType.message}</p>
+                )}
+              </SKidsDropDown>
             )}
           />
           <div className="btnsWrapper">

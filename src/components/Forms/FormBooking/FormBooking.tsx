@@ -9,18 +9,17 @@ import { BookingScheme } from "./yupFormBooking";
 import { FormBtn } from "../../ui/Button/FormBtn";
 import { useParams } from "react-router-dom";
 import { useAddBookingPrivetEventsMutation } from "../../../store/Api/bookingFormsApi";
+import { useEffect } from "react";
 interface IFormBookingScheme {
   firstName: string;
   phoneNumber: string;
   email: string;
-  peopleNumber: number;
-  privateEventId: number;
+  peopleNumber: string;
 }
 
 interface IFormBookingProps {
   isOpen: boolean;
   onClose: () => void;
-  id: string | undefined;
 }
 
 const customStyles: Modal.Styles = {
@@ -36,8 +35,13 @@ const customStyles: Modal.Styles = {
 };
 
 export const FormBooking = ({ isOpen, onClose }: IFormBookingProps) => {
-  const { id } = useParams();
+  const { id } = useParams<{ id?: string }>();
   const [addBookingEvents] = useAddBookingPrivetEventsMutation();
+  useEffect(() => {
+    if (!id) onClose();
+  }, [id, onClose]);
+
+  if (!id) return null;
   const {
     control,
     handleSubmit,
@@ -50,21 +54,19 @@ export const FormBooking = ({ isOpen, onClose }: IFormBookingProps) => {
       firstName: "",
       phoneNumber: "",
       email: "",
-      peopleNumber: 0,
-      privateEventId: 1,
+      peopleNumber: "",
     },
   });
 
   const onSubmit: SubmitHandler<IFormBookingScheme> = async (data) => {
     try {
-      let payload = {
-        firstName: data.firstName,
-        phoneNumber: data.phoneNumber,
+      const payload = {
+        first_name: data.firstName,
+        phone_number: data.phoneNumber,
         email: data.email,
-        peopleNumber: data.privateEventId,
-        privateEventId: Number(id),
+        people_quantity: String(data.peopleNumber),
+        eventId: id,
       };
-      console.log("Отправка формы:", payload);
       await addBookingEvents(payload).unwrap();
       reset();
       onClose();

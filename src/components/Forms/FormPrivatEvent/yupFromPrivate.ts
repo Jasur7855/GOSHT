@@ -20,6 +20,7 @@ export const PrivateEventScheme = yup.object({
   userDate: yup
     .string()
     .required("Дата обязательна")
+    .matches(/^\d{4}-\d{2}-\d{2}$/)
     .test("is-valid-date", "Некорректная дата", (value) =>
       Boolean(value && !isNaN(new Date(value).getTime()))
     ),
@@ -33,7 +34,6 @@ export const PrivateEventScheme = yup.object({
       /^([01]\d|2[0-3]):([0-5]\d)$/,
       "Время должно быть в формате HH:mm"
     ),
-
   endTime: yup
     .string()
     .required("Время окончания обязательно")

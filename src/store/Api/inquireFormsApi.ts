@@ -1,28 +1,29 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { API_URL } from "../../config/envConfig";
 
-
 interface IAddPrivetEventPayload {
-  firstName: string;
-  lastName: string;
+  first_name: string;
+  last_name: string;
   email: string;
-  phoneNumber: string;
-  eventDate: string;
-  companyName: string;
-  startTime: string;
-  endTime: string;
-  eventType: string;
-  peopleNumber: number;
-  additionalInformation: string | null;
+  phone_number: string;
+  company_name: string;
+  date: string;
+  start_time: string;
+  end_time: string;
+  event_type: string;
+  people_quantity: number;
+  additional_info: string | null;
+  status: string;
 }
+
 interface IAddKidsEventPayload {
-  peopleNumber: number;
-  firstName: string;
+  people_quantity: number;
+  first_name: string;
   email: string;
-  phoneNumber: string;
-  eventDate: string;
-  showType: string;
-  masterclass: string;
+  phone_number: string;
+  date: string;
+  showForKidsId: string;
+  masterclassId: string;
 }
 interface IAddKidsEventResponse extends IAddKidsEventPayload {
   id: number;
@@ -37,26 +38,29 @@ interface IAddPrivetEventResponse extends IAddPrivetEventPayload {
 
 export const inquireFormsApi = createApi({
   reducerPath: "inquireForms",
-  baseQuery: fetchBaseQuery({ baseUrl:API_URL }),
+  baseQuery: fetchBaseQuery({ baseUrl: API_URL }),
   endpoints: (builder) => ({
     addPrivetEvent: builder.mutation<
       IAddPrivetEventResponse,
       IAddPrivetEventPayload
     >({
       query: (payload) => ({
-        url: "/inquire/private",
+        url: "/api/v1/private-inquiries",
         method: "POST",
         body: payload,
       }),
     }),
-    addKidsEvent: builder.mutation<IAddKidsEventResponse, IAddKidsEventPayload>({
-      query: (payload) => ({
-        url: "/inquire/kids",
-        method: "POST",
-        body: payload,
-      }),
-    }),
+    addKidsEvent: builder.mutation<IAddKidsEventResponse, IAddKidsEventPayload>(
+      {
+        query: (payload) => ({
+          url: "/api/v1/kids-inquiries",
+          method: "POST",
+          body: payload,
+        }),
+      }
+    ),
   }),
 });
 
-export const { useAddPrivetEventMutation, useAddKidsEventMutation } = inquireFormsApi;
+export const { useAddPrivetEventMutation, useAddKidsEventMutation } =
+  inquireFormsApi;
