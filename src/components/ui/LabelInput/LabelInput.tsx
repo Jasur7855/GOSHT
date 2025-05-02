@@ -35,7 +35,7 @@ export const LabelInput = ({
           {isInput ? (
             <input type="text" {...props} />
           ) : (
-            <textarea rows={10} placeholder={areaPlaceholder}></textarea>
+            <textarea rows={inputIcon ? 5 : 10} placeholder={areaPlaceholder} />
           )}
         </div>
       )}

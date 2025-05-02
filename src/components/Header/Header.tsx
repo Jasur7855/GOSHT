@@ -37,7 +37,7 @@ export const Header = () => {
             <Link to="/location-page">Hours & Location</Link>
           </li>
           <li>
-            <Link to="/career-page">Review</Link>
+            <Link to="/review-page">Review</Link>
           </li>
         </ul>
       </nav>
@@ -46,7 +46,7 @@ export const Header = () => {
           <FaUser />
           <span>Log in</span>
         </button>
-       
+
         <button>
           <FaUtensils />
           <span>Book a table</span>

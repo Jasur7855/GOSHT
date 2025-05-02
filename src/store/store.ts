@@ -4,6 +4,7 @@ import { inquireFormsApi } from "./Api/inquireFormsApi";
 import { bookingFormsApi } from "./Api/bookingFormsApi";
 import { showsApi } from "./Api/ShowsApi";
 import { masterclassesApi } from "./Api/MasterclassesApi";
+import { feedbackApi } from "./Api/FeedbackApi";
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     [bookingFormsApi.reducerPath]: bookingFormsApi.reducer,
     [showsApi.reducerPath]: showsApi.reducer,
     [masterclassesApi.reducerPath]: masterclassesApi.reducer,
+    [feedbackApi.reducerPath]: feedbackApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat([
@@ -20,6 +22,7 @@ export const store = configureStore({
       bookingFormsApi.middleware,
       showsApi.middleware,
       masterclassesApi.middleware,
+      feedbackApi.middleware,
     ]),
 });
 
