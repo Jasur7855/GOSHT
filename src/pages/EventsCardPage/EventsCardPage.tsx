@@ -27,7 +27,7 @@ const EventsCardPage = () => {
     isLoading: isEventsLoading,
     isError: isEventsError,
   } = useGetAllEventsQuery(null);
-  
+
   if (isLoading) return <div>Loading event...</div>;
   if (isError) return <div>Error loading event</div>;
   if (!eventInfo) return <div>No event found</div>;
@@ -111,7 +111,6 @@ const EventsCardPage = () => {
         <FormBooking
           isOpen={isFormBookingOpenModal}
           onClose={handleCloseModal}
-          id={id}
         />
       )}
     </div>

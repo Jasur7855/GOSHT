@@ -27,7 +27,11 @@ export const LabelInput = ({
           {isInput ? (
             <input type="text" {...props} />
           ) : (
-            <textarea rows={5} placeholder={areaPlaceholder}></textarea>
+            <textarea
+              className="textArea"
+              rows={5}
+              placeholder={areaPlaceholder}
+            ></textarea>
           )}
         </div>
       ) : (
@@ -35,7 +39,7 @@ export const LabelInput = ({
           {isInput ? (
             <input type="text" {...props} />
           ) : (
-            <textarea rows={inputIcon ? 5 : 10} placeholder={areaPlaceholder} />
+            <textarea className="textArea" rows={inputIcon ? 5 : 10} placeholder={areaPlaceholder} />
           )}
         </div>
       )}

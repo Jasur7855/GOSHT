@@ -6,7 +6,7 @@ export const FeedbackScheme = yup.object({
     .string()
     .email("Введите корректный email")
     .required("Обязательное поле!"),
-  rate: yup.string().required("Обязательное поле!"),
+  rate: yup.number().required("Обязательное поле!"),
   last_name: yup.string().required("Обязательное поле!"),
   additional_info: yup
     .string()

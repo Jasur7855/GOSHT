@@ -5,8 +5,8 @@ interface IFeedbackPayload {
   first_name: string;
   last_name: string;
   email: string;
-  rate: string;
-  additional_info: string;
+  rate: number;
+  additional_info: string | null;
 }
 
 export const feedbackApi = createApi({

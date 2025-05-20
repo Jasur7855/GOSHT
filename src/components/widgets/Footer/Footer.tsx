@@ -70,8 +70,8 @@ export const Footer = () => {
           </div>
           <div className="links_list">
             <span className="title">Cooperation</span>
-            <Link to={"#"}>Career</Link>
-            <Link to={"#"}>Contact us</Link>
+            <Link to={"/workWithUs-page"}>Career</Link>
+            <Link to={"/contactUs-page"}>Contact us</Link>
           </div>
           <div className="info">
             <div className="info_item">

@@ -2,62 +2,65 @@ import { Controller, SubmitHandler, useForm } from "react-hook-form";
 import { LabelInput } from "../../ui/LabelInput/LabelInput";
 import { SFormFeedBack } from "./FormFeedback.style";
 import { FormBtn } from "../../ui/Button/FormBtn";
-import { MdOutlineClear } from "react-icons/md";
 import { Heading } from "../../typography/Heading/Heading";
-import Modal from "react-modal";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FeedbackScheme } from "./yupFeedBackScheme";
 import { useAddFeedBackMutation } from "../../../store/Api/FeedbackApi";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { MdOutlineClear } from "react-icons/md";
 
 interface IFormFeedbackScheme {
   first_name: string;
   email: string;
   last_name: string;
-  rate: string;
+  rate: number; // Позволяет и строку и число
   additional_info?: string | null;
 }
 
 export const FormFeedback = () => {
   const [addFeedback] = useAddFeedBackMutation();
+  const navigate = useNavigate();
 
   const {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<IFormFeedbackScheme>({
     resolver: yupResolver(FeedbackScheme),
     mode: "onBlur",
     defaultValues: {
       first_name: "",
       last_name: "",
       email: "",
-      rate: "",
+      rate: 0, // Начальное значение как строка
       additional_info: "",
     },
   });
+
   const formFeedbackSubmit: SubmitHandler<IFormFeedbackScheme> = (data) => {
     const payload = {
-      first_name: data.first_name,
-      last_name: data.last_name,
-      email: data.email,
-      rate: data.rate,
-      additional_info: data.additional_info?.trim()
-        ? data.additional_info.trim()
-        : "",
+      first_name: data.first_name.trim(),
+      last_name: data.last_name.trim(),
+      email: data.email.trim(),
+      rate: Number(data.rate), // Конвертируем в число
+      additional_info: data.additional_info?.trim() || null,
     };
-    addFeedback(payload);
+
+    addFeedback(payload)
+      .unwrap()
+      .then(() => navigate("/thank-you")) // Перенаправление после успешной отправки
+      .catch((error) => console.error("Submission error:", error));
   };
+
   return (
     <SFormFeedBack>
-      <Link to={"/"} className="exit">
-        х
-      </Link>
+      <MdOutlineClear className="exit" onClick={() => navigate("/")} />
 
       <div className="image"></div>
       <div className="form">
         <Heading variant="h4" text="Customer Feedback" />
         <form onSubmit={handleSubmit(formFeedbackSubmit)}>
+          {/* Поле First Name */}
           <Controller
             name="first_name"
             control={control}
@@ -71,6 +74,8 @@ export const FormFeedback = () => {
               />
             )}
           />
+
+          {/* Поле Email */}
           <Controller
             name="email"
             control={control}
@@ -85,6 +90,8 @@ export const FormFeedback = () => {
               />
             )}
           />
+
+          {/* Поле Last Name */}
           <Controller
             name="last_name"
             control={control}
@@ -98,45 +105,60 @@ export const FormFeedback = () => {
               />
             )}
           />
+
+          {/* Поле Rate с улучшенной валидацией */}
           <Controller
             name="rate"
             control={control}
             render={({ field }) => (
               <LabelInput
                 labelText="Please Rate Your Experience (1-10)"
-                placeholder="Please Rate Your Experience (1-10)"
-                {...field}
+                placeholder="Enter a number from 1 to 10"
+                type="number"
+                min={1}
+                max={10}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  // Проверяем и корректируем значение
+                  if (value === "") {
+                    field.onChange("");
+                    return;
+                  }
+                  const numValue = Math.min(Math.max(Number(value), 1), 10);
+                  field.onChange(numValue);
+                }}
+                value={field.value}
                 isError={!!errors.rate}
                 errorText={errors.rate?.message}
               />
             )}
           />
+
+          {/* Поле Additional Info */}
           <Controller
             name="additional_info"
             control={control}
             render={({ field }) => (
-              <div>
+              <div className="textarea-wrapper">
+                {" "}
+                {/* Добавлен существующий класс для стилей */}
                 <label htmlFor="additional_info">
                   Additional Information
                   <textarea
                     id="additional_info"
                     placeholder="Additional Information"
                     rows={5}
-                    name={field.name}
-                    // если field.value = null или undefined, подставляем ""
+                    {...field}
                     value={field.value ?? ""}
-                    onChange={field.onChange}
-                    onBlur={field.onBlur}
-                    ref={field.ref}
                   />
                 </label>
-
                 {errors.additional_info && (
                   <p className="error-text">{errors.additional_info.message}</p>
                 )}
               </div>
             )}
           />
+
           <FormBtn text="Send" typeButton="submit" variant="fill" />
         </form>
       </div>
