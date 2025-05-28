@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 const dataMain = [
   {
     id: 1,
-    tagText: "BOOK AN EVENT",
+    tagText: "NEW DISH",
     title: "Caesar",
     description:
       "Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg.",
@@ -26,12 +26,12 @@ const dataMain = [
   },
   {
     id: 2,
-    tagText: "книга про Эвенты",
-    title: "Private Events",
+    tagText: "NEW DISH",
+    title: "Caesar",
     description:
-      "For all inquiries, please fill out the form below and we’ll be in touch soon. ",
+      "Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg.",
     buttonText: "Order now",
-    backgroundImage: "/img/Kids.png",
+    backgroundImage: "/img/Main.jpg",
   },
 ];
 const cards = [

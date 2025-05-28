@@ -7,7 +7,7 @@ import { FormPrivateEvent } from "../../components/Forms/FormPrivatEvent/FormPri
 const dataMain = [
   {
     id: 1,
-    tagText: "книга про Эвенты",
+    tagText: "BOOK AN EVENT",
     title: "Private Events",
     description:
       "For all inquiries, please fill out the form below and we’ll be in touch soon. ",
