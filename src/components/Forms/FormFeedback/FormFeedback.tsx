@@ -48,13 +48,13 @@ export const FormFeedback = () => {
 
     addFeedback(payload)
       .unwrap()
-      .then(() => navigate("/thank-you")) // Перенаправление после успешной отправки
+      .then(() => navigate(-1)) // Перенаправление после успешной отправки
       .catch((error) => console.error("Submission error:", error));
   };
 
   return (
     <SFormFeedBack>
-      <MdOutlineClear className="exit" onClick={() => navigate("/")} />
+      <MdOutlineClear className="exit" onClick={() => navigate(-1)} />
 
       <div className="image"></div>
       <div className="form">

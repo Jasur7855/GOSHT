@@ -60,8 +60,8 @@ export const Footer = () => {
             <span className="title">Navigation</span>
             <Link to={"/"}>Menu</Link>
             <Link to={"/about-page"}>About us</Link>
-            <Link to={"#"}>Hours & Location</Link>
-            <Link to={"#"}>Review</Link>
+            <Link to={"/location-page"}>Hours & Location</Link>
+            <Link to={"/review-page"}>Review</Link>
           </div>
           <div className="links_list">
             <span className="title">Events</span>
