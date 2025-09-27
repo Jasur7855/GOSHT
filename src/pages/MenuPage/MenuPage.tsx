@@ -14,7 +14,7 @@ interface IMenuPageProps {}
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const response = await fetch("http://0.0.0.0:1515/menu?cat_id="+params.id, {});
+        const response = await fetch("https://gosht.ddmedia.uz/menu?cat_id="+params.id, {});
 
         if (!response.ok) {
           throw new Error(`Ошибка: ${response.status} ${response.statusText}`);

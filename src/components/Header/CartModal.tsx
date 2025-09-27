@@ -54,7 +54,7 @@ const CartModal: React.FC<CartModalProps> = ({ onClose }) => {
   const submitOrder = async () => {
     const orderData = { name, phone, address, items: cart };
     try {
-      const response = await fetch("http://0.0.0.0:1515/order", {
+      const response = await fetch("https://gosht.ddmedia.uz/order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(orderData),
