@@ -37,7 +37,7 @@ interface IMenuPageProps {}
   return (
     <SMenuPage>
       <MenuAsside />
-      <MainMenu link={params.id as string} menu={menu} />
+      <MainMenu link={params.id as string} menu={menu} name={params.id} />
     </SMenuPage>
   );
 };

@@ -1,3 +1,6 @@
+import React, { useState } from "react";
+import CartModal from "./CartModal";
+
 import { Link } from "react-router-dom";
 import { SHeader } from "./Header.style";
 
@@ -9,9 +12,11 @@ import { useIsMobile } from "../../hooks/useIsMobile";
 
 export const Header = () => {
   const isMobile = useIsMobile(1075);
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <SHeader>
       {isMobile && <BurgerMenu />}
+      {isOpen && <CartModal onClose={() => setIsOpen(false)} />}
       <Link to="/">
         <img
           src="/icons/header-logo.svg"
@@ -46,7 +51,10 @@ export const Header = () => {
           <FaUser />
           <span>Log in</span>
         </button>
-
+        <button onClick={() => setIsOpen(true)}>
+          <IoMdBasket />
+          <span>Cart</span>
+        </button>
         <button>
           <FaUtensils />
           <span>Book a table</span>
