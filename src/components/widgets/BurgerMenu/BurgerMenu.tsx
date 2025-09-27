@@ -35,7 +35,7 @@ export const BurgerMenu = ({}: IBurgerMenuProps) => {
 
         <nav>
           <ul>
-            <Link to="/" onClick={() => setIsOpen(false)}>
+            <Link to="/menu-page/starter" onClick={() => setIsOpen(false)}>
               <li>Menu</li>
             </Link>
             <Link to="/about-page" onClick={() => setIsOpen(false)}>
