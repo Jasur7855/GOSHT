@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const SMenuCard = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   .img {
     border-radius: 12px 12px 0 0;
     background-repeat: no-repeat;

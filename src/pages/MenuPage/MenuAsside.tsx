@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 import { Heading } from "../../components/typography/Heading/Heading";
 import { DropDown } from "../../components/ui/DropDown/DropDown";
 import { useIsMobile } from "../../hooks/useIsMobile";
@@ -6,48 +8,31 @@ import { SAsside } from "./MenuPage.style";
 
 export const MenuAsside = () => {
   const mobile = useIsMobile();
-  const menuArray = [
-    {
-      text: "Starter’s",
-      link: "#",
-    },
-    {
-      text: "Salads",
-      link: "#",
-    },
-    {
-      text: "Steaks",
-      link: "#",
-    },
-    {
-      text: "Soups",
-      link: "#",
-    },
-    {
-      text: "Pasta",
-      link: "#",
-    },
-    {
-      text: "Between Buns",
-      link: "#",
-    },
-    {
-      text: "Beef",
-      link: "#",
-    },
-    {
-      text: "Chiken & Seafood",
-      link: "#",
-    },
-    {
-      text: "Side Dishes",
-      link: "#",
-    },
-    {
-      text: "Desserts",
-      link: "#",
-    },
-  ];
+  const [menuArray, setMenuArray] = useState([]);
+
+  useEffect(() => {
+    const fetchMenu = async () => {
+      try {
+        const response = await fetch("http://0.0.0.0:1515/categories", {});
+
+        if (!response.ok) {
+          throw new Error(`Ошибка: ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+
+        // Преобразуем данные к твоей структуре
+        console.log(data)
+
+        setMenuArray(data);
+      } catch (error) {
+        console.error("Ошибка загрузки меню:", error);
+      }
+    };
+
+    fetchMenu();
+  }, []);
+
   return (
     <SAsside>
       {!mobile ? (
@@ -55,36 +40,11 @@ export const MenuAsside = () => {
           <Heading variant="h6" text="Menu" />
           <nav>
             <ul>
-              <li>
-                <Link to="starter">Starter’s</Link>
-              </li>
-              <li>
-                <Link to="#">Salads</Link>
-              </li>
-              <li>
-                <Link to="#">Steaks</Link>
-              </li>
-              <li>
-                <Link to="#">Soups</Link>
-              </li>
-              <li>
-                <Link to="#">Pasta</Link>
-              </li>
-              <li>
-                <Link to="#">Between Buns</Link>
-              </li>
-              <li>
-                <Link to="#">Beef</Link>
-              </li>
-              <li>
-                <Link to="#">Chiken & Seafood</Link>
-              </li>
-              <li>
-                <Link to="#">Side Dishes</Link>
-              </li>
-              <li>
-                <Link to="#">Desserts</Link>
-              </li>
+              {menuArray.map((elem, index) => (
+                <li key={index}>
+                    <Link to={'/menu-page/'+elem.link}>{elem.text}</Link>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>

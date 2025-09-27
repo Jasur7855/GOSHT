@@ -14,7 +14,7 @@ interface IMainMenu {
   menu?: MenuItem[];
   link: string;
 }
-export const MainMenu = ({ name, description, link }: IMainMenu) => {
+export const MainMenu = ({ name, description, link, menu }: IMainMenu) => {
   return (
     <SMainMenu>
       <Heading variant="h4" text="Steaks" />
@@ -23,15 +23,15 @@ export const MainMenu = ({ name, description, link }: IMainMenu) => {
         local butchers
       </p>
       <div className="menuWrapper">
-        <h3>{link}</h3>
-        {/* {menu.map((elem) => (
+        {menu.map((elem, index) => (
           <MenuCard
+            key={index}
             cardBadge={elem.badge}
             cardSubtitle={elem.subTitle}
             cardTitle={elem.title}
             cardImg={elem.img}
           />
-        ))} */}
+        ))}
       </div>
     </SMainMenu>
   );
