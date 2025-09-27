@@ -1,4 +1,4 @@
-import{d as a,j as o}from"./ui-CuDAUpxO.js";import{H as r}from"./index-BG2w4uWu.js";const s=a.div`
+import{d as a,j as o}from"./ui-CuDAUpxO.js";import{H as r}from"./index-VO3FSro9.js";const s=a.div`
   display: flex;
   flex-direction: column;
   .header {

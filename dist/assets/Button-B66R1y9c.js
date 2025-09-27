@@ -1,1 +1,0 @@
-import{j as t}from"./ui-CuDAUpxO.js";import{S as e}from"./index-BG2w4uWu.js";import{L as i}from"./react-BjlJThec.js";const x=({text:s,onClick:r,variant:n,childText:o,typeButton:m="button",btnLink:a})=>t.jsx(i,{to:a,children:t.jsxs(e,{className:`Button ${n}`,onClick:r,type:m,children:[s,o&&t.jsx("span",{children:o})]})});export{x as B};

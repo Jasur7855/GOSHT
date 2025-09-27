@@ -1,4 +1,4 @@
-import{d as x,j as e}from"./ui-CuDAUpxO.js";import{a as b}from"./react-BjlJThec.js";import{a as I,b as T}from"./SliderMobile-BLFgnlda.js";import{H as m,I as $,a as F,i as w,j as v,k as E,c as K,L as c,d as M,e as z,o as B,u as W}from"./index-BG2w4uWu.js";import{S as q,N as D,P as A,A as P,a as g}from"./a11y-EIo1Ei7w.js";import{c as _,b as p,d as G,u as O,C as d}from"./form-BnEbJxh9.js";import{M as R}from"./index-nUfILl86.js";import"./Button-B66R1y9c.js";import"./redux-1Y8IFHhn.js";import"./swiper-Cl-SL7yl.js";x.section`
+import{d as x,j as e}from"./ui-CuDAUpxO.js";import{a as b}from"./react-BjlJThec.js";import{a as I,b as T}from"./SliderMobile-B7ipfXVD.js";import{H as m,I as $,a as F,i as w,j as v,k as E,c as K,L as c,d as M,e as z,o as B,u as W}from"./index-VO3FSro9.js";import{S as q,N as D,P as A,A as P,a as g}from"./a11y-EIo1Ei7w.js";import{c as _,b as p,d as G,u as O,C as d}from"./form-BnEbJxh9.js";import{M as R}from"./index-nUfILl86.js";import"./Button-B8w8A775.js";import"./redux-1Y8IFHhn.js";import"./swiper-Cl-SL7yl.js";x.section`
   height: calc(10.2vw + 337px);
   padding: 52px ${r=>r.theme.padding.padding6024};
   background-image: url("/img/Kids.png");

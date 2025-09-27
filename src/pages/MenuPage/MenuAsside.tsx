@@ -13,7 +13,7 @@ export const MenuAsside = () => {
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const response = await fetch("https://gosht.ddmedia.uz/categories", {});
+        const response = await fetch("https://new.gosht.com/api-back/categories", {});
 
         if (!response.ok) {
           throw new Error(`Ошибка: ${response.status} ${response.statusText}`);
