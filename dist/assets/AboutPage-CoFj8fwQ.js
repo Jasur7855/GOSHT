@@ -1,4 +1,4 @@
-import{d as i,j as e}from"./ui-CuDAUpxO.js";import{G as h,M as p,u as g,l as m,m as x,H as u,L as o,e as f}from"./index-CfvlCZxP.js";import{S as b,G as s}from"./GoshtBadge-CzkBYIrE.js";import{L as a}from"./react-BjlJThec.js";import"./form-BnEbJxh9.js";import"./redux-1Y8IFHhn.js";const j=i.main`
+import{d as i,j as e}from"./ui-CuDAUpxO.js";import{G as h,M as p,u as g,l as m,m as x,H as u,L as o,e as f}from"./index-mQhs8PHY.js";import{S as b,G as s}from"./GoshtBadge-CSaQMghT.js";import{L as a}from"./react-BjlJThec.js";import"./form-BnEbJxh9.js";import"./redux-1Y8IFHhn.js";const j=i.main`
   padding: 0 ${t=>t.theme.padding.padding6024} calc(4.7vw + 34.4px);
   position: relative;
   padding-top: 96px;

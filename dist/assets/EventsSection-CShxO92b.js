@@ -1,4 +1,4 @@
-import{d as n,j as i}from"./ui-CuDAUpxO.js";import{H as r,f as o,A as l}from"./index-CfvlCZxP.js";import{B as p}from"./Button-BGs4gZU-.js";const x=n.div`
+import{d as n,j as i}from"./ui-CuDAUpxO.js";import{H as s,f as o,A as l}from"./index-mQhs8PHY.js";import{B as p}from"./Button-CyT3PzE-.js";const x=n.div`
   display: flex;
   align-items: center;
   flex-direction: ${t=>t.$isWrap?"row":"row-reverse"};
@@ -44,7 +44,7 @@ import{d as n,j as i}from"./ui-CuDAUpxO.js";import{H as r,f as o,A as l}from"./i
       width: 100%;
     }
   }
-`,d=({isWrap:t,onClick:e,eventTitle:a,eventSubtitle:s,eventImg:c})=>i.jsxs(x,{$isWrap:t,children:[i.jsx("div",{className:"ActivityImg ",children:i.jsx("img",{src:c,alt:"activity"})}),i.jsxs("div",{className:"ActivityInfo",children:[i.jsx(r,{variant:"h3",text:a}),i.jsx("p",{className:"description",children:s}),i.jsx(p,{btnLink:e,typeButton:"button",text:"Know more",variant:"outlined"})]})]}),v=n.div`
+`,d=({isWrap:t,onClick:e,eventTitle:a,eventSubtitle:r,eventImg:c})=>i.jsxs(x,{$isWrap:t,children:[i.jsx("div",{className:"ActivityImg ",children:i.jsx("img",{src:c,alt:"activity"})}),i.jsxs("div",{className:"ActivityInfo",children:[i.jsx(s,{variant:"h3",text:a}),i.jsx("p",{className:"description",children:r}),i.jsx(p,{btnLink:e,typeButton:"button",text:"Know more",variant:"outlined"})]})]}),m=n.div`
   padding: calc(0.9vw + 38.5px) calc(3.4vw + 11.3px) calc(4.7vw + 34.3px);
   display: flex;
   flex-direction: column;
@@ -63,4 +63,4 @@ import{d as n,j as i}from"./ui-CuDAUpxO.js";import{H as r,f as o,A as l}from"./i
   a {
     width: 100% !important;
   }
-`,f=()=>{const{data:t}=o(null);return i.jsxs(v,{children:[i.jsx(r,{variant:"h2",text:"Activities"}),i.jsx("p",{children:"Activities inside the Gōsht Restaurant"}),i.jsx("div",{className:"eventsWrapper",children:Array.isArray(t)&&t.length>0?t.map((e,a)=>i.jsx(d,{eventTitle:e.main_title,eventSubtitle:e.main_description,eventImg:`${l}${e.media.path}`,isWrap:a%2===0,onClick:`/events/${e.id}`},e.id)):i.jsx("p",{children:"No events available."})})]})};export{f as E};
+`,f=()=>{const{data:t}=o(null);return i.jsxs(m,{className:"container",children:[i.jsx(s,{variant:"h2",text:"Activities"}),i.jsx("p",{children:"Activities inside the Gōsht Restaurant"}),i.jsx("div",{className:"eventsWrapper",children:Array.isArray(t)&&t.length>0?t.map((e,a)=>i.jsx(d,{eventTitle:e.main_title,eventSubtitle:e.main_description,eventImg:`${l}${e.media.path}`,isWrap:a%2===0,onClick:`/events/${e.id}`},e.id)):i.jsx("p",{children:"No events available."})})]})};export{f as E};
