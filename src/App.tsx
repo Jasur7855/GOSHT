@@ -31,6 +31,7 @@ const App = () => {
       <ScrollToTop />
 
       <Suspense fallback={<div>Loading...</div>}>
+      <div>
         <Routes>
           {/* 1) Отдельный маршрут без Header/Footer */}
           <Route path="/review-page" element={<FormFeedback />} />
@@ -51,6 +52,7 @@ const App = () => {
             <Route path="career-more-page" element={<CareerMorePage />} />
           </Route>
         </Routes>
+      </div>
       </Suspense>
     </BrowserRouter>
   );

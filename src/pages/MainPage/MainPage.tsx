@@ -74,8 +74,9 @@ const MainPage = ({}) => {
     <SMainPage>
       {!isMobile && <SliderDesk btnClick={() => {}} data={dataMain} />}
       {isMobile && <SliderMobile data={dataMain} />}
-      <section className="menuInfo">
-        <div className="bgImg">
+      <div className="adaptive">
+      <section className="menuInfo container">
+        <div className="bgImg container">
           <img src="/img/burger4.png" className="burger" />
           <div>
             <h6>
@@ -100,7 +101,7 @@ const MainPage = ({}) => {
           </div>
         </div>
       </section>
-      <section className="mainMenu">
+      <section className="mainMenu container">
         <Link to="https://www.toasttab.com/local/order/gosht-3225-coney-island-avenue/r-d6d97f8d-513d-4bcf-ba76-8a40e1b23651">
           <MenuCard
             cardBadge="/icons/badge.svg"
@@ -182,7 +183,7 @@ const MainPage = ({}) => {
           />
         </Link>
       </section>
-      <section className="allFood">
+      <section className="allFood container">
         <div className="allFoodImg">
           <MenuBadge cardBadge="/icons/badge.svg" badgeText="Chief's choice!" />
         </div>
@@ -201,7 +202,7 @@ const MainPage = ({}) => {
           />
         </div>
       </section>
-      <section className="aboutGosht">
+      <section className="aboutGosht container">
         <div className="restaurant">
           <GoshtBadge
             badgeLogo="/icons/RedGosht.svg"
@@ -270,8 +271,8 @@ const MainPage = ({}) => {
           />
         </div>
       </section>
-      <EventsSection />
-      <section className="clientSlider">
+      <EventsSection className="container" />
+      <section className="clientSlider container">
         <span>Review</span>
         <Heading
           text={`Don’t believe me, check what Clients\nthink about us!`}
@@ -302,6 +303,7 @@ const MainPage = ({}) => {
           </div>
         )}
       </section>
+      </div>
     </SMainPage>
   );
 };

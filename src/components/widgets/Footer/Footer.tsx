@@ -51,7 +51,7 @@ const menuMob = {
 export const Footer = () => {
   return (
     <SFooter>
-      <footer className="footer">
+      <footer className="footer container">
         <div className="top">
           <div className="footer_logo">
             <img src="/icons/footer-logo.svg" alt="footer-logo" />

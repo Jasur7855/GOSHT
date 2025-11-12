@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+#root {
+}
 * {
   padding: 0;
   margin: 0;
@@ -48,6 +50,9 @@ html,
 body {
   height: 100%;
   width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
   font-size: 100%;
   line-height: 1;
   font-size: 16px;
@@ -107,10 +112,7 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
-.container {
-  width: 100vw;
-  padding: 52px 60px 102px 60px;
-}
+
 
 img {
   width: 100%;
@@ -143,5 +145,26 @@ label{
 }
 a{
   color:#222;
+}
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1440px;
+  }
+  .mainMenu {
+    grid-template-columns: repeat(4, 1fr) !important;
+    padding: 60px 0 !important;
+  }
+  .allFood, .aboutGosht, .clientSlider {
+    padding: 60px 0 !important;
+  }
+  .adaptive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .menuInfo {
+    width: 1440px !important;
+    margin: 0 !important;
+  }
 }
 `;

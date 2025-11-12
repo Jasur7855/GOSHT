@@ -8,7 +8,7 @@ export const EventsSection = () => {
   const { data } = useGetAllEventsQuery(null);
 
   return (
-    <SEventSection>
+    <SEventSection className="container">
       <Heading variant="h2" text="Activities" />
       <p>Activities inside the Gōsht Restaurant</p>
       <div className="eventsWrapper">
