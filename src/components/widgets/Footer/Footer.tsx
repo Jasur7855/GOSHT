@@ -50,7 +50,7 @@ const menuMob = {
 
 export const Footer = () => {
   return (
-    <SFooter>
+    <SFooter className="footerApadtive">
       <footer className="footer container">
         <div className="top">
           <div className="footer_logo">
