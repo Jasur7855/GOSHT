@@ -1,4 +1,4 @@
-import{d as T,j as t}from"./ui-CuDAUpxO.js";import{E as b}from"./EventsSection-CShxO92b.js";import{a as f,b as C}from"./SliderMobile-DVdwi1GX.js";import{b as y,c as j,H as E,L as s,d as N,e as I,o as w,u as B}from"./index-mQhs8PHY.js";import{a as P}from"./react-BjlJThec.js";import{c as S,b as m,d as q,u as M,C as i}from"./form-BnEbJxh9.js";import{M as D}from"./index-nUfILl86.js";import"./Button-CyT3PzE-.js";import"./a11y-EIo1Ei7w.js";import"./swiper-Cl-SL7yl.js";import"./redux-1Y8IFHhn.js";const k=T.div`
+import{d as T,j as t}from"./ui-CuDAUpxO.js";import{E as b}from"./EventsSection-soodAREX.js";import{a as f,b as C}from"./SliderMobile-k6uYn0mq.js";import{b as y,c as j,H as E,L as s,d as N,e as I,o as w,u as B}from"./index-Acc0vs7h.js";import{a as P}from"./react-BjlJThec.js";import{c as S,b as m,d as q,u as M,C as i}from"./form-BnEbJxh9.js";import{M as D}from"./index-nUfILl86.js";import"./Button-Ck018LnH.js";import"./a11y-EIo1Ei7w.js";import"./swiper-Cl-SL7yl.js";import"./redux-1Y8IFHhn.js";const k=T.div`
   padding: 52px calc(3vw + 8.7px) calc(3vw + 8.7px);
   position: relative;
   .exit{
