@@ -5,8 +5,10 @@ interface MenuItemCardProps {
   id: string; // 👈 обязательно уникальный ID
   category?: string;
   title: string;
-  description: string;
-  image: string;
+  description?: string;
+  subTitle?: string;
+  image?: string;
+  img?: string;
   weight?: string;
   price: number;
   onBack?: () => void;
@@ -17,11 +19,15 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
   category,
   title,
   description,
+  subTitle,
   image,
+  img,
   weight,
   price,
   onBack,
 }) => {
+  const finalDescription = description || subTitle || '';
+  const finalImage = image || img || '';
   const [count, setCount] = useState<number>(0);
 
   // 🔹 Следим за сменой товара (id)
@@ -69,14 +75,14 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
       <div className="menu">
         {/* Left image */}
         <div className="menu-card__image">
-          <img src={image} alt={title} />
+          <img src={finalImage} alt={title} />
         </div>
 
         {/* Right content */}
         <div className="menu-card__content">
           <div className="card__content_up">
             <h2 className="menu-card__title">{title}</h2>
-            <p className="menu-card__description">{description}</p>
+            <p className="menu-card__description">{finalDescription}</p>
             {weight && <p className="menu-card__weight">{weight}</p>}
           </div>
 

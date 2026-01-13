@@ -31,6 +31,9 @@ const EventsCardPage = () => {
   if (isLoading) return <div>Loading event...</div>;
   if (isError) return <div>Error loading event</div>;
   if (!eventInfo) return <div>No event found</div>;
+  
+  const visibleEvents = eventsData?.filter((event) => event.is_visible) || [];
+  
   const handleCloseModal = () => {
     setIsFormBookingOpenModal(false);
   };
@@ -41,11 +44,11 @@ const EventsCardPage = () => {
           <Heading text="Events" variant="h6" />
           {isEventsLoading && <p>Loading events...</p>}
           {isEventsError && <p>Error loading events</p>}
-          {Array.isArray(eventsData) && eventsData.length > 0 ? (
-            eventsData.map((e, i) => (
+          {visibleEvents.length > 0 ? (
+            visibleEvents.map((e, i) => (
               <EventCardItem
                 key={i}
-                itemBg={`${API_URL}${eventInfo.media.path}`}
+                itemBg={`${API_URL}${e.media.path}`}
                 itemTitle={e.main_title}
               />
             ))

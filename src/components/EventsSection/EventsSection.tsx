@@ -7,13 +7,15 @@ import { API_URL } from "../../config/envConfig";
 export const EventsSection = () => {
   const { data } = useGetAllEventsQuery(null);
 
+  const visibleEvents = data?.filter((event) => event.is_visible) || [];
+
   return (
     <SEventSection className="container">
       <Heading variant="h2" text="Activities" />
       <p>Activities inside the Gōsht Restaurant</p>
       <div className="eventsWrapper">
-        {Array.isArray(data) && data.length > 0 ? (
-          data.map((elem, index) => (
+        {visibleEvents.length > 0 ? (
+          visibleEvents.map((elem, index) => (
             <ActivityItem
               key={elem.id}
               eventTitle={elem.main_title}

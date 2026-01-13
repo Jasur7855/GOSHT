@@ -2,10 +2,9 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { API_URL } from "../../config/envConfig";
 
 export interface IEvent {
-  cost: number;
   id: string;
-  mediaId: string;
   type: string;
+  cost: number;
   date: string;
   time: string;
   main_title: string;
@@ -13,19 +12,13 @@ export interface IEvent {
   card_title: string;
   paragraph: string[];
   motivation: string;
-  createdAt: string;
-  updatedAt: string;
+  is_visible: boolean;
   media: {
     id: string;
-    originalName: string;
-    fileName: string;
     path: string;
-    size: number;
-    mimeType: string;
-    createdAt: string;
-    updatedAt: string;
   };
 }
+
 type IGetAllEventsResponse = IEvent[];
 interface IGetEventByIdResponse extends IEvent {}
 export const eventsApi = createApi({

@@ -6,6 +6,7 @@ import { FaTelegramPlane } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebookF } from "react-icons/fa";
 import { DropDown } from "../../ui/DropDown/DropDown";
+import { useGetFooterQuery } from "../../../store/Api/footerApi";
 
 const menuMob = {
   navigate: [
@@ -49,6 +50,12 @@ const menuMob = {
 };
 
 export const Footer = () => {
+  const { data: footerData, isLoading } = useGetFooterQuery();
+
+  if (isLoading) {
+    return null;
+  }
+
   return (
     <SFooter className="footerApadtive">
       <footer className="footer container">
@@ -76,37 +83,39 @@ export const Footer = () => {
           <div className="info">
             <div className="info_item">
               <span className="title">Feedback</span>
-              <a href="tel:718504880" className="phone_number">
-                Phone number: (718) 504-880
-              </a>
-              <a href="mailto:info@gosht.com" className="email">
-                Email: info@gosht.com
-              </a>
+              <p className="phone_number">
+                {footerData?.feedback_text || "Contact us for feedback"}
+              </p>
             </div>
             <div className="info_item">
               <span className="title">Address</span>
-              <a>
-                3215 Coney Island Ave, Brooklyn, <br /> NY 11235, United States
-              </a>
+              <p>
+                {footerData?.address || "3215 Coney Island Ave, Brooklyn, NY 11235, United States"}
+              </p>
             </div>
           </div>
         </div>
         <div className="divider"></div>
         <div className="bottom">
           <div className="schedule">
-            <span>7 Days a week,</span>
-            <span>11:00 AM - 12:00 AM</span>
+            <span>{footerData?.work_hours || "7 Days a week, 11:00 AM - 12:00 AM"}</span>
           </div>
           <div className="social_media">
-            <a href="#">
-              <img src="/icons/telegram-logo.svg" alt="telegram" />
-            </a>
-            <a href="#">
-              <img src="/icons/instagram-logo.svg" alt="instagram" />
-            </a>
-            <a href="#">
-              <img src="/icons/facebook-logo.svg" alt="facebook" />
-            </a>
+            {footerData?.telegram_enabled && (
+              <a href={footerData.telegram_link} target="_blank" rel="noopener noreferrer">
+                <img src="/icons/telegram-logo.svg" alt="telegram" />
+              </a>
+            )}
+            {footerData?.instagram_enabled && (
+              <a href={footerData.instagram_link} target="_blank" rel="noopener noreferrer">
+                <img src="/icons/instagram-logo.svg" alt="instagram" />
+              </a>
+            )}
+            {footerData?.facebook_enabled && (
+              <a href={footerData.facebook_link} target="_blank" rel="noopener noreferrer">
+                <img src="/icons/facebook-logo.svg" alt="facebook" />
+              </a>
+            )}
           </div>
         </div>
       </footer>
@@ -116,9 +125,7 @@ export const Footer = () => {
           <div className="footerLogoInfo">
             <span className="title">Schedule</span>
             <span className="subTitle">
-              7 Days a week,
-              <br />
-              11:00 AM - 12:00 AM
+              {footerData?.work_hours || "7 Days a week, 11:00 AM - 12:00 AM"}
             </span>
           </div>
         </div>
@@ -131,26 +138,30 @@ export const Footer = () => {
           <div className="footerAddress">
             <div className="address">
               <h5>Feedback</h5>
-              <p>Phone number: (718) 504-880</p>
-              <p>Email: info@gosht.com</p>
+              <p>{footerData?.feedback_text || "Contact us for feedback"}</p>
             </div>
             <div className="address">
               <h5>Address</h5>
-              <p>3215 Coney Island Ave, Brooklyn,</p>
-              <p>NY 11235, United States</p>
+              <p>{footerData?.address || "3215 Coney Island Ave, Brooklyn, NY 11235, United States"}</p>
             </div>
           </div>
         </div>
         <div className="footerSocial">
-          <Link to="#" className="social">
-            <FaTelegramPlane />
-          </Link>
-          <Link to="#" className="social">
-            <FaInstagram />
-          </Link>
-          <Link to="#" className="social">
-            <FaFacebookF />
-          </Link>
+          {footerData?.telegram_enabled && (
+            <a href={footerData.telegram_link} target="_blank" rel="noopener noreferrer" className="social">
+              <FaTelegramPlane />
+            </a>
+          )}
+          {footerData?.instagram_enabled && (
+            <a href={footerData.instagram_link} target="_blank" rel="noopener noreferrer" className="social">
+              <FaInstagram />
+            </a>
+          )}
+          {footerData?.facebook_enabled && (
+            <a href={footerData.facebook_link} target="_blank" rel="noopener noreferrer" className="social">
+              <FaFacebookF />
+            </a>
+          )}
         </div>
       </footer>
     </SFooter>

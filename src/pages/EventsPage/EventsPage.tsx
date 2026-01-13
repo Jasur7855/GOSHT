@@ -2,40 +2,42 @@ import { EventsSection } from "../../components/EventsSection/EventsSection";
 import { SliderDesk } from "../../components/widgets/Carousel/SliderDesk";
 import { useIsMobile } from "../../hooks/useIsMobile";
 import { SliderMobile } from "../../components/widgets/Carousel/SliderMobile";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { FormPrivateEvent } from "../../components/Forms/FormPrivatEvent/FormPrivateEvent";
-const dataMain = [
-  {
-    id: 1,
-    tagText: "BOOK AN EVENT",
-    title: "Private Events",
-    description:
-      "For all inquiries, please fill out the form below and we’ll be in touch soon. ",
-    buttonText: "Inquire Now",
-    backgroundImage: "/img/Kids.png",
-  },
-  {
-    id: 2,
-    tagText: "BOOK AN EVENT",
-    title: "Caesar",
-    description:
-      "Crisp hearts of Romaine lettuce tossed in robust homemade Caesar dressing, topped with shaved parmesan cheese and egg.",
-    buttonText: "Inquire Now",
-    backgroundImage: "/img/Main.jpg",
-  },
-];
+import { useGetEventBannersQuery } from "../../store/Api/eventBannerApi";
+
 const EventsPage = () => {
   const [isAddPostModalOpen, setIsAddPostModalOpen] = useState<boolean>(false);
+  const { data: bannersData, isLoading } = useGetEventBannersQuery();
+  const isMobile = useIsMobile(975);
+
+  const dataMain = useMemo(() => {
+    if (!bannersData) return [];
+    
+    return bannersData.map((banner) => ({
+      id: banner.id,
+      tagText: banner.tag_text,
+      title: banner.main_text,
+      description: banner.description,
+      buttonText: banner.button_enabled ? banner.button_text : "",
+      backgroundImage: `https://new.gosht.com${banner.background_image}`,
+      buttonLink: banner.button_link,
+    }));
+  }, [bannersData]);
 
   const handleCloseModal = () => {
     setIsAddPostModalOpen(false);
   };
+  
   const handleOpenModal = () => {
     console.log("true");
-
     setIsAddPostModalOpen(true);
   };
-  const isMobile = useIsMobile(975);
+  
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div>
       {!isMobile && <SliderDesk btnClick={handleOpenModal} data={dataMain} />}
