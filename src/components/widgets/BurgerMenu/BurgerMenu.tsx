@@ -41,12 +41,12 @@ export const BurgerMenu = ({}: IBurgerMenuProps) => {
             <Link to="/about-page" onClick={() => setIsOpen(false)}>
               <li>About us</li>
             </Link>
-            <Link to="/events" onClick={() => setIsOpen(false)}>
+            {/* <Link to="/events" onClick={() => setIsOpen(false)}>
               <li>Events</li>
             </Link>
             <Link to="/kids-event" onClick={() => setIsOpen(false)}>
               <li>Kids Events</li>
-            </Link>
+            </Link> */}
             <Link to="/location-page" onClick={() => setIsOpen(false)}>
               <li>Hours & Location</li>
             </Link>
@@ -60,10 +60,10 @@ export const BurgerMenu = ({}: IBurgerMenuProps) => {
               <span>Cart</span>
             </button>
 
-            <button className="outline">
+            {/* <button className="outline">
               <FaUtensils style={{ color: "white" }} />
               <span>Book a table</span>
-            </button>
+            </button> */}
           </div>
         </nav>
       </SBurgerMenu>

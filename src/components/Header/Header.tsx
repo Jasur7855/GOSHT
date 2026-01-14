@@ -33,10 +33,10 @@ export const Header = () => {
             <Link to="/about-page">About us</Link>
           </li>
           <li>
-            <Link to="/events">Events</Link>
+            {/* <Link to="/events">Events</Link> */}
           </li>
           <li>
-            <Link to="/kids-event">Kids Events</Link>
+            {/* <Link to="/kids-event">Kids Events</Link> */}
           </li>
           <li>
             <Link to="/location-page">Hours & Location</Link>
@@ -47,18 +47,18 @@ export const Header = () => {
         </ul>
       </nav>
       <div className="header_buttons">
-        <button>
+        {/* <button>
           <FaUser />
           <span>Log in</span>
-        </button>
+        </button> */}
         <button onClick={() => setIsOpen(true)}>
           <IoMdBasket />
           <span>Cart</span>
         </button>
-        <button>
+        {/* <button>
           <FaUtensils />
           <span>Book a table</span>
-        </button>
+        </button> */}
       </div>
     </SHeader>
   );
