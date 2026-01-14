@@ -1,4 +1,4 @@
-import{d as _,j as t}from"./ui-CuDAUpxO.js";import{M as G,a as P,b as z}from"./MenuItemCard-D7iSwY4P.js";import{G as B,F as n,I as O,a as E,u as Q,b as H,c as W,d as K,e as D,f as R,g as V,H as w,M as Z}from"./index-CTDS4Q3V.js";import{S as X,a as q,b as J}from"./SliderMobile-BByjKj09.js";import{B as b}from"./Button-CFjc8JBQ.js";import{G as h}from"./GoshtBadge-BoJXyJwE.js";import{E as U}from"./EventsSection-D7KwNQP0.js";import{S as Y,N as tt,A as et,P as it,a as v}from"./a11y-EIo1Ei7w.js";import{a as o}from"./react-BjlJThec.js";import"./form-BnEbJxh9.js";import"./redux-1Y8IFHhn.js";import"./swiper-Cl-SL7yl.js";const st=_.div`
+import{d as _,j as t}from"./ui-CuDAUpxO.js";import{M as G,a as P,b as z}from"./MenuItemCard-D7iSwY4P.js";import{G as B,F as n,I as O,a as E,u as Q,b as H,c as W,d as K,e as D,f as R,g as V,H as w,M as Z}from"./index-CvxQ4Acp.js";import{S as X,a as q,b as J}from"./SliderMobile-DvMlTmQy.js";import{B as b}from"./Button-CtIEnqjS.js";import{G as h}from"./GoshtBadge-BwK3AP9S.js";import{E as U}from"./EventsSection-iBnQOaOY.js";import{S as Y,N as tt,A as et,P as it,a as v}from"./a11y-EIo1Ei7w.js";import{a as o}from"./react-BjlJThec.js";import"./form-BnEbJxh9.js";import"./redux-1Y8IFHhn.js";import"./swiper-Cl-SL7yl.js";const st=_.div`
   .menuInfo {
     margin: 0 ${i=>i.theme.padding.padding6024};
     display: flex;
@@ -51,7 +51,7 @@ import{d as _,j as t}from"./ui-CuDAUpxO.js";import{M as G,a as P,b as z}from"./M
   .mainMenu {
     display: grid;
     padding: 60px ${i=>i.theme.padding.padding6024};
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 36px 30px;
   }
   .allFood {
