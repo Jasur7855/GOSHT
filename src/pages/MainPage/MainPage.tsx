@@ -156,13 +156,13 @@ const MainPage = ({}) => {
             >
               <MenuCard
                 cardBadge={
-                  item.tag_icon_url[0]
+                  item.tag_icon_url?.[0]
                     ? `https://new.gosht.com${item.tag_icon_url[0]}`
                     : "/icons/badge.svg"
                 }
                 cardSubtitle={item.description}
                 cardTitle={item.main_text}
-                cardImg={`https://new.gosht.com${item.image}`}
+                cardImg={item.image ? `https://new.gosht.com${item.image}` : "/img/placeholder.png"}
               />
             </div>
           ))}
@@ -176,11 +176,13 @@ const MainPage = ({}) => {
                   badgeText={info.tag_text}
                 />
               )}
-              <img
-                src={`https://new.gosht.com${info.image}`}
-                alt={info.title}
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
+              {info.image && (
+                <img
+                  src={`https://new.gosht.com${info.image}`}
+                  alt={info.title}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              )}
             </div>
             <div className="allFoodText">
               <Heading text={info.title} variant="h4" />
@@ -200,44 +202,46 @@ const MainPage = ({}) => {
           <section key={aboutBlock.id} className="aboutGosht container">
             <div className="restaurant">
               <GoshtBadge
-                badgeLogo={`https://new.gosht.com${aboutBlock.first_project.image}`}
-                subTitle={aboutBlock.first_project.short_description}
-                title={aboutBlock.first_project.name}
+                badgeLogo={aboutBlock.first_project?.image ? `https://new.gosht.com${aboutBlock.first_project.image}` : "/img/placeholder.png"}
+                subTitle={aboutBlock.first_project?.short_description || ""}
+                title={aboutBlock.first_project?.name || ""}
                 children={
                   <>
-                    <h5>{aboutBlock.first_project.info_1.title}</h5>
-                    <p>{aboutBlock.first_project.info_1.description}</p>
+                    <h5>{aboutBlock.first_project?.info_1?.title || ""}</h5>
+                    <p>{aboutBlock.first_project?.info_1?.description || ""}</p>
                   </>
                 }
               />
               <GoshtBadge
                 children={
                   <>
-                    <h5>{aboutBlock.first_project.info_2.title}</h5>
-                    <p>{aboutBlock.first_project.info_2.description}</p>
+                    <h5>{aboutBlock.first_project?.info_2?.title || ""}</h5>
+                    <p>{aboutBlock.first_project?.info_2?.description || ""}</p>
                   </>
                 }
               />
             </div>
             <div className="kidsWrapper">
               <GoshtBadge
-                badgeLogo={`https://new.gosht.com${aboutBlock.second_project.image}`}
-                title={aboutBlock.second_project.name}
-                subTitle={aboutBlock.second_project.short_description}
+                badgeLogo={aboutBlock.second_project?.image ? `https://new.gosht.com${aboutBlock.second_project.image}` : "/img/placeholder.png"}
+                title={aboutBlock.second_project?.name || ""}
+                subTitle={aboutBlock.second_project?.short_description || ""}
                 children={
                   <div className="kids">
-                    <img
-                      src={`https://new.gosht.com${aboutBlock.second_project.image}`}
-                      alt={aboutBlock.second_project.name}
-                      className="goshtKids"
-                    />
+                    {aboutBlock.second_project?.image && (
+                      <img
+                        src={`https://new.gosht.com${aboutBlock.second_project.image}`}
+                        alt={aboutBlock.second_project?.name || ""}
+                        className="goshtKids"
+                      />
+                    )}
                     <div className="instagram">
                       <MdArrowOutward />
                       <span>Open instagram</span>
                     </div>
                     <div className="kidsText">
-                      <h5>{aboutBlock.second_project.info_1.title}</h5>
-                      <p>{aboutBlock.second_project.info_1.description}</p>
+                      <h5>{aboutBlock.second_project?.info_1?.title || ""}</h5>
+                      <p>{aboutBlock.second_project?.info_1?.description || ""}</p>
                     </div>
                   </div>
                 }
