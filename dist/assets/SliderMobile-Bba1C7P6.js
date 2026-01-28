@@ -1,4 +1,10 @@
-import{d as s,j as t}from"./ui-CuDAUpxO.js";import{S as l,N as c,P as p,A as d,a as x}from"./a11y-EIo1Ei7w.js";import{B as m}from"./Button-qNY6Ndoj.js";import{I as g,a as u,H as w,k as f}from"./index-U4wzshVy.js";import{a as h}from"./react-BjlJThec.js";const j=s.div`
+import{d as s,j as t}from"./ui-CuDAUpxO.js";import{S as l,N as c,P as p,A as d,a as x}from"./a11y-EIo1Ei7w.js";import{B as m}from"./Button-DQGa1B0d.js";import{I as g,a as u,H as f,k as w}from"./index-eGOdRXMZ.js";import{a as b}from"./react-BjlJThec.js";const j=s.div`
+  .sliderBtns button {
+    &:hover {
+      background-color: gray !important;
+      border: none !important;
+    }
+  }
   position: relative;
   .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
     display: flex;
@@ -49,7 +55,8 @@ import{d as s,j as t}from"./ui-CuDAUpxO.js";import{S as l,N as c,P as p,A as d,a
       transition: background-color 0.3s;
 
       &:hover {
-        background-color: #0056b3;
+        background-color: gray !important;
+        border: none !important;
       }
     }
   }
@@ -70,6 +77,8 @@ import{d as s,j as t}from"./ui-CuDAUpxO.js";import{S as l,N as c,P as p,A as d,a
     padding: 4px 12px;
     border-radius: 4px;
     font-size: calc(0.4vw + 10.6px);
+    text-transform: uppercase;
+    font-family: ${e=>e.theme.fontFamily.roboto};
   }
 
   .title {
@@ -115,7 +124,7 @@ import{d as s,j as t}from"./ui-CuDAUpxO.js";import{S as l,N as c,P as p,A as d,a
     margin-bottom: 20px;
     .tag {
       color: white;
-      background-color: ${n=>n.theme.colors.red};
+      background-color: ${e=>e.theme.colors.red};
       padding: 4px 12px;
       border-radius: 4px;
       font-size: calc(0.4vw + 10.6px);
@@ -126,7 +135,7 @@ import{d as s,j as t}from"./ui-CuDAUpxO.js";import{S as l,N as c,P as p,A as d,a
     h1 {
     }
     p {
-      font-family: ${n=>n.theme.fontFamily.roboto};
+      font-family: ${e=>e.theme.fontFamily.roboto};
       font-size: calc(0.4vw + 12.6px);
       font-weight: 300;
       line-height: 114%;
@@ -138,7 +147,6 @@ import{d as s,j as t}from"./ui-CuDAUpxO.js";import{S as l,N as c,P as p,A as d,a
   .sliderBtns {
     display: flex;
     justify-content: space-between;
-    padding: 0 24px;
 
     button {
       width: 48px;
@@ -155,8 +163,9 @@ import{d as s,j as t}from"./ui-CuDAUpxO.js";import{S as l,N as c,P as p,A as d,a
       transition: background-color 0.3s;
 
       &:hover {
-        background-color: #0056b3;
+        background-color: gray !important;
+        border: none !important;
       }
     }
   }
-`,y=({buttonText:n,description:a,tagText:i,title:o,onClick:e})=>t.jsx(t.Fragment,{children:t.jsxs(k,{className:"left",children:[t.jsx("span",{className:"tag",children:i}),t.jsx("h1",{className:"title",children:o}),t.jsx("p",{className:"description",children:a}),t.jsx(m,{btnLink:"#",typeButton:"button",text:n,variant:"fill",onClick:e})]})}),C=({data:n,sliderForm:a,btnClick:i})=>{const[o,e]=h.useState(null);return t.jsxs(j,{children:[t.jsxs(l,{modules:[c,p,d],slidesPerView:1,pagination:{clickable:!0},onSwiper:r=>e(r),children:[n.map((r,b)=>t.jsx(x,{style:{backgroundImage:`url(${r.backgroundImage})`},children:t.jsx(y,{tagText:r.tagText,title:r.title,description:r.description,buttonText:r.buttonText,onClick:i})},b)),t.jsxs("div",{className:"sliderBtns",children:[t.jsx("button",{className:"arrBtn",onClick:()=>o==null?void 0:o.slidePrev(),children:t.jsx(g,{})}),t.jsx("button",{className:"arrBtn",onClick:()=>o==null?void 0:o.slideNext(),children:t.jsx(u,{})})]})]}),a]})},T=({data:n,btnClick:a})=>{const[i,o]=h.useState(null);return t.jsx(v,{children:t.jsxs(l,{modules:[c,p,d],slidesPerView:1,pagination:{clickable:!0},onSwiper:e=>o(e),children:[n.map(e=>t.jsxs(x,{children:[t.jsx("div",{className:"sliderImg",style:{backgroundImage:`url(${e.backgroundImage})`}}),t.jsxs("div",{className:"sliderText",children:[t.jsx("span",{className:"tag",children:e.tagText}),t.jsx(w,{variant:"h1",text:e.title}),t.jsx("p",{children:e.description}),t.jsx(f,{typeButton:"button",text:e.buttonText,variant:"fill",onClick:a})]})]})),t.jsxs("div",{className:"sliderBtns",children:[t.jsx("button",{className:"arrBtn",onClick:()=>i==null?void 0:i.slidePrev(),children:t.jsx(g,{})}),t.jsx("button",{className:"arrBtn",onClick:()=>i==null?void 0:i.slideNext(),children:t.jsx(u,{})})]})]})})};export{v as S,C as a,T as b};
+`,y=({buttonText:e,description:a,tagText:o,title:r,onClick:i})=>t.jsx(t.Fragment,{children:t.jsxs(k,{className:"left",children:[t.jsx("span",{className:"tag",children:o}),t.jsx("h1",{className:"title",children:r}),t.jsx("p",{className:"description",children:a}),t.jsx(m,{btnLink:"#",typeButton:"button",text:e,variant:"fill",onClick:i})]})}),C=({data:e,sliderForm:a,btnClick:o})=>{const[r,i]=b.useState(null);return t.jsxs(j,{children:[t.jsxs(l,{modules:[c,p,d],slidesPerView:1,pagination:{clickable:!0},onSwiper:n=>i(n),children:[e.map((n,h)=>t.jsx(x,{style:{backgroundImage:`url(${n.backgroundImage})`},children:t.jsx(y,{tagText:n.tagText,title:n.title,description:n.description,buttonText:n.buttonText,onClick:o})},h)),t.jsxs("div",{className:"sliderBtns",children:[t.jsx("button",{className:"arrBtn",onClick:()=>r==null?void 0:r.slidePrev(),children:t.jsx(g,{})}),t.jsx("button",{className:"arrBtn",onClick:()=>r==null?void 0:r.slideNext(),children:t.jsx(u,{})})]})]}),a]})},T=({data:e,btnClick:a})=>{const[o,r]=b.useState(null);return t.jsx(v,{children:t.jsxs(l,{modules:[c,p,d],slidesPerView:1,pagination:{clickable:!0},onSwiper:i=>r(i),children:[e.map(i=>t.jsxs(x,{children:[t.jsx("div",{className:"sliderImg",style:{backgroundImage:`url(${i.backgroundImage})`}}),t.jsxs("div",{className:"sliderText",children:[t.jsx("span",{className:"tag",children:i.tagText}),t.jsx(f,{variant:"h1",text:i.title}),t.jsx("p",{children:i.description}),t.jsx(w,{typeButton:"button",text:i.buttonText,variant:"fill",onClick:a})]})]})),t.jsxs("div",{className:"sliderBtns",children:[t.jsx("button",{className:"arrBtn",onClick:()=>o==null?void 0:o.slidePrev(),children:t.jsx(g,{})}),t.jsx("button",{className:"arrBtn",onClick:()=>o==null?void 0:o.slideNext(),children:t.jsx(u,{})})]})]})})};export{v as S,C as a,T as b};

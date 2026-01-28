@@ -65,17 +65,17 @@ export const SLocation = styled.main`
           }
         }
         p {
-          font-size: 14px;
+          font-size: 12px;
           color: #fff;
           font-family: ${(props) => props.theme.fontFamily.roboto};
           font-weight: 300;
-          max-width: 156px;
+          max-width: 216px;
           line-height: 128%;
         }
       }
       .center {
-        margin: 0 calc(5.1vw + 7px);
-        padding: 0 calc(5.1vw + 7px);
+        margin: 0 calc(3.1vw + 7px);
+        padding: 0 calc(3.1vw + 7px);
         border-left: 1px solid #ffffff80;
         border-right: 1px solid #ffffff80;
       }

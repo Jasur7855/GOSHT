@@ -43,13 +43,14 @@ const LocationPage = () => {
             <p>
               {bannerData?.description || "For all inquiries, please fill out the form below and we'll be in touch soon."}
             </p>
-            {bannerData?.button_enabled && (
+            
               <FormBtn 
-                text={bannerData.button_text} 
+                text={"Get directions"} 
                 typeButton="button" 
                 variant="fill" 
               />
-            )}
+          
+             
           </div>
         </section>
       ) : (
@@ -62,13 +63,12 @@ const LocationPage = () => {
             <p>
               {bannerData?.description || "For all inquiries, please fill out the form below and we'll be in touch soon."}
             </p>
-            {bannerData?.button_enabled && (
-              <FormBtn 
-                text={bannerData.button_text} 
+            <FormBtn 
+                text={"Get directions"} 
                 typeButton="button" 
                 variant="fill" 
               />
-            )}
+            
           </div>
         </section>
       )}

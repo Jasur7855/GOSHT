@@ -37,14 +37,19 @@ export const SFooter = styled.div`
       .info {
         display: flex;
         flex-direction: column;
-        gap: 24px;
+        gap: 50px 0;
         .info_item {
           display: flex;
           flex-direction: column;
           .title {
-            font-family: ${(props) => props.theme.fontFamily.titleFont};
+            font-family: ${(props) => props.theme.fontFamily.roboto};
             font-size: 18px;
             font-weight: 500;
+          }
+          p{
+            font-family: ${(props) => props.theme.fontFamily.roboto};
+            font-size: 16px;
+            font-weight: 400;
           }
           a:nth-child(2) {
             margin-top: 24px;
@@ -64,7 +69,7 @@ export const SFooter = styled.div`
       margin-bottom: 36px;
       width: 100%;
       height: 1px;
-      background-color: ${(props) => props.theme.colors.white};
+      background-color: gray;
     }
     .bottom {
       display: flex;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const SGoshtBadge = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100%;
   .header {
     display: flex;
     align-items: center;
@@ -15,6 +16,7 @@ export const SGoshtBadge = styled.div`
       h5 {
         font-size: calc(0.8vw + 13px);
         font-family: ${(props) => props.theme.fontFamily.robotoSerif};
+      
         margin-bottom: 4px;
         line-height: 117%;
       }
@@ -26,6 +28,7 @@ export const SGoshtBadge = styled.div`
     }
   }
   .children {
+    flex: 1;
     border: 1.5px solid #00000033;
     border-radius: 12px;
     padding: calc(0.8vw + 13.2px);

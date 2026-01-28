@@ -63,7 +63,7 @@ export const SContainer = styled.main`
 `;
 
 export const SAboutPageSocial = styled.section`
-  height: calc(21.6vw + 79px);
+  height: calc(18.6vw + 79px);
   background-image: url(/img/aboutdesk.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -93,9 +93,10 @@ export const SAboutGosht = styled.section`
   .children {
     h3 {
       margin-bottom: 12px;
+      font-weight:600;
     }
     p {
-      font-size: calc(0.9vw + 10.5px);
+      font-size: 16px;
       font-family: ${(props) => props.theme.fontFamily.roboto};
       line-height: 120%;
     }

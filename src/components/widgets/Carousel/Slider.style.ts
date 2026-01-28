@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 export const SSliderDesk = styled.div`
+  .sliderBtns button {
+    &:hover {
+      background-color: gray !important;
+      border: none !important;
+    }
+  }
   position: relative;
   .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
     display: flex;
@@ -51,7 +57,8 @@ export const SSliderDesk = styled.div`
       transition: background-color 0.3s;
 
       &:hover {
-        background-color: #0056b3;
+        background-color: gray !important;
+        border: none !important;
       }
     }
   }
@@ -74,6 +81,8 @@ export const SCarouselItem = styled.div`
     padding: 4px 12px;
     border-radius: 4px;
     font-size: calc(0.4vw + 10.6px);
+    text-transform: uppercase;
+    font-family: ${(props) => props.theme.fontFamily.roboto};
   }
 
   .title {
@@ -143,7 +152,6 @@ export const SSliderMobile = styled.div`
   .sliderBtns {
     display: flex;
     justify-content: space-between;
-    padding: 0 24px;
 
     button {
       width: 48px;
@@ -160,7 +168,8 @@ export const SSliderMobile = styled.div`
       transition: background-color 0.3s;
 
       &:hover {
-        background-color: #0056b3;
+        background-color: gray !important;
+        border: none !important;
       }
     }
   }

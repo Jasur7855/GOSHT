@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./CartModal.css";
 
 interface CartItem {
@@ -94,7 +95,13 @@ const CartModal: React.FC<CartModalProps> = ({ onClose }) => {
         </div>
 
         {cart.length === 0 ? (
-          <p className="cart-empty">Your cart is empty.</p>
+          <div className="cart-empty">
+            <p>Your cart is empty.</p>
+            <p className="cart-empty__hint">Go to the menu to order something delicious!</p>
+            <Link to="/menu-page/starter" className="cart-empty__btn" onClick={onClose}>
+              Go to Menu
+            </Link>
+          </div>
         ) : (
           <>
             <ul className="cart-items">

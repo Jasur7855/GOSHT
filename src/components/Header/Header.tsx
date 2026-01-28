@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import CartModal from "./CartModal";
 
 import { Link } from "react-router-dom";
@@ -6,6 +6,7 @@ import { SHeader } from "./Header.style";
 
 import { FaUser } from "react-icons/fa";
 import { IoMdBasket } from "react-icons/io";
+import { IoBasketSharp } from "react-icons/io5";
 import { FaUtensils } from "react-icons/fa";
 import { BurgerMenu } from "../widgets/BurgerMenu/BurgerMenu";
 import { useIsMobile } from "../../hooks/useIsMobile";
@@ -33,10 +34,10 @@ export const Header = () => {
             <Link to="/about-page">About us</Link>
           </li>
           <li>
-            {/* <Link to="/events">Events</Link> */}
+            <Link to="/events">Events</Link>
           </li>
           <li>
-            {/* <Link to="/kids-event">Kids Events</Link> */}
+            <Link to="/kids-event">Kids Events</Link>
           </li>
           <li>
             <Link to="/location-page">Hours & Location</Link>
@@ -52,8 +53,8 @@ export const Header = () => {
           <span>Log in</span>
         </button> */}
         <button onClick={() => setIsOpen(true)}>
-          <IoMdBasket />
-          <span>Cart</span>
+          <IoBasketSharp style={{ color: 'black' }} />
+          <span style={{ color: 'black' }}>Cart</span>
         </button>
         {/* <button>
           <FaUtensils />

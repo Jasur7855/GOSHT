@@ -170,6 +170,9 @@ export const SMainPage = styled.div`
   }
   .clientSlider {
     margin-bottom: 52px;
+   .fill{
+    margin: 36px auto 0;
+   }
     span {
       font-size: calc(0.4vw + 14.6px);
       color: ${(props) => props.theme.colors.red};
@@ -193,10 +196,14 @@ export const SMainPage = styled.div`
       padding-top: 40px;
     }
     .desktop{
-      
+
       .swiper-wrapper{
         padding-top: 81px;
         height: 100%;
+      }
+      .sliderBtns {
+        padding: 0 ${(props) => props.theme.padding.padding6024};
+        margin-top: 32px;
       }
     }
     }

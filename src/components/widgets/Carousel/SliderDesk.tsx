@@ -9,7 +9,7 @@ import { Swiper as SwiperType } from "swiper";
 
 interface ISlide {
   tagText: string;
-  title: string;
+  title: string;  
   description: string;
   buttonText: string;
   backgroundImage: string;
@@ -18,10 +18,14 @@ interface ISlide {
 interface ISliderDeskProps {
   data: ISlide[];
   sliderForm?: ReactNode;
-  btnClick:()=>void
+  btnClick: () => void;
 }
 
-export const SliderDesk = ({ data, sliderForm,btnClick }: ISliderDeskProps) => {
+export const SliderDesk = ({
+  data,
+  sliderForm,
+  btnClick,
+}: ISliderDeskProps) => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
   return (

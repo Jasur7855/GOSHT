@@ -33,7 +33,7 @@ export const SHeader = styled.header`
     align-items: center;
 
     button {
-      background-color: transparent;
+      background-color: white;
       padding: calc(0.6vw + 6px) calc(1.1vw + 8px);
       border-radius: 4px;
       border: 1px solid transparent;
@@ -45,7 +45,7 @@ export const SHeader = styled.header`
       font-family: ${props => props.theme.fontFamily.robotoSerif};
 
       &:hover {
-        border: 1px solid white;
+        border: 1px solid ${props=>props.theme.colors.red};
       }
 
       svg {
