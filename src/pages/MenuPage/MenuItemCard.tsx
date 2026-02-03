@@ -52,7 +52,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
         existing.count = newCount;
       }
     } else {
-      cart.push({ id, title, image, weight, price, count: newCount });
+      cart.push({ id, title, image: finalImage, weight, price, count: newCount });
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));

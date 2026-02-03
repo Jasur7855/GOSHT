@@ -10,6 +10,7 @@
 
 .cart-modal__content {
   background: #fff;
+  font-family: 'Roboto Serif';
   border-radius: 12px;
   padding: 24px;
   min-width: 450px;
@@ -54,6 +55,7 @@
 }
 
 .cart-empty p {
+  font-family: 'Roboto';
   margin: 0;
 }
 
@@ -63,6 +65,7 @@
 }
 
 .cart-empty__btn {
+  font-family: 'Roboto Serif';
   display: inline-block;
   margin-top: 12px;
   background: #a51616;
@@ -70,7 +73,7 @@
   padding: 12px 24px;
   border-radius: 8px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
   transition: background 0.2s ease;
 }
