@@ -202,36 +202,36 @@ const MainPage = ({}) => {
           <section key={aboutBlock.id} className="aboutGosht container">
             <div className="restaurant">
               <GoshtBadge
-                badgeLogo={aboutBlock.first_project?.image ? `https://new.gosht.com${aboutBlock.first_project.image}` : "/img/placeholder.png"}
-                subTitle={aboutBlock.first_project?.short_description || ""}
-                title={aboutBlock.first_project?.name || ""}
+                badgeLogo={aboutBlock.firstProject?.image || "/img/placeholder.png"}
+                subTitle={aboutBlock.firstProject?.short_description || ""}
+                title={aboutBlock.firstProject?.name || ""}
                 children={
                   <>
-                    <h5>{aboutBlock.first_project?.info_1?.title || ""}</h5>
-                    <p>{aboutBlock.first_project?.info_1?.description || ""}</p>
+                    <h5>{aboutBlock.firstProject?.info_1?.title || ""}</h5>
+                    <p>{aboutBlock.firstProject?.info_1?.description || ""}</p>
                   </>
                 }
               />
               <GoshtBadge
                 children={
                   <>
-                    <h5>{aboutBlock.first_project?.info_2?.title || ""}</h5>
-                    <p>{aboutBlock.first_project?.info_2?.description || ""}</p>
+                    <h5>{aboutBlock.firstProject?.info_2?.title || ""}</h5>
+                    <p>{aboutBlock.firstProject?.info_2?.description || ""}</p>
                   </>
                 }
               />
             </div>
             <div className="kidsWrapper">
               <GoshtBadge
-                badgeLogo={aboutBlock.second_project?.image ? `https://new.gosht.com${aboutBlock.second_project.image}` : "/img/placeholder.png"}
-                title={aboutBlock.second_project?.name || ""}
-                subTitle={aboutBlock.second_project?.short_description || ""}
+                badgeLogo={aboutBlock.secondProject?.image || "/img/placeholder.png"}
+                title={aboutBlock.secondProject?.name || ""}
+                subTitle={aboutBlock.secondProject?.short_description || ""}
                 children={
                   <div className="kids">
-                    {aboutBlock.second_project?.image && (
+                    {aboutBlock.secondProject?.image && (
                       <img
-                        src={`https://new.gosht.com${aboutBlock.second_project.image}`}
-                        alt={aboutBlock.second_project?.name || ""}
+                        src={aboutBlock.secondProject.image}
+                        alt={aboutBlock.secondProject?.name || ""}
                         className="goshtKids"
                       />
                     )}
@@ -240,16 +240,16 @@ const MainPage = ({}) => {
                       <span>Open instagram</span>
                     </div>
                     <div className="kidsText">
-                      <h5>{aboutBlock.second_project?.info_1?.title || ""}</h5>
-                      <p>{aboutBlock.second_project?.info_1?.description || ""}</p>
+                      <h5>{aboutBlock.secondProject?.info?.main_text || ""}</h5>
+                      <p>{aboutBlock.secondProject?.info?.description || ""}</p>
                     </div>
                   </div>
                 }
               />
-              {aboutBlock.button_enabled && (
+              {aboutBlock.buttonEnabled && (
                 <Button
-                  btnLink={aboutBlock.button_link}
-                  text={aboutBlock.button_text}
+                  btnLink={aboutBlock.buttonLink}
+                  text={aboutBlock.buttonText}
                   typeButton="button"
                   variant="outlined"
                 />

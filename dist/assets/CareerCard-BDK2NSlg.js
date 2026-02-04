@@ -1,4 +1,4 @@
-import{d as i,j as t}from"./ui-CuDAUpxO.js";import{H as l}from"./index-BxC9GfvE.js";import{B as a}from"./Button-BI1yN_Qq.js";const m=i.main`
+import{d as i,j as t}from"./ui-CuDAUpxO.js";import{H as l}from"./index-D7ge506g.js";import{B as a}from"./Button-CvnSNFOY.js";const m=i.main`
   .swiper {
     height: 100%;
   }

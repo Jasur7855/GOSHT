@@ -6,7 +6,7 @@ export interface IProjectInfo {
   description: string;
 }
 
-export interface IProject {
+export interface IFirstProject {
   name: string;
   short_description: string;
   image: string;
@@ -14,13 +14,29 @@ export interface IProject {
   info_2: IProjectInfo;
 }
 
-export interface IAboutBlock {
-  id: string;
+export interface ISecondProjectInfo {
+  image: string;
+  main_text: string;
+  description: string;
   button_enabled: boolean;
   button_text: string;
   button_link: string;
-  first_project: IProject;
-  second_project: IProject;
+}
+
+export interface ISecondProject {
+  name: string;
+  short_description: string;
+  image: string;
+  info: ISecondProjectInfo;
+}
+
+export interface IAboutBlock {
+  id: string;
+  buttonEnabled: boolean;
+  buttonText: string;
+  buttonLink: string;
+  firstProject: IFirstProject;
+  secondProject: ISecondProject;
 }
 
 type IGetAboutBlockResponse = IAboutBlock[];
