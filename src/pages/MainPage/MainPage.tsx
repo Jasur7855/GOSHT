@@ -200,61 +200,65 @@ const MainPage = ({}) => {
         ))}
         {aboutBlockData?.map((aboutBlock) => (
           <section key={aboutBlock.id} className="aboutGosht container">
-            <div className="restaurant">
-              <GoshtBadge
-                badgeLogo={aboutBlock.firstProject?.image || "/img/placeholder.png"}
-                subTitle={aboutBlock.firstProject?.short_description || ""}
-                title={aboutBlock.firstProject?.name || ""}
-                children={
-                  <>
-                    <h5>{aboutBlock.firstProject?.info_1?.title || ""}</h5>
-                    <p>{aboutBlock.firstProject?.info_1?.description || ""}</p>
-                  </>
-                }
-              />
-              <GoshtBadge
-                children={
-                  <>
-                    <h5>{aboutBlock.firstProject?.info_2?.title || ""}</h5>
-                    <p>{aboutBlock.firstProject?.info_2?.description || ""}</p>
-                  </>
-                }
-              />
+            <div style={{ display: "flex", gap: "26px 31px" }}>
+              <div className="restaurant">
+                <GoshtBadge
+                  badgeLogo={aboutBlock.firstProject?.image || "/img/placeholder.png"}
+                  subTitle={aboutBlock.firstProject?.short_description || ""}
+                  title={aboutBlock.firstProject?.name || ""}
+                  children={
+                    <>
+                      <h5>{aboutBlock.firstProject?.info_1?.title || ""}</h5>
+                      <p>{aboutBlock.firstProject?.info_1?.description || ""}</p>
+                    </>
+                  }
+                />
+                <GoshtBadge
+                  children={
+                    <>
+                      <h5>{aboutBlock.firstProject?.info_2?.title || ""}</h5>
+                      <p>{aboutBlock.firstProject?.info_2?.description || ""}</p>
+                    </>
+                  }
+                />
+              </div>
+              <div className="kidsWrapper">
+                <GoshtBadge
+                  badgeLogo={aboutBlock.secondProject?.image || "/img/placeholder.png"}
+                  title={aboutBlock.secondProject?.name || ""}
+                  subTitle={aboutBlock.secondProject?.short_description || ""}
+                  children={
+                    <div className="kids">
+                      {aboutBlock.secondProject?.image && (
+                        <img
+                          src={aboutBlock.secondProject.image}
+                          alt={aboutBlock.secondProject?.name || ""}
+                          className="goshtKids"
+                        />
+                      )}
+                      <div className="instagram">
+                        <MdArrowOutward />
+                        <a href={aboutBlock.secondProject?.info.button_link || "#"}><span>Open instagram</span></a>
+                      </div>
+                      <div className="kidsText">
+                        <h5>{aboutBlock.secondProject?.info?.main_text || ""}</h5>
+                        <p>{aboutBlock.secondProject?.info?.description || ""}</p>
+                      </div>
+                    </div>
+                  }
+                />
+              </div>
             </div>
-            <div className="kidsWrapper">
-              <GoshtBadge
-                badgeLogo={aboutBlock.secondProject?.image || "/img/placeholder.png"}
-                title={aboutBlock.secondProject?.name || ""}
-                subTitle={aboutBlock.secondProject?.short_description || ""}
-                children={
-                  <div className="kids">
-                    {aboutBlock.secondProject?.image && (
-                      <img
-                        src={aboutBlock.secondProject.image}
-                        alt={aboutBlock.secondProject?.name || ""}
-                        className="goshtKids"
-                      />
-                    )}
-                    <div className="instagram">
-                      <MdArrowOutward />
-                      <span>Open instagram</span>
-                    </div>
-                    <div className="kidsText">
-                      <h5>{aboutBlock.secondProject?.info?.main_text || ""}</h5>
-                      <p>{aboutBlock.secondProject?.info?.description || ""}</p>
-                    </div>
-                  </div>
-                }
-              />
-              {aboutBlock.buttonEnabled && (
+            {aboutBlock.buttonEnabled && (
+              <div style={{ display: "flex", justifyContent: "center", cursor: "pointer" }}>
                 <Button
                   btnLink={aboutBlock.buttonLink}
                   text={aboutBlock.buttonText}
                   typeButton="button"
                   variant="outlined"
                 />
-              )}
-            </div>
+              </div>
+            )}
           </section>
         ))}
         <EventsSection className="container" />

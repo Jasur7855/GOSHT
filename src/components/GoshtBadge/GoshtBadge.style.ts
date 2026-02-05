@@ -59,7 +59,8 @@ export const SGoshtChildren = styled.div<IGoshtChildrenProps>`
   .goshtKids {
     position: absolute;
     top: 36px;
-    right: 36px;
+    object-fit: contain;
+    right: 0;
     width: 226px;
     height: 94px;
   }

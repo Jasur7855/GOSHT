@@ -89,6 +89,7 @@ export const SMainPage = styled.div`
     padding: 0 ${(props) => props.theme.padding.padding6024}
       calc(0.9vw + 38.5px);
     display: flex;
+    flex-direction: column;
     gap: 26px 31px;
 
     .restaurant {
@@ -101,7 +102,6 @@ export const SMainPage = styled.div`
       flex-grow: 1;
       .children {
         height: calc(-0.8vw + 333px);
-        margin-bottom: calc(0.5vw + 23.23px);
       }
       .kids {
         position: relative;
@@ -117,7 +117,8 @@ export const SMainPage = styled.div`
         .goshtKids {
           position: absolute;
           top: 36px;
-          right: 36px;
+          object-fit: contain;
+          right: 0;
           width: 226px;
           height: 94px;
         }

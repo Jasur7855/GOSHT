@@ -1,4 +1,4 @@
-import{d as a,j as o}from"./ui-CuDAUpxO.js";import{H as r}from"./index-D7ge506g.js";const s=a.div`
+import{d as a,j as o}from"./ui-CuDAUpxO.js";import{H as r}from"./index-CAhg9aXq.js";const s=a.div`
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -39,7 +39,7 @@ import{d as a,j as o}from"./ui-CuDAUpxO.js";import{H as r}from"./index-D7ge506g.
       font-family: ${t=>t.theme.fontFamily.roboto};
     }
   }
-`,p=a.div`
+`,f=a.div`
   background: url(${t=>t.$bgImg}) no-repeat center/cover;
   height: calc(12vw + 331px);
   border-radius: 12px;
@@ -51,7 +51,8 @@ import{d as a,j as o}from"./ui-CuDAUpxO.js";import{H as r}from"./index-D7ge506g.
   .goshtKids {
     position: absolute;
     top: 36px;
-    right: 36px;
+    object-fit: contain;
+    right: 0;
     width: 226px;
     height: 94px;
   }
@@ -98,4 +99,4 @@ import{d as a,j as o}from"./ui-CuDAUpxO.js";import{H as r}from"./index-D7ge506g.
       display: none;
     }
   }
-`,f=({children:t,title:i,subTitle:n,badgeLogo:e})=>o.jsxs(s,{children:[e&&o.jsxs("div",{className:"header",children:[o.jsx("img",{src:e,alt:e}),o.jsxs("div",{className:"text",children:[i&&o.jsx(r,{text:i,variant:"h5"}),o.jsx("span",{children:n})]})]}),o.jsxs("div",{className:"children",children:[" ",t]})]});export{f as G,p as S};
+`,p=({children:t,title:e,subTitle:n,badgeLogo:i})=>o.jsxs(s,{children:[i&&o.jsxs("div",{className:"header",children:[o.jsx("img",{src:i,alt:i}),o.jsxs("div",{className:"text",children:[e&&o.jsx(r,{text:e,variant:"h5"}),o.jsx("span",{children:n})]})]}),o.jsxs("div",{className:"children",children:[" ",t]})]});export{p as G,f as S};
