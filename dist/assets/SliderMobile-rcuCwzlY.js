@@ -1,4 +1,4 @@
-import{d as s,j as t}from"./ui-CuDAUpxO.js";import{S as l,N as c,P as p,A as d,a as x}from"./a11y-EIo1Ei7w.js";import{B as m}from"./Button-DVVy9TPM.js";import{I as g,a as u,H as f,h as w}from"./index-DbhM1Z9c.js";import{a as h}from"./react-BjlJThec.js";const j=s.div`
+import{d as s,j as t}from"./ui-CuDAUpxO.js";import{S as l,N as c,P as p,A as d,a as x}from"./a11y-EIo1Ei7w.js";import{B as m}from"./Button-BoGE5aUA.js";import{I as g,a as u,H as f,h as w}from"./index-D542ga8I.js";import{a as h}from"./react-BjlJThec.js";const j=s.div`
   .sliderBtns button {
     &:hover {
       background-color: gray !important;
