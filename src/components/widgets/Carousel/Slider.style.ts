@@ -210,7 +210,7 @@ export const SSliderMobile = styled.div`
 
   @media (max-width: 768px) {
     .sliderBtns {
-      margin: 0 16px;
+      margin: 24px calc(11.3px + 3.4vw) 0px;
       margin-top: 24px;
     }
   }
