@@ -46,11 +46,12 @@ const EventsCardPage = () => {
           {isEventsError && <p>Error loading events</p>}
           {visibleEvents.length > 0 ? (
             visibleEvents.map((e, i) => (
-              <EventCardItem
-                key={i}
-                itemBg={`${API_URL}${e.media.path}`}
-                itemTitle={e.main_title}
-              />
+              <Link key={i} to={`/events/${e.id}`}>
+                <EventCardItem
+                  itemBg={`${API_URL}${e.media.path}`}
+                  itemTitle={e.main_title}
+                />
+              </Link>
             ))
           ) : (
             <p>No events available</p>

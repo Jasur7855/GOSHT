@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { SFooter } from "./Footer.style";
+import ReviewModal from "../../Forms/FormFeedback/ReviewModal";
 
 import { IoIosArrowForward } from "react-icons/io";
 import { FaTelegramPlane } from "react-icons/fa";
@@ -51,6 +53,7 @@ const menuMob = {
 
 export const Footer = () => {
   const { data: footerData, isLoading } = useGetFooterQuery();
+  const [isReviewOpen, setIsReviewOpen] = useState(false);
 
   if (isLoading) {
     return null;
@@ -58,6 +61,7 @@ export const Footer = () => {
 
   return (
     <SFooter className="footerApadtive">
+      {isReviewOpen && <ReviewModal isOpen={isReviewOpen} onClose={() => setIsReviewOpen(false)} />}
       <footer className="footer container">
         <div className="top">
           <div className="footer_logo">
@@ -68,7 +72,7 @@ export const Footer = () => {
             <Link to={"/"}>Menu</Link>
             <Link to={"/about-page"}>About us</Link>
             <Link to={"/location-page"}>Hours & Location</Link>
-            <Link to={"/review-page"}>Review</Link>
+            <button onClick={() => setIsReviewOpen(true)} className="review-link">Review</button>
           </div>
           <div className="links_list">
             <span className="title">Events</span>
@@ -125,7 +129,7 @@ export const Footer = () => {
           <div className="footerLogoInfo">
             <span className="title">Schedule</span>
             <span className="subTitle">
-              {footerData?.work_hours || "7 Days a week, 11:00 AM - 12:00 AM"}
+              Mon-Fri: 10:00 AM - 11:00 PM<br />Sat-Sun: 9:00 AM - 12:00 AM
             </span>
           </div>
         </div>

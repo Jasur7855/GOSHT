@@ -20,4 +20,9 @@ export const SEventSection = styled.div`
   a {
     width: 100% !important;
   }
+  .knowMoreBtn {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+  }
 `;

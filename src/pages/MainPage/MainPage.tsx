@@ -21,6 +21,8 @@ import { useMemo, useState } from "react";
 import { useGetMenuQuery } from "../../store/Api/menuApi";
 import MenuItemModal from "../../components/MenuItemModal/MenuItemModal";
 import { IMenuItem } from "../../store/Api/menuApi";
+import ReviewModal from "../../components/Forms/FormFeedback/ReviewModal";
+import { FormBtn } from "../../components/ui/Button/FormBtn";
 
 
 const cards = [
@@ -62,6 +64,7 @@ const MainPage = ({}) => {
     null,
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isReviewOpen, setIsReviewOpen] = useState(false);
 
   const { data: bannersData, isLoading } = useGetHomeBannersQuery();
   const { data: menuData, isLoading: isMenuLoading } = useGetHomeMenuQuery();
@@ -148,7 +151,7 @@ const MainPage = ({}) => {
           </div>
         </section>
         <section className="mainMenu container">
-          {visibleMenuItems.map((item) => (
+          {(isMobile ? visibleMenuItems.slice(0, 3) : visibleMenuItems).map((item) => (
             <div
               key={item.id}
               onClick={() => handleMenuItemClick(item.main_text)}
@@ -166,6 +169,16 @@ const MainPage = ({}) => {
               />
             </div>
           ))}
+          {isMobile && visibleMenuItems.length > 3 && (
+            <div className="knowMoreBtn">
+              <Button 
+                typeButton="button" 
+                text="Know more" 
+                variant="outlined"
+                btnLink="/menu-page/starter"
+              />
+            </div>
+          )}
         </section>
         {informationData?.map((info) => (
           <section key={info.id} className="allFood container">
@@ -200,7 +213,7 @@ const MainPage = ({}) => {
         ))}
         {aboutBlockData?.map((aboutBlock) => (
           <section key={aboutBlock.id} className="aboutGosht container">
-            <div style={{ display: "flex", gap: "26px 31px" }}>
+            <div className="aboutGoshtInner" style={{ display: "flex", gap: "26px 31px" }}>
               <div className="restaurant">
                 <GoshtBadge
                   badgeLogo={aboutBlock.firstProject?.image || "/img/placeholder.png"}
@@ -261,7 +274,7 @@ const MainPage = ({}) => {
             )}
           </section>
         ))}
-        <EventsSection className="container" />
+        <EventsSection />
         <section className="clientSlider container">
           <span>Review</span>
           
@@ -269,16 +282,15 @@ const MainPage = ({}) => {
             text={`Don't believe me, check what Clients\nthink about us!`}
             variant="h4"
           />
-          <Button typeButton="button" text="Leave a review" variant="fill" btnLink="#" />
+          <ReviewModal isOpen={isReviewOpen} onClose={() => setIsReviewOpen(false)} />
+          <div style={{ width: "100%", display: "flex", justifyContent: "center" }}>
+          <FormBtn typeButton="button" text="Leave a review" variant="fill" onClick={() => setIsReviewOpen(true)} />
+          </div>
           {isMobile ? (
             <MainSlider slidesPerView={1}>
               {cards.map((card) => (
                 <SwiperSlide key={card.id}>
-                  <div className="cardWrapper">
-                    <Card title={card.title} description={card.description} />
-                    <Card title={card.title} description={card.description} />
-                    <Card title={card.title} description={card.description} />
-                  </div>
+                  <Card title={card.title} description={card.description} />
                 </SwiperSlide>
               ))}
             </MainSlider>

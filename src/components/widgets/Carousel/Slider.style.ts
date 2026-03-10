@@ -101,6 +101,18 @@ export const SCarouselItem = styled.div`
   }
 `;
 export const SSliderMobile = styled.div`
+  .swiper {
+    overflow-y: visible;
+  }
+
+  .swiper-wrapper {
+    padding-top: 30px;
+  }
+
+  .swiper-slide {
+    overflow-y: visible;
+  }
+
   .swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
     display: flex;
     justify-content: center;
@@ -150,8 +162,30 @@ export const SSliderMobile = styled.div`
     }
   }
   .sliderBtns {
+   margin: 24px calc(3.4vw + 11.3px) 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    .custom-pagination {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      align-items: center;
+
+      .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        background: #0000004d;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: #AA181A;
+      }
+    }
 
     button {
       width: 48px;
@@ -171,6 +205,13 @@ export const SSliderMobile = styled.div`
         background-color: gray !important;
         border: none !important;
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .sliderBtns {
+      margin: 0 16px;
+      margin-top: 24px;
     }
   }
 `;

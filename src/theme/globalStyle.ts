@@ -157,13 +157,19 @@ a{
   .allFood, .aboutGosht, .clientSlider {
     padding: 60px 0 !important;
   }
+  .adaptive {
+    gap: 50px !important;
+  }
   .adaptive, .footerApadtive {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  .menuInfo, .footer {
+  .menuInfo, .footer, .location {
     width: 1440px !important;
+    margin: 0 !important;
+  }
+  .location .wrapper {
     margin: 0 !important;
   }
 }

@@ -55,6 +55,13 @@ export const SMainPage = styled.div`
     padding: 60px ${(props) => props.theme.padding.padding6024};
     grid-template-columns: repeat(4, 1fr);
     gap: 36px 30px;
+
+    .knowMoreBtn {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
   }
   .allFood {
     padding: calc(1.9vw + 25px) ${(props) => props.theme.padding.padding6024};
@@ -170,9 +177,12 @@ export const SMainPage = styled.div`
     }
   }
   .clientSlider {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
     margin-bottom: 52px;
    .fill{
-    margin: 36px auto 0;
+    margin: 0;
    }
     span {
       font-size: calc(0.4vw + 14.6px);
@@ -259,6 +269,9 @@ export const SMainPage = styled.div`
     }
   }
   @media (max-width: 575px) {
+    .aboutGoshtInner {
+      flex-direction: column;
+    }
     .mainMenu {
       grid-template-columns: 1fr;
     }

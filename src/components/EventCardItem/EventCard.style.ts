@@ -5,6 +5,13 @@ interface IEventCardItemProps {
 }
 
 export const SEventsCardItem = styled.div<IEventCardItemProps>`
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  
+  &:hover {
+    opacity: 0.8;
+  }
+  
   .picture {
     height: 100px;
     border-radius: 8px;

@@ -19,7 +19,7 @@ export const GoshtBadge = ({
     <SGoshtBadge>
       {badgeLogo && (
         <div className="header">
-          <img src={badgeLogo} alt={badgeLogo} />
+          {/* <img src={badgeLogo} alt={badgeLogo} /> */}
           <div className="text">
             {title && <Heading text={title} variant="h5" />}
             <span>{subTitle}</span>

@@ -19,6 +19,10 @@ export const SEventsCard = styled.div<IEventsCardProps>`
       border-bottom:1px solid  #B9BCBB;
 
     }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
   }
 
   .Main {

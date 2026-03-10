@@ -26,12 +26,19 @@ export const SFooter = styled.div`
           font-weight: 500;
           margin-bottom: 8px;
         }
-        a {
+        a, .review-link {
           text-decoration: none;
           font-family: ${(props) => props.theme.fontFamily.roboto};
           color: var(--white);
           font-size: 16px;
           font-weight: 400;
+        }
+        .review-link {
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 0;
+          text-align: left;
         }
       }
       .info {
@@ -172,7 +179,8 @@ export const SFooter = styled.div`
 
     .footerSocial {
       display: flex;
-      gap: 0 30px;
+      justify-content: space-between;
+      width: 100%;
       .social {
         padding: 16px 26px;
         border: 1px solid #cccccc80;

@@ -72,27 +72,29 @@ const LocationPage = () => {
           </div>
         </section>
       )}
-      <section className="menuInfo">
-        <div className="bgImg">
-          <img src="/img/burger4.png" className="burger" />
-          {infoBlocks.map((info, index) => (
-            <div key={info.id || info.type} className={info.type === "second" ? "center" : ""}>
-              <h6>
-                <img src="/icons/starWhite.svg" alt="" />
-                {info.title}
-              </h6>
-              <p>{info.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-      <section className="location">
-        <Heading text={mapData?.title || "We are on the map"} variant="h2" />
-        <span>{mapData?.description || "We're waiting for everyone!"}</span>
-        <div className="wrapper">
-          <Map />
-        </div>
-      </section>
+      <div className="adaptive">
+        <section className="menuInfo">
+          <div className="bgImg">
+            <img src="/img/burger4.png" className="burger" />
+            {infoBlocks.map((info, index) => (
+              <div key={info.id || info.type} className={info.type === "second" ? "center" : ""}>
+                <h6>
+                  <img src="/icons/starWhite.svg" alt="" />
+                  {info.title}
+                </h6>
+                <p>{info.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+        <section className="location">
+          <Heading text={mapData?.title || "We are on the map"} variant="h2" />
+          <span>{mapData?.description || "We're waiting for everyone!"}</span>
+          <div className="wrapper">
+            <Map />
+          </div>
+        </section>
+      </div>
     </SLocation>
   );
 };

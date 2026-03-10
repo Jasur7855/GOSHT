@@ -18,7 +18,7 @@ export const MasterClass = () => {
           <div className="plan">{elem.title}</div>
         ))}
       </div>
-      <div className="plan">Cookie Painting</div>
+      {/* <div className="plan">Cookie Painting</div> */}
       <div className="plan red">Cookie Painting</div>
     </div>
   );

@@ -1,23 +1,23 @@
 import  { useState } from "react";
 import CartModal from "./CartModal";
+import ReviewModal from "../Forms/FormFeedback/ReviewModal";
 
 import { Link } from "react-router-dom";
 import { SHeader } from "./Header.style";
 
-import { FaUser } from "react-icons/fa";
-import { IoMdBasket } from "react-icons/io";
 import { IoBasketSharp } from "react-icons/io5";
-import { FaUtensils } from "react-icons/fa";
 import { BurgerMenu } from "../widgets/BurgerMenu/BurgerMenu";
 import { useIsMobile } from "../../hooks/useIsMobile";
 
 export const Header = () => {
   const isMobile = useIsMobile(1075);
   const [isOpen, setIsOpen] = useState(false);
+  const [isReviewOpen, setIsReviewOpen] = useState(false);
   return (
     <SHeader>
       {isMobile && <BurgerMenu />}
       {isOpen && <CartModal onClose={() => setIsOpen(false)} />}
+      {isReviewOpen && <ReviewModal isOpen={isReviewOpen} onClose={() => setIsReviewOpen(false)} />}
       <Link to="/">
         <img
           src="/icons/header-logo.svg"
@@ -43,7 +43,7 @@ export const Header = () => {
             <Link to="/location-page">Hours & Location</Link>
           </li>
           <li>
-            <Link to="/review-page">Review</Link>
+            <button onClick={() => setIsReviewOpen(true)} className="review-link">Review</button>
           </li>
         </ul>
       </nav>

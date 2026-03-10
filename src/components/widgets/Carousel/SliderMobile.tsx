@@ -53,20 +53,22 @@ export const SliderMobile = ({ data, btnClick }: ISliderMobileProps) => {
           </SwiperSlide>
         ))}
 
-        <div className="sliderBtns">
-          <button
-            className="arrBtn"
-            onClick={() => swiperInstance?.slidePrev()}
-          >
-            <IoIosArrowBack />
-          </button>
-          <button
-            className="arrBtn"
-            onClick={() => swiperInstance?.slideNext()}
-          >
-            <IoIosArrowForward />
-          </button>
-        </div>
+        {data.length > 1 && (
+          <div className="sliderBtns">
+            <button
+              className="arrBtn"
+              onClick={() => swiperInstance?.slidePrev()}
+            >
+              <IoIosArrowBack />
+            </button>
+            <button
+              className="arrBtn"
+              onClick={() => swiperInstance?.slideNext()}
+            >
+              <IoIosArrowForward />
+            </button>
+          </div>
+        )}
       </Swiper>
     </SSliderMobile>
   );

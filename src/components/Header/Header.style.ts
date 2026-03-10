@@ -16,9 +16,17 @@ export const SHeader = styled.header`
     display: flex;
     gap: 0 24px;
 
-    a {
+    a, .review-link {
       font-family: ${props => props.theme.fontFamily.robotoSerif};
       color: #fff;
+    }
+
+    .review-link {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: inherit;
+      padding: 0;
     }
   }
 

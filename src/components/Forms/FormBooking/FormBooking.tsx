@@ -77,11 +77,11 @@ export const FormBooking = ({ isOpen, onClose }: IFormBookingProps) => {
 
   return (
     <Modal isOpen={isOpen} onRequestClose={onClose} style={customStyles}>
-      <SFormBooking>
+      <SFormBooking style={{ background: "white" }}>
         <MdOutlineClear className="exit" onClick={onClose} />
 
         <div className="image"></div>
-        <div className="form">
+        <div className="form" style={{ background: "white" }}>
           <Heading
             variant="h4"
             text="Fill in the form and we will contact you about Kids event"

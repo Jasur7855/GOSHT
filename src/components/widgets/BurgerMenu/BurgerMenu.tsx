@@ -41,12 +41,12 @@ export const BurgerMenu = ({}: IBurgerMenuProps) => {
             <Link to="/about-page" onClick={() => setIsOpen(false)}>
               <li>About us</li>
             </Link>
-            {/* <Link to="/events" onClick={() => setIsOpen(false)}>
+            <Link to="/events" onClick={() => setIsOpen(false)}>
               <li>Events</li>
             </Link>
             <Link to="/kids-event" onClick={() => setIsOpen(false)}>
               <li>Kids Events</li>
-            </Link> */}
+            </Link>
             <Link to="/location-page" onClick={() => setIsOpen(false)}>
               <li>Hours & Location</li>
             </Link>

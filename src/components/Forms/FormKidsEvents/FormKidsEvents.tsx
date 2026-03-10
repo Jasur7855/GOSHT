@@ -34,7 +34,9 @@ const customStyles: Modal.Styles = {
     width: "100vw",
     height: "100vh",
     padding: "20px",
-    background: "white",
+    display: "flex",
+    justifyContent: "center",
+    background: "none",
     border: "none",
   },
 };

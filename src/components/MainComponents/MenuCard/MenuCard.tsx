@@ -17,7 +17,7 @@ export const MenuCard = ({
   return (
     <SMenuCard>
       <div className="img" style={{ backgroundImage: `url(${cardImg})` }}>
-        <MenuBadge cardBadge={cardBadge}/>
+        {/* <MenuBadge cardBadge={cardBadge}/> */}
       </div>
       <div className="description">
         <h5>{cardTitle}</h5>

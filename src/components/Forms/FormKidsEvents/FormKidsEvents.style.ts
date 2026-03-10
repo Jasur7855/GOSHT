@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const SFormKidsEvent = styled.div`
   position: relative;
   display: flex;
+  background: white;
+  height: fit-content;
   flex-direction: column;
   align-items: center;
   padding: 52px 20px calc(3vw + 8.7px);

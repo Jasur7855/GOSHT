@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
 import ScrollToTop from "./theme/ScrolToTop";
 
 import { lazy, Suspense } from "react";
-import { FormFeedback } from "./components/Forms/FormFeedback/FormFeedback";
 import { Layout } from "./Layout/Layout";
 import { FormContactUs } from "./components/Forms/FormContactUs/FormContactUs";
 import { FormWorkWithUs } from "./components/Forms/FormWorkWithUs/FormWorkWithU";
@@ -34,7 +33,6 @@ const App = () => {
       <div>
         <Routes>
           {/* 1) Отдельный маршрут без Header/Footer */}
-          <Route path="/review-page" element={<FormFeedback />} />
           <Route path="/contactUs-page" element={<FormContactUs />} />
           <Route path="/workWithUs-page" element={<FormWorkWithUs />} />
           {/* 2) Все остальные страницы — внутри Layout */}
